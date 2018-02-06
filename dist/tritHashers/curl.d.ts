@@ -7,11 +7,8 @@ import { ITritsHasher } from "@iota-pico/data/dist/interfaces/ITritsHasher";
  */
 export declare class Curl implements ITritsHasher {
     static readonly HASH_LENGTH: number;
-    private static readonly NUMBER_OF_ROUNDS;
-    private static readonly STATE_LENGTH;
-    private static readonly TRUTH_TABLE;
-    private readonly _rounds;
-    private _state;
+    static readonly NUMBER_OF_ROUNDS: number;
+    static readonly STATE_LENGTH: number;
     /**
      * Create a new instance of Curl.
      * @param rounds The number of rounds to perform.
@@ -22,6 +19,11 @@ export declare class Curl implements ITritsHasher {
      * @param state The initial state for the hasher.
      */
     initialize(state?: number[]): void;
+    /**
+     * Get the state.
+     * @return State array.
+     */
+    getState(): number[];
     /**
      * Reset the hasher.
      */
@@ -40,8 +42,4 @@ export declare class Curl implements ITritsHasher {
      * @param length The number of trits to squeeze.
      */
     squeeze(trits: Trits, offset: number, length: number): void;
-    /**
-     * Transform the hash.
-     */
-    private transform();
 }

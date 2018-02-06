@@ -5,6 +5,7 @@ import { ICurlProofOfWork } from "../interfaces/ICurlProofOfWork";
  * @interface
  */
 export class ProofOfWork {
+    /* @internal */
     private readonly _curlProofOfWork: ICurlProofOfWork;
 
     /**

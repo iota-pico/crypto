@@ -7,8 +7,6 @@ import { ITritsHasher } from "@iota-pico/data/dist/interfaces/ITritsHasher";
  */
 export declare class Kerl implements ITritsHasher {
     static readonly HASH_LENGTH: number;
-    private static readonly BIT_HASH_LENGTH;
-    private readonly _hasher;
     /**
      * Create a new instance of Kerl.
      * @param rounds The number of rounds to perform.

@@ -11,15 +11,40 @@ Represents an interface to curl proof of work.
 
 
 ## Methods
+<a id="initialize"></a>
+
+###  initialize
+
+► **initialize**(): `void`
+
+
+
+*Defined in [interfaces/ICurlProofOfWork.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/interfaces/ICurlProofOfWork.ts#L12)*
+
+
+
+Allow the proof of work to perform any initialization. Will throw an exception if the implementation is not supported.
+
+
+
+
+**Returns:** `void`
+
+
+
+
+
+___
+
 <a id="pow"></a>
 
 ###  pow
 
-► **pow**(trytes: *`string`*, minWeightMagnitude: *`number`*): `Promise`.<`string`>
+► **pow**(trytes: *`Trytes`*, minWeightMagnitude: *`number`*): `Promise`.<`Trytes`>
 
 
 
-*Defined in interfaces/ICurlProofOfWork.ts:12*
+*Defined in [interfaces/ICurlProofOfWork.ts:20](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/interfaces/ICurlProofOfWork.ts#L20)*
 
 
 
@@ -30,14 +55,14 @@ Perform a proof of work on the data.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trytes | `string`   |  The trytes to perform the pow on. |
+| trytes | `Trytes`   |  The trytes to perform the pow on. |
 | minWeightMagnitude | `number`   |  The minimum weight magnitude. |
 
 
 
 
 
-**Returns:** `Promise`.<`string`>
+**Returns:** `Promise`.<`Trytes`>
 The trytes produced by the proof of work.
 
 

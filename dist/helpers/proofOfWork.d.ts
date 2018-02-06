@@ -4,7 +4,6 @@ import { ICurlProofOfWork } from "../interfaces/ICurlProofOfWork";
  * @interface
  */
 export declare class ProofOfWork {
-    private readonly _curlProofOfWork;
     /**
      * Create a new instance of ProofOfWork.
      */

@@ -9,12 +9,15 @@ import { ITritsHasher } from "@iota-pico/data/dist/interfaces/ITritsHasher";
  */
 export class Curl implements ITritsHasher {
     public static readonly HASH_LENGTH: number = 243;
-    private static readonly NUMBER_OF_ROUNDS: number = 81;
-    private static readonly STATE_LENGTH: number = Curl.HASH_LENGTH * 3;
+    public static readonly NUMBER_OF_ROUNDS: number = 81;
+    public static readonly STATE_LENGTH: number = Curl.HASH_LENGTH * 3;
 
+    /* @internal */
     private static readonly TRUTH_TABLE: number[] = [1, 0, -1, 2, 1, -1, 0, 2, -1, 1, 0];
 
+    /* @internal */
     private readonly _rounds: number;
+    /* @internal */
     private _state: number[];
 
     /**
@@ -39,6 +42,14 @@ export class Curl implements ITritsHasher {
                 this._state[i] = 0;
             }
         }
+    }
+
+    /**
+     * Get the state.
+     * @return State array.
+     */
+    public getState(): number[] {
+        return this._state;
     }
 
     /**
@@ -120,6 +131,7 @@ export class Curl implements ITritsHasher {
 
     /**
      * Transform the hash.
+     * @internal
      */
     private transform(): void {
         let stateCopy = [];

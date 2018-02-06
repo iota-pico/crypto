@@ -8,3 +8,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 __export(require("./helpers/proofOfWork"));
 __export(require("./tritHashers/curl"));
+__export(require("./tritHashers/kerl"));

@@ -23,11 +23,14 @@ Implementation of ITritsHasher using Curl algorithm. [https://github.com/iotaled
 ### Properties
 
 * [HASH_LENGTH](curl.md#hash_length)
+* [NUMBER_OF_ROUNDS](curl.md#number_of_rounds)
+* [STATE_LENGTH](curl.md#state_length)
 
 
 ### Methods
 
 * [absorb](curl.md#absorb)
+* [getState](curl.md#getstate)
 * [initialize](curl.md#initialize)
 * [reset](curl.md#reset)
 * [squeeze](curl.md#squeeze)
@@ -42,7 +45,7 @@ Implementation of ITritsHasher using Curl algorithm. [https://github.com/iotaled
 ### ⊕ **new Curl**(rounds?: *`number`*): [Curl](curl.md)
 
 
-*Defined in tritHashers/curl.ts:18*
+*Defined in [tritHashers/curl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L21)*
 
 
 
@@ -71,7 +74,35 @@ Create a new instance of Curl.
 
 **●  HASH_LENGTH**:  *`number`*  = 243
 
-*Defined in tritHashers/curl.ts:11*
+*Defined in [tritHashers/curl.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L11)*
+
+
+
+
+
+___
+
+<a id="number_of_rounds"></a>
+
+### «Static» NUMBER_OF_ROUNDS
+
+**●  NUMBER_OF_ROUNDS**:  *`number`*  = 81
+
+*Defined in [tritHashers/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L12)*
+
+
+
+
+
+___
+
+<a id="state_length"></a>
+
+### «Static» STATE_LENGTH
+
+**●  STATE_LENGTH**:  *`number`*  =  Curl.HASH_LENGTH * 3
+
+*Defined in [tritHashers/curl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L13)*
 
 
 
@@ -89,7 +120,7 @@ ___
 
 
 
-*Defined in tritHashers/curl.ts:57*
+*Defined in [tritHashers/curl.ts:68](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L68)*
 
 
 
@@ -116,6 +147,33 @@ Absorb trits into the hash.
 
 ___
 
+<a id="getstate"></a>
+
+###  getState
+
+► **getState**(): `number`[]
+
+
+
+*Defined in [tritHashers/curl.ts:51](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L51)*
+
+
+
+Get the state.
+
+
+
+
+**Returns:** `number`[]
+State array.
+
+
+
+
+
+
+___
+
 <a id="initialize"></a>
 
 ###  initialize
@@ -124,7 +182,7 @@ ___
 
 
 
-*Defined in tritHashers/curl.ts:32*
+*Defined in [tritHashers/curl.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L35)*
 
 
 
@@ -157,7 +215,7 @@ ___
 
 
 
-*Defined in tritHashers/curl.ts:47*
+*Defined in [tritHashers/curl.ts:58](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L58)*
 
 
 
@@ -182,7 +240,7 @@ ___
 
 
 
-*Defined in tritHashers/curl.ts:92*
+*Defined in [tritHashers/curl.ts:103](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L103)*
 
 
 

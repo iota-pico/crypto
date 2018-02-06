@@ -30,6 +30,13 @@ class Curl {
         }
     }
     /**
+     * Get the state.
+     * @return State array.
+     */
+    getState() {
+        return this._state;
+    }
+    /**
      * Reset the hasher.
      */
     reset() {
@@ -95,6 +102,7 @@ class Curl {
     }
     /**
      * Transform the hash.
+     * @internal
      */
     transform() {
         let stateCopy = [];
@@ -110,5 +118,6 @@ class Curl {
 Curl.HASH_LENGTH = 243;
 Curl.NUMBER_OF_ROUNDS = 81;
 Curl.STATE_LENGTH = Curl.HASH_LENGTH * 3;
+/* @internal */
 Curl.TRUTH_TABLE = [1, 0, -1, 2, 1, -1, 0, 2, -1, 1, 0];
 exports.Curl = Curl;

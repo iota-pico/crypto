@@ -1,8 +1,8 @@
 import { CoreError } from "@iota-pico/core/dist/error/coreError";
+import { TritsWordConverter } from "@iota-pico/data/dist/converters/tritsWordConverter";
 import { Trits } from "@iota-pico/data/dist/data/trits";
 import { ITritsHasher } from "@iota-pico/data/dist/interfaces/ITritsHasher";
 import * as CryptoJS from "crypto-js";
-import { TritsWordConverter } from "../converters/tritsWordConverter";
 
 /**
  * Implementation of ITritsHasher using Kerl algorithm.
@@ -11,9 +11,12 @@ import { TritsWordConverter } from "../converters/tritsWordConverter";
  */
 export class Kerl implements ITritsHasher {
     public static readonly HASH_LENGTH: number = 243;
+    /* @internal */
     private static readonly BIT_HASH_LENGTH: number = 384;
 
+    /* @internal */
     private readonly _hasher: CryptoJS.HashAlgorithm;
+
     /**
      * Create a new instance of Kerl.
      * @param rounds The number of rounds to perform.
@@ -70,7 +73,7 @@ export class Kerl implements ITritsHasher {
             localOffset += limit;
 
             // convert trit state to words
-            const wordsToAbsorb = TritsWordConverter.tritsToWords(tritState);
+            const wordsToAbsorb = TritsWordConverter.tritsToWords(Trits.fromValue(tritState));
 
             // absorb the trit stat as wordarray
             this._hasher.update(CryptoJS.lib.WordArray.create(wordsToAbsorb));
@@ -109,7 +112,7 @@ export class Kerl implements ITritsHasher {
             const final = kCopy.finalize();
 
             // Convert words to trits and then map it into the internal state
-            const tritState = TritsWordConverter.wordsToTrits(final.words);
+            const tritState = TritsWordConverter.wordsToTrits(final.words).toValue();
 
             let i = 0;
             const limit = localLength < Kerl.HASH_LENGTH ? localLength : Kerl.HASH_LENGTH;

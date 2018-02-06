@@ -42,7 +42,7 @@ Implementation of ITritsHasher using Kerl algorithm. [https://github.com/iotaled
 ### ⊕ **new Kerl**(): [Kerl](kerl.md)
 
 
-*Defined in tritHashers/kerl.ts:16*
+*Defined in [tritHashers/kerl.ts:18](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/kerl.ts#L18)*
 
 
 
@@ -63,7 +63,7 @@ Create a new instance of Kerl.
 
 **●  HASH_LENGTH**:  *`number`*  = 243
 
-*Defined in tritHashers/kerl.ts:13*
+*Defined in [tritHashers/kerl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/kerl.ts#L13)*
 
 
 
@@ -81,7 +81,7 @@ ___
 
 
 
-*Defined in tritHashers/kerl.ts:48*
+*Defined in [tritHashers/kerl.ts:51](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/kerl.ts#L51)*
 
 
 
@@ -116,7 +116,7 @@ ___
 
 
 
-*Defined in tritHashers/kerl.ts:32*
+*Defined in [tritHashers/kerl.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/kerl.ts#L35)*
 
 
 
@@ -149,7 +149,7 @@ ___
 
 
 
-*Defined in tritHashers/kerl.ts:38*
+*Defined in [tritHashers/kerl.ts:41](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/kerl.ts#L41)*
 
 
 
@@ -174,7 +174,7 @@ ___
 
 
 
-*Defined in tritHashers/kerl.ts:88*
+*Defined in [tritHashers/kerl.ts:91](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/kerl.ts#L91)*
 
 
 
