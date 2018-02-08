@@ -8,11 +8,22 @@ const coreError_1 = require("@iota-pico/core/dist/error/coreError");
  */
 class Curl {
     /**
-     * Create a new instance of Curl.
-     * @param rounds The number of rounds to perform.
+     * Get the constant for the hasher.
+     * @returns The constants.
      */
-    constructor(rounds = Curl.NUMBER_OF_ROUNDS) {
-        this._rounds = rounds;
+    getConstants() {
+        return {
+            HASH_LENGTH: Curl.HASH_LENGTH,
+            STATE_LENGTH: Curl.STATE_LENGTH,
+            NUMBER_OF_ROUNDS: Curl.NUMBER_OF_ROUNDS
+        };
+    }
+    /**
+     * Get the state.
+     * @returns The state.
+     */
+    getState() {
+        return this._state;
     }
     /**
      * Initialise the hasher.
@@ -28,13 +39,6 @@ class Curl {
                 this._state[i] = 0;
             }
         }
-    }
-    /**
-     * Get the state.
-     * @return State array.
-     */
-    getState() {
-        return this._state;
     }
     /**
      * Reset the hasher.
@@ -107,7 +111,7 @@ class Curl {
     transform() {
         let stateCopy = [];
         let index = 0;
-        for (let round = 0; round < this._rounds; round++) {
+        for (let round = 0; round < Curl.NUMBER_OF_ROUNDS; round++) {
             stateCopy = this._state.slice();
             for (let i = 0; i < Curl.STATE_LENGTH; i++) {
                 this._state[i] = Curl.TRUTH_TABLE[stateCopy[index] + (stateCopy[index += (index < 365 ? 364 : -365)] << 2) + 5];

@@ -1,29 +1,34 @@
 import { Trits } from "@iota-pico/data/dist/data/trits";
-import { ITritsHasher } from "@iota-pico/data/dist/interfaces/ITritsHasher";
+import { ITritsHasher } from "../interfaces/ITritsHasher";
 /**
- * Implementation of ITritsHasher using Curl algorithm.
- * https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js
+ * Implementation of ITritsHasher using Kerl algorithm.
+ * https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/kerl/kerl.js
  * @interface
  */
-export declare class Curl implements ITritsHasher {
+export declare class Kerl implements ITritsHasher {
     static readonly HASH_LENGTH: number;
-    static readonly NUMBER_OF_ROUNDS: number;
-    static readonly STATE_LENGTH: number;
+    static readonly BIT_HASH_LENGTH: number;
     /**
-     * Create a new instance of Curl.
-     * @param rounds The number of rounds to perform.
+     * Create a new instance of Kerl.
      */
-    constructor(rounds?: number);
+    constructor();
+    /**
+     * Get the constant for the hasher.
+     * @returns The constants.
+     */
+    getConstants(): {
+        [name: string]: number;
+    };
+    /**
+     * Get the state.
+     * @returns The state.
+     */
+    getState(): number[];
     /**
      * Initialise the hasher.
      * @param state The initial state for the hasher.
      */
     initialize(state?: number[]): void;
-    /**
-     * Get the state.
-     * @return State array.
-     */
-    getState(): number[];
     /**
      * Reset the hasher.
      */

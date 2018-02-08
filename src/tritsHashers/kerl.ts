@@ -1,8 +1,8 @@
 import { CoreError } from "@iota-pico/core/dist/error/coreError";
 import { TritsWordConverter } from "@iota-pico/data/dist/converters/tritsWordConverter";
 import { Trits } from "@iota-pico/data/dist/data/trits";
-import { ITritsHasher } from "@iota-pico/data/dist/interfaces/ITritsHasher";
 import * as CryptoJS from "crypto-js";
+import { ITritsHasher } from "../interfaces/ITritsHasher";
 
 /**
  * Implementation of ITritsHasher using Kerl algorithm.
@@ -11,21 +11,38 @@ import * as CryptoJS from "crypto-js";
  */
 export class Kerl implements ITritsHasher {
     public static readonly HASH_LENGTH: number = 243;
-    /* @internal */
-    private static readonly BIT_HASH_LENGTH: number = 384;
+    public static readonly BIT_HASH_LENGTH: number = 384;
 
     /* @internal */
     private readonly _hasher: CryptoJS.HashAlgorithm;
 
     /**
      * Create a new instance of Kerl.
-     * @param rounds The number of rounds to perform.
      */
     constructor() {
         this._hasher = CryptoJS.algo.SHA3.create();
         this._hasher.init({
             outputLength: Kerl.BIT_HASH_LENGTH
         });
+    }
+
+    /**
+     * Get the constant for the hasher.
+     * @returns The constants.
+     */
+    public getConstants(): { [name: string]: number} {
+        return {
+            HASH_LENGTH: Kerl.HASH_LENGTH,
+            BIT_HASH_LENGTH: Kerl.BIT_HASH_LENGTH
+        };
+    }
+
+    /**
+     * Get the state.
+     * @returns The state.
+     */
+    public getState(): number[] {
+        return undefined;
     }
 
     /**

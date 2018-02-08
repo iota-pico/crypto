@@ -4,7 +4,7 @@
 import { Trits } from "@iota-pico/data/dist/data/trits";
 import { Trytes } from "@iota-pico/data/dist/data/trytes";
 import * as chai from "chai";
-import { Kerl } from "../../src/tritHashers/kerl";
+import { Kerl } from "../../src/tritsHashers/kerl";
 
 describe("Kerl", () => {
     it("can be created", () => {

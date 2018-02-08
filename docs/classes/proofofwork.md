@@ -30,7 +30,7 @@ Wrap an ICurlProofOfWork and add logic to call it.
 ### ⊕ **new ProofOfWork**(curlProofOfWork: *[ICurlProofOfWork](../interfaces/icurlproofofwork.md)*): [ProofOfWork](proofofwork.md)
 
 
-*Defined in [helpers/proofOfWork.ts:9](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/helpers/proofOfWork.ts#L9)*
+*Defined in [helpers/proofOfWork.ts:9](https://github.com/iotaeco/iota-pico-crypto/blob/0d9f182/src/helpers/proofOfWork.ts#L9)*
 
 
 
@@ -61,7 +61,7 @@ Create a new instance of ProofOfWork.
 
 
 
-*Defined in [helpers/proofOfWork.ts:27](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/helpers/proofOfWork.ts#L27)*
+*Defined in [helpers/proofOfWork.ts:27](https://github.com/iotaeco/iota-pico-crypto/blob/0d9f182/src/helpers/proofOfWork.ts#L27)*
 
 
 

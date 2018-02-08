@@ -15,11 +15,11 @@ Represents an interface to curl proof of work.
 
 ###  initialize
 
-► **initialize**(): `void`
+► **initialize**(): `Promise`.<`void`>
 
 
 
-*Defined in [interfaces/ICurlProofOfWork.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/interfaces/ICurlProofOfWork.ts#L12)*
+*Defined in [interfaces/ICurlProofOfWork.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/0d9f182/src/interfaces/ICurlProofOfWork.ts#L12)*
 
 
 
@@ -28,7 +28,7 @@ Allow the proof of work to perform any initialization. Will throw an exception i
 
 
 
-**Returns:** `void`
+**Returns:** `Promise`.<`void`>
 
 
 
@@ -44,7 +44,7 @@ ___
 
 
 
-*Defined in [interfaces/ICurlProofOfWork.ts:20](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/interfaces/ICurlProofOfWork.ts#L20)*
+*Defined in [interfaces/ICurlProofOfWork.ts:20](https://github.com/iotaeco/iota-pico-crypto/blob/0d9f182/src/interfaces/ICurlProofOfWork.ts#L20)*
 
 
 

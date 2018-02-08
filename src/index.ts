@@ -1,7 +1,9 @@
 /**
  * Combined index of all the modules.
  */
+export * from "./factories/tritsHasherFactory";
 export * from "./helpers/proofOfWork";
 export * from "./interfaces/ICurlProofOfWork";
-export * from "./tritHashers/curl";
-export * from "./tritHashers/kerl";
+export * from "./interfaces/ITritsHasher";
+export * from "./tritsHashers/curl";
+export * from "./tritsHashers/kerl";

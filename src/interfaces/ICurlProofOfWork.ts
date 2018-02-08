@@ -9,7 +9,7 @@ export interface ICurlProofOfWork {
      * Allow the proof of work to perform any initialization.
      * Will throw an exception if the implementation is not supported.
      */
-    initialize(): void;
+    initialize(): Promise<void>;
 
     /**
      * Perform a proof of work on the data.

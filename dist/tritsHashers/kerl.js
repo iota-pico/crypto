@@ -19,13 +19,29 @@ const CryptoJS = __importStar(require("crypto-js"));
 class Kerl {
     /**
      * Create a new instance of Kerl.
-     * @param rounds The number of rounds to perform.
      */
     constructor() {
         this._hasher = CryptoJS.algo.SHA3.create();
         this._hasher.init({
             outputLength: Kerl.BIT_HASH_LENGTH
         });
+    }
+    /**
+     * Get the constant for the hasher.
+     * @returns The constants.
+     */
+    getConstants() {
+        return {
+            HASH_LENGTH: Kerl.HASH_LENGTH,
+            BIT_HASH_LENGTH: Kerl.BIT_HASH_LENGTH
+        };
+    }
+    /**
+     * Get the state.
+     * @returns The state.
+     */
+    getState() {
+        return undefined;
     }
     /**
      * Initialise the hasher.
@@ -115,6 +131,5 @@ class Kerl {
     }
 }
 Kerl.HASH_LENGTH = 243;
-/* @internal */
 Kerl.BIT_HASH_LENGTH = 384;
 exports.Kerl = Kerl;

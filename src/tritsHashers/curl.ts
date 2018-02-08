@@ -1,6 +1,6 @@
 import { CoreError } from "@iota-pico/core/dist/error/coreError";
 import { Trits } from "@iota-pico/data/dist/data/trits";
-import { ITritsHasher } from "@iota-pico/data/dist/interfaces/ITritsHasher";
+import { ITritsHasher } from "../interfaces/ITritsHasher";
 
 /**
  * Implementation of ITritsHasher using Curl algorithm.
@@ -16,16 +16,26 @@ export class Curl implements ITritsHasher {
     private static readonly TRUTH_TABLE: number[] = [1, 0, -1, 2, 1, -1, 0, 2, -1, 1, 0];
 
     /* @internal */
-    private readonly _rounds: number;
-    /* @internal */
     private _state: number[];
 
     /**
-     * Create a new instance of Curl.
-     * @param rounds The number of rounds to perform.
+     * Get the constant for the hasher.
+     * @returns The constants.
      */
-    constructor(rounds: number = Curl.NUMBER_OF_ROUNDS) {
-        this._rounds = rounds;
+    public getConstants(): { [name: string]: number} {
+        return {
+            HASH_LENGTH: Curl.HASH_LENGTH,
+            STATE_LENGTH: Curl.STATE_LENGTH,
+            NUMBER_OF_ROUNDS: Curl.NUMBER_OF_ROUNDS
+        };
+    }
+
+    /**
+     * Get the state.
+     * @returns The state.
+     */
+    public getState(): number[] {
+        return this._state;
     }
 
     /**
@@ -42,14 +52,6 @@ export class Curl implements ITritsHasher {
                 this._state[i] = 0;
             }
         }
-    }
-
-    /**
-     * Get the state.
-     * @return State array.
-     */
-    public getState(): number[] {
-        return this._state;
     }
 
     /**
@@ -137,7 +139,7 @@ export class Curl implements ITritsHasher {
         let stateCopy = [];
         let index = 0;
 
-        for (let round = 0; round < this._rounds; round++) {
+        for (let round = 0; round < Curl.NUMBER_OF_ROUNDS; round++) {
             stateCopy = this._state.slice();
 
             for (let i = 0; i < Curl.STATE_LENGTH; i++) {

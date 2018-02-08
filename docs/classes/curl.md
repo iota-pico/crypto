@@ -11,14 +11,9 @@ Implementation of ITritsHasher using Curl algorithm. [https://github.com/iotaled
 
 ## Implements
 
-* `ITritsHasher`
+* [ITritsHasher](../interfaces/itritshasher.md)
 
 ## Index
-
-### Constructors
-
-* [constructor](curl.md#constructor)
-
 
 ### Properties
 
@@ -30,6 +25,7 @@ Implementation of ITritsHasher using Curl algorithm. [https://github.com/iotaled
 ### Methods
 
 * [absorb](curl.md#absorb)
+* [getConstants](curl.md#getconstants)
 * [getState](curl.md#getstate)
 * [initialize](curl.md#initialize)
 * [reset](curl.md#reset)
@@ -38,35 +34,6 @@ Implementation of ITritsHasher using Curl algorithm. [https://github.com/iotaled
 
 
 ---
-## Constructors
-<a id="constructor"></a>
-
-
-### ⊕ **new Curl**(rounds?: *`number`*): [Curl](curl.md)
-
-
-*Defined in [tritHashers/curl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L21)*
-
-
-
-Create a new instance of Curl.
-
-
-**Parameters:**
-
-| Param | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| rounds | `number`  |  Curl.NUMBER_OF_ROUNDS |   The number of rounds to perform. |
-
-
-
-
-
-**Returns:** [Curl](curl.md)
-
----
-
-
 ## Properties
 <a id="hash_length"></a>
 
@@ -74,7 +41,7 @@ Create a new instance of Curl.
 
 **●  HASH_LENGTH**:  *`number`*  = 243
 
-*Defined in [tritHashers/curl.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L11)*
+*Defined in tritsHashers/curl.ts:11*
 
 
 
@@ -88,7 +55,7 @@ ___
 
 **●  NUMBER_OF_ROUNDS**:  *`number`*  = 81
 
-*Defined in [tritHashers/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L12)*
+*Defined in tritsHashers/curl.ts:12*
 
 
 
@@ -102,7 +69,7 @@ ___
 
 **●  STATE_LENGTH**:  *`number`*  =  Curl.HASH_LENGTH * 3
 
-*Defined in [tritHashers/curl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L13)*
+*Defined in tritsHashers/curl.ts:13*
 
 
 
@@ -120,7 +87,9 @@ ___
 
 
 
-*Defined in [tritHashers/curl.ts:68](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L68)*
+*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[absorb](../interfaces/itritshasher.md#absorb)*
+
+*Defined in tritsHashers/curl.ts:70*
 
 
 
@@ -147,6 +116,35 @@ Absorb trits into the hash.
 
 ___
 
+<a id="getconstants"></a>
+
+###  getConstants
+
+► **getConstants**(): `object`
+
+
+
+*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getConstants](../interfaces/itritshasher.md#getconstants)*
+
+*Defined in tritsHashers/curl.ts:25*
+
+
+
+Get the constant for the hasher.
+
+
+
+
+**Returns:** `object`
+The constants.
+
+
+
+
+
+
+___
+
 <a id="getstate"></a>
 
 ###  getState
@@ -155,7 +153,9 @@ ___
 
 
 
-*Defined in [tritHashers/curl.ts:51](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L51)*
+*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getState](../interfaces/itritshasher.md#getstate)*
+
+*Defined in tritsHashers/curl.ts:37*
 
 
 
@@ -165,7 +165,7 @@ Get the state.
 
 
 **Returns:** `number`[]
-State array.
+The state.
 
 
 
@@ -182,7 +182,9 @@ ___
 
 
 
-*Defined in [tritHashers/curl.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L35)*
+*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[initialize](../interfaces/itritshasher.md#initialize)*
+
+*Defined in tritsHashers/curl.ts:45*
 
 
 
@@ -215,7 +217,9 @@ ___
 
 
 
-*Defined in [tritHashers/curl.ts:58](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L58)*
+*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[reset](../interfaces/itritshasher.md#reset)*
+
+*Defined in tritsHashers/curl.ts:60*
 
 
 
@@ -240,7 +244,9 @@ ___
 
 
 
-*Defined in [tritHashers/curl.ts:103](https://github.com/iotaeco/iota-pico-crypto/blob/79d7f23/src/tritHashers/curl.ts#L103)*
+*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[squeeze](../interfaces/itritshasher.md#squeeze)*
+
+*Defined in tritsHashers/curl.ts:105*
 
 
 
