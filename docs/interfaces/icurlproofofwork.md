@@ -19,7 +19,7 @@ Represents an interface to curl proof of work.
 
 
 
-*Defined in [interfaces/ICurlProofOfWork.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/d4510b9/src/interfaces/ICurlProofOfWork.ts#L12)*
+*Defined in [interfaces/ICurlProofOfWork.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/interfaces/ICurlProofOfWork.ts#L12)*
 
 
 
@@ -44,7 +44,7 @@ ___
 
 
 
-*Defined in [interfaces/ICurlProofOfWork.ts:20](https://github.com/iotaeco/iota-pico-crypto/blob/d4510b9/src/interfaces/ICurlProofOfWork.ts#L20)*
+*Defined in [interfaces/ICurlProofOfWork.ts:20](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/interfaces/ICurlProofOfWork.ts#L20)*
 
 
 
