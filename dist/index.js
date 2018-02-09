@@ -7,6 +7,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * Combined index of all the modules.
  */
 __export(require("./factories/tritsHasherFactory"));
-__export(require("./helpers/proofOfWork"));
 __export(require("./tritsHashers/curl"));
 __export(require("./tritsHashers/kerl"));

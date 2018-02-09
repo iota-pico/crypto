@@ -80,7 +80,7 @@ export class Curl implements ITritsHasher {
 
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toValue();
+        const tritsData = trits.toTritsArray();
 
         do {
             let i = 0;
@@ -114,7 +114,7 @@ export class Curl implements ITritsHasher {
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toValue();
+        const tritsData = trits.toTritsArray();
 
         do {
 

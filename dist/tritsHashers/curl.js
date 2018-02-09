@@ -64,7 +64,7 @@ class Curl {
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toValue();
+        const tritsData = trits.toTritsArray();
         do {
             let i = 0;
             const limit = localLength < Curl.HASH_LENGTH ? localLength : Curl.HASH_LENGTH;
@@ -93,7 +93,7 @@ class Curl {
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toValue();
+        const tritsData = trits.toTritsArray();
         do {
             let i = 0;
             const limit = localLength < Curl.HASH_LENGTH ? length : Curl.HASH_LENGTH;
