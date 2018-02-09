@@ -45,7 +45,7 @@ Implementation of ITritsHasher using Kerl algorithm. [https://github.com/iotaled
 ### ⊕ **new Kerl**(): [Kerl](kerl.md)
 
 
-*Defined in [tritsHashers/kerl.ts:17](https://github.com/iotaeco/iota-pico-crypto/blob/0ffc561/src/tritsHashers/kerl.ts#L17)*
+*Defined in [tritsHashers/kerl.ts:17](https://github.com/iotaeco/iota-pico-crypto/blob/d4510b9/src/tritsHashers/kerl.ts#L17)*
 
 
 
@@ -66,7 +66,7 @@ Create a new instance of Kerl.
 
 **●  BIT_HASH_LENGTH**:  *`number`*  = 384
 
-*Defined in [tritsHashers/kerl.ts:14](https://github.com/iotaeco/iota-pico-crypto/blob/0ffc561/src/tritsHashers/kerl.ts#L14)*
+*Defined in [tritsHashers/kerl.ts:14](https://github.com/iotaeco/iota-pico-crypto/blob/d4510b9/src/tritsHashers/kerl.ts#L14)*
 
 
 
@@ -80,7 +80,7 @@ ___
 
 **●  HASH_LENGTH**:  *`number`*  = 243
 
-*Defined in [tritsHashers/kerl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/0ffc561/src/tritsHashers/kerl.ts#L13)*
+*Defined in [tritsHashers/kerl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/d4510b9/src/tritsHashers/kerl.ts#L13)*
 
 
 
@@ -100,7 +100,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[absorb](../interfaces/itritshasher.md#absorb)*
 
-*Defined in [tritsHashers/kerl.ts:68](https://github.com/iotaeco/iota-pico-crypto/blob/0ffc561/src/tritsHashers/kerl.ts#L68)*
+*Defined in [tritsHashers/kerl.ts:68](https://github.com/iotaeco/iota-pico-crypto/blob/d4510b9/src/tritsHashers/kerl.ts#L68)*
 
 
 
@@ -137,7 +137,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getConstants](../interfaces/itritshasher.md#getconstants)*
 
-*Defined in [tritsHashers/kerl.ts:33](https://github.com/iotaeco/iota-pico-crypto/blob/0ffc561/src/tritsHashers/kerl.ts#L33)*
+*Defined in [tritsHashers/kerl.ts:33](https://github.com/iotaeco/iota-pico-crypto/blob/d4510b9/src/tritsHashers/kerl.ts#L33)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getState](../interfaces/itritshasher.md#getstate)*
 
-*Defined in [tritsHashers/kerl.ts:44](https://github.com/iotaeco/iota-pico-crypto/blob/0ffc561/src/tritsHashers/kerl.ts#L44)*
+*Defined in [tritsHashers/kerl.ts:44](https://github.com/iotaeco/iota-pico-crypto/blob/d4510b9/src/tritsHashers/kerl.ts#L44)*
 
 
 
@@ -195,7 +195,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[initialize](../interfaces/itritshasher.md#initialize)*
 
-*Defined in [tritsHashers/kerl.ts:52](https://github.com/iotaeco/iota-pico-crypto/blob/0ffc561/src/tritsHashers/kerl.ts#L52)*
+*Defined in [tritsHashers/kerl.ts:52](https://github.com/iotaeco/iota-pico-crypto/blob/d4510b9/src/tritsHashers/kerl.ts#L52)*
 
 
 
@@ -230,7 +230,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[reset](../interfaces/itritshasher.md#reset)*
 
-*Defined in [tritsHashers/kerl.ts:58](https://github.com/iotaeco/iota-pico-crypto/blob/0ffc561/src/tritsHashers/kerl.ts#L58)*
+*Defined in [tritsHashers/kerl.ts:58](https://github.com/iotaeco/iota-pico-crypto/blob/d4510b9/src/tritsHashers/kerl.ts#L58)*
 
 
 
@@ -257,7 +257,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[squeeze](../interfaces/itritshasher.md#squeeze)*
 
-*Defined in [tritsHashers/kerl.ts:108](https://github.com/iotaeco/iota-pico-crypto/blob/0ffc561/src/tritsHashers/kerl.ts#L108)*
+*Defined in [tritsHashers/kerl.ts:108](https://github.com/iotaeco/iota-pico-crypto/blob/d4510b9/src/tritsHashers/kerl.ts#L108)*
 
 
 
