@@ -41,7 +41,7 @@ Implementation of ITritsHasher using Curl algorithm. [https://github.com/iotaled
 
 **●  HASH_LENGTH**:  *`number`*  = 243
 
-*Defined in [tritsHashers/curl.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/tritsHashers/curl.ts#L11)*
+*Defined in [tritsHashers/curl.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/tritsHashers/curl.ts#L11)*
 
 
 
@@ -55,7 +55,7 @@ ___
 
 **●  NUMBER_OF_ROUNDS**:  *`number`*  = 81
 
-*Defined in [tritsHashers/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/tritsHashers/curl.ts#L12)*
+*Defined in [tritsHashers/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/tritsHashers/curl.ts#L12)*
 
 
 
@@ -69,7 +69,7 @@ ___
 
 **●  STATE_LENGTH**:  *`number`*  =  Curl.HASH_LENGTH * 3
 
-*Defined in [tritsHashers/curl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/tritsHashers/curl.ts#L13)*
+*Defined in [tritsHashers/curl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/tritsHashers/curl.ts#L13)*
 
 
 
@@ -89,7 +89,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[absorb](../interfaces/itritshasher.md#absorb)*
 
-*Defined in [tritsHashers/curl.ts:70](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/tritsHashers/curl.ts#L70)*
+*Defined in [tritsHashers/curl.ts:70](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/tritsHashers/curl.ts#L70)*
 
 
 
@@ -126,7 +126,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getConstants](../interfaces/itritshasher.md#getconstants)*
 
-*Defined in [tritsHashers/curl.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/tritsHashers/curl.ts#L25)*
+*Defined in [tritsHashers/curl.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/tritsHashers/curl.ts#L25)*
 
 
 
@@ -155,7 +155,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getState](../interfaces/itritshasher.md#getstate)*
 
-*Defined in [tritsHashers/curl.ts:37](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/tritsHashers/curl.ts#L37)*
+*Defined in [tritsHashers/curl.ts:37](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/tritsHashers/curl.ts#L37)*
 
 
 
@@ -184,7 +184,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[initialize](../interfaces/itritshasher.md#initialize)*
 
-*Defined in [tritsHashers/curl.ts:45](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/tritsHashers/curl.ts#L45)*
+*Defined in [tritsHashers/curl.ts:45](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/tritsHashers/curl.ts#L45)*
 
 
 
@@ -219,7 +219,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[reset](../interfaces/itritshasher.md#reset)*
 
-*Defined in [tritsHashers/curl.ts:60](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/tritsHashers/curl.ts#L60)*
+*Defined in [tritsHashers/curl.ts:60](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/tritsHashers/curl.ts#L60)*
 
 
 
@@ -246,7 +246,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[squeeze](../interfaces/itritshasher.md#squeeze)*
 
-*Defined in [tritsHashers/curl.ts:105](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/tritsHashers/curl.ts#L105)*
+*Defined in [tritsHashers/curl.ts:105](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/tritsHashers/curl.ts#L105)*
 
 
 

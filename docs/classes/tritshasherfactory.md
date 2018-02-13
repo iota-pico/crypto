@@ -38,13 +38,13 @@ Factory to generate tritsHashers.
 
 ###  create
 
-► **create**(name: *`string`*): [ITritsHasher](../interfaces/itritshasher.md)
+► **create**(name: *`string`*, ...args: *`any`[]*): [ITritsHasher](../interfaces/itritshasher.md)
 
 
 
 *Inherited from FactoryBase.create*
 
-*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:22*
+*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:23*
 
 
 
@@ -56,6 +56,7 @@ Create an instance of an object from the factory.
 | Param | Type | Description |
 | ------ | ------ | ------ |
 | name | `string`   |  The name of the type to create. |
+| args | `any`[]   |  Any parameters to pass to the constructor. |
 
 
 
@@ -79,7 +80,7 @@ ___
 
 
 
-*Defined in [factories/tritsHasherFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/factories/tritsHasherFactory.ts#L35)*
+*Defined in [factories/tritsHasherFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/factories/tritsHasherFactory.ts#L35)*
 
 
 
@@ -172,7 +173,7 @@ ___
 
 
 
-*Defined in [factories/tritsHasherFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/124402b/src/factories/tritsHasherFactory.ts#L25)*
+*Defined in [factories/tritsHasherFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/factories/tritsHasherFactory.ts#L25)*
 
 
 
