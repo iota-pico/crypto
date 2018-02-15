@@ -64,7 +64,7 @@ class Curl {
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toTritsArray();
+        const tritsData = trits.toArray();
         do {
             let i = 0;
             const limit = localLength < Curl.HASH_LENGTH ? localLength : Curl.HASH_LENGTH;
@@ -74,6 +74,7 @@ class Curl {
             this.transform();
             localLength -= Curl.HASH_LENGTH;
         } while (localLength > 0);
+        trits.fromArray(tritsData);
     }
     /**
      * Squeeze trits into the hash.
@@ -93,7 +94,7 @@ class Curl {
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toTritsArray();
+        const tritsData = trits.toArray();
         do {
             let i = 0;
             const limit = localLength < Curl.HASH_LENGTH ? length : Curl.HASH_LENGTH;
@@ -103,6 +104,7 @@ class Curl {
             this.transform();
             localLength -= Curl.HASH_LENGTH;
         } while (localLength > 0);
+        trits.fromArray(tritsData);
     }
     /**
      * Transform the hash.

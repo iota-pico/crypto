@@ -76,17 +76,18 @@ class Kerl {
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toTritsArray();
+        const tritsData = trits.toArray();
         do {
             const limit = localLength < Kerl.HASH_LENGTH ? localLength : Kerl.HASH_LENGTH;
             const tritState = tritsData.slice(localOffset, localOffset + limit);
             localOffset += limit;
             // convert trit state to words
-            const wordsToAbsorb = tritsWordConverter_1.TritsWordConverter.tritsToWords(trits_1.Trits.fromTritsArray(tritState));
+            const wordsToAbsorb = tritsWordConverter_1.TritsWordConverter.tritsToWords(trits_1.Trits.fromArray(tritState));
             // absorb the trit stat as wordarray
             this._hasher.update(CryptoJS.lib.WordArray.create(wordsToAbsorb));
             localLength -= Kerl.HASH_LENGTH;
         } while (localLength > 0);
+        trits.fromArray(tritsData);
     }
     /**
      * Squeeze trits into the hash.
@@ -109,13 +110,13 @@ class Kerl {
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toTritsArray();
+        const tritsData = trits.toArray();
         do {
             // get the hash digest
             const kCopy = this._hasher.clone();
             const final = kCopy.finalize();
             // Convert words to trits and then map it into the internal state
-            const tritState = tritsWordConverter_1.TritsWordConverter.wordsToTrits(final.words).toTritsArray();
+            const tritState = tritsWordConverter_1.TritsWordConverter.wordsToTrits(final.words).toArray();
             let i = 0;
             const limit = localLength < Kerl.HASH_LENGTH ? localLength : Kerl.HASH_LENGTH;
             while (i < limit) {
@@ -128,6 +129,7 @@ class Kerl {
             this._hasher.update(final);
             localLength -= Kerl.HASH_LENGTH;
         } while (localLength > 0);
+        trits.fromArray(tritsData);
     }
 }
 Kerl.HASH_LENGTH = 243;

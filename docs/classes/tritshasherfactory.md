@@ -80,7 +80,7 @@ ___
 
 
 
-*Defined in [factories/tritsHasherFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/factories/tritsHasherFactory.ts#L35)*
+*Defined in [factories/tritsHasherFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/factories/tritsHasherFactory.ts#L35)*
 
 
 
@@ -173,7 +173,7 @@ ___
 
 
 
-*Defined in [factories/tritsHasherFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/97f8899/src/factories/tritsHasherFactory.ts#L25)*
+*Defined in [factories/tritsHasherFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/factories/tritsHasherFactory.ts#L25)*
 
 
 

@@ -81,7 +81,7 @@ export class Kerl implements ITritsHasher {
 
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toTritsArray();
+        const tritsData = trits.toArray();
 
         do {
             const limit = localLength < Kerl.HASH_LENGTH ? localLength : Kerl.HASH_LENGTH;
@@ -90,13 +90,15 @@ export class Kerl implements ITritsHasher {
             localOffset += limit;
 
             // convert trit state to words
-            const wordsToAbsorb = TritsWordConverter.tritsToWords(Trits.fromTritsArray(tritState));
+            const wordsToAbsorb = TritsWordConverter.tritsToWords(Trits.fromArray(tritState));
 
             // absorb the trit stat as wordarray
             this._hasher.update(CryptoJS.lib.WordArray.create(wordsToAbsorb));
 
             localLength -= Kerl.HASH_LENGTH;
         } while (localLength > 0);
+
+        trits.fromArray(tritsData);
     }
 
     /**
@@ -121,7 +123,7 @@ export class Kerl implements ITritsHasher {
 
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toTritsArray();
+        const tritsData = trits.toArray();
 
         do {
             // get the hash digest
@@ -129,7 +131,7 @@ export class Kerl implements ITritsHasher {
             const final = kCopy.finalize();
 
             // Convert words to trits and then map it into the internal state
-            const tritState = TritsWordConverter.wordsToTrits(final.words).toTritsArray();
+            const tritState = TritsWordConverter.wordsToTrits(final.words).toArray();
 
             let i = 0;
             const limit = localLength < Kerl.HASH_LENGTH ? localLength : Kerl.HASH_LENGTH;
@@ -148,5 +150,7 @@ export class Kerl implements ITritsHasher {
 
             localLength -= Kerl.HASH_LENGTH;
         } while (localLength > 0);
+
+        trits.fromArray(tritsData);
     }
 }
