@@ -15,6 +15,11 @@ Implementation of ITritsHasher using Curl algorithm. [https://github.com/iotaled
 
 ## Index
 
+### Constructors
+
+* [constructor](curl.md#constructor)
+
+
 ### Properties
 
 * [HASH_LENGTH](curl.md#hash_length)
@@ -34,6 +39,35 @@ Implementation of ITritsHasher using Curl algorithm. [https://github.com/iotaled
 
 
 ---
+## Constructors
+<a id="constructor"></a>
+
+
+### ⊕ **new Curl**(rounds?: *`number`*): [Curl](curl.md)
+
+
+*Defined in [tritsHashers/curl.ts:20](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/curl.ts#L20)*
+
+
+
+Create a new instance of Curl.
+
+
+**Parameters:**
+
+| Param | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| rounds | `number`  |  Curl.NUMBER_OF_ROUNDS |   The number of rounds to use. |
+
+
+
+
+
+**Returns:** [Curl](curl.md)
+
+---
+
+
 ## Properties
 <a id="hash_length"></a>
 
@@ -41,7 +75,7 @@ Implementation of ITritsHasher using Curl algorithm. [https://github.com/iotaled
 
 **●  HASH_LENGTH**:  *`number`*  = 243
 
-*Defined in [tritsHashers/curl.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/curl.ts#L11)*
+*Defined in [tritsHashers/curl.ts:10](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/curl.ts#L10)*
 
 
 
@@ -55,7 +89,7 @@ ___
 
 **●  NUMBER_OF_ROUNDS**:  *`number`*  = 81
 
-*Defined in [tritsHashers/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/curl.ts#L12)*
+*Defined in [tritsHashers/curl.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/curl.ts#L11)*
 
 
 
@@ -69,7 +103,7 @@ ___
 
 **●  STATE_LENGTH**:  *`number`*  =  Curl.HASH_LENGTH * 3
 
-*Defined in [tritsHashers/curl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/curl.ts#L13)*
+*Defined in [tritsHashers/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/curl.ts#L12)*
 
 
 
@@ -83,13 +117,13 @@ ___
 
 ###  absorb
 
-► **absorb**(trits: *`Trits`*, offset: *`number`*, length: *`number`*): `void`
+► **absorb**(trits: *`number`[]*, offset: *`number`*, length: *`number`*): `void`
 
 
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[absorb](../interfaces/itritshasher.md#absorb)*
 
-*Defined in [tritsHashers/curl.ts:70](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/curl.ts#L70)*
+*Defined in [tritsHashers/curl.ts:79](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/curl.ts#L79)*
 
 
 
@@ -100,7 +134,7 @@ Absorb trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `Trits`   |  The trits to absorb. |
+| trits | `number`[]   |  The trits to absorb. |
 | offset | `number`   |  The offset into the trits to absorb from. |
 | length | `number`   |  The number of trits to absorb. |
 
@@ -126,7 +160,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getConstants](../interfaces/itritshasher.md#getconstants)*
 
-*Defined in [tritsHashers/curl.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/curl.ts#L25)*
+*Defined in [tritsHashers/curl.ts:34](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/curl.ts#L34)*
 
 
 
@@ -155,7 +189,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getState](../interfaces/itritshasher.md#getstate)*
 
-*Defined in [tritsHashers/curl.ts:37](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/curl.ts#L37)*
+*Defined in [tritsHashers/curl.ts:46](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/curl.ts#L46)*
 
 
 
@@ -184,7 +218,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[initialize](../interfaces/itritshasher.md#initialize)*
 
-*Defined in [tritsHashers/curl.ts:45](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/curl.ts#L45)*
+*Defined in [tritsHashers/curl.ts:54](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/curl.ts#L54)*
 
 
 
@@ -219,7 +253,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[reset](../interfaces/itritshasher.md#reset)*
 
-*Defined in [tritsHashers/curl.ts:60](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/curl.ts#L60)*
+*Defined in [tritsHashers/curl.ts:69](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/curl.ts#L69)*
 
 
 
@@ -240,13 +274,13 @@ ___
 
 ###  squeeze
 
-► **squeeze**(trits: *`Trits`*, offset: *`number`*, length: *`number`*): `void`
+► **squeeze**(trits: *`number`[]*, offset: *`number`*, length: *`number`*): `void`
 
 
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[squeeze](../interfaces/itritshasher.md#squeeze)*
 
-*Defined in [tritsHashers/curl.ts:107](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/curl.ts#L107)*
+*Defined in [tritsHashers/curl.ts:113](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/curl.ts#L113)*
 
 
 
@@ -257,7 +291,7 @@ Squeeze trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `Trits`   |  The trits to squeeze. |
+| trits | `number`[]   |  The trits to squeeze. |
 | offset | `number`   |  The offset into the trits to squeeze from. |
 | length | `number`   |  The number of trits to squeeze. |
 

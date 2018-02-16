@@ -1,4 +1,3 @@
-import { Trits } from "@iota-pico/data/dist/data/trits";
 import { ITritsHasher } from "../interfaces/ITritsHasher";
 /**
  * Implementation of ITritsHasher using Curl algorithm.
@@ -9,6 +8,11 @@ export declare class Curl implements ITritsHasher {
     static readonly HASH_LENGTH: number;
     static readonly NUMBER_OF_ROUNDS: number;
     static readonly STATE_LENGTH: number;
+    /**
+     * Create a new instance of Curl.
+     * @param rounds The number of rounds to use.
+     */
+    constructor(rounds?: number);
     /**
      * Get the constant for the hasher.
      * @returns The constants.
@@ -36,12 +40,12 @@ export declare class Curl implements ITritsHasher {
      * @param offset The offset into the trits to absorb from.
      * @param length The number of trits to absorb.
      */
-    absorb(trits: Trits, offset: number, length: number): void;
+    absorb(trits: number[], offset: number, length: number): void;
     /**
      * Squeeze trits into the hash.
      * @param trits The trits to squeeze.
      * @param offset The offset into the trits to squeeze from.
      * @param length The number of trits to squeeze.
      */
-    squeeze(trits: Trits, offset: number, length: number): void;
+    squeeze(trits: number[], offset: number, length: number): void;
 }

@@ -21,8 +21,8 @@ class TritsHasherFactory extends factoryBase_1.FactoryBase {
     static instance() {
         if (!TritsHasherFactory._instance) {
             TritsHasherFactory._instance = new TritsHasherFactory();
-            TritsHasherFactory._instance.register("curl", () => new curl_1.Curl());
-            TritsHasherFactory._instance.register("kerl", () => new kerl_1.Kerl());
+            TritsHasherFactory._instance.register("curl", (...args) => new curl_1.Curl(...args));
+            TritsHasherFactory._instance.register("kerl", (...args) => new kerl_1.Kerl());
         }
         return TritsHasherFactory._instance;
     }

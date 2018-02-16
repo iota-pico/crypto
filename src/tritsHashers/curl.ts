@@ -1,5 +1,4 @@
 import { CoreError } from "@iota-pico/core/dist/error/coreError";
-import { Trits } from "@iota-pico/data/dist/data/trits";
 import { ITritsHasher } from "../interfaces/ITritsHasher";
 
 /**
@@ -17,6 +16,16 @@ export class Curl implements ITritsHasher {
 
     /* @internal */
     private _state: number[];
+    /* @internal */
+    private readonly _numberOfRounds: number;
+
+    /**
+     * Create a new instance of Curl.
+     * @param rounds The number of rounds to use.
+     */
+    constructor(rounds: number = Curl.NUMBER_OF_ROUNDS) {
+        this._numberOfRounds = rounds;
+    }
 
     /**
      * Get the constant for the hasher.
@@ -26,7 +35,7 @@ export class Curl implements ITritsHasher {
         return {
             HASH_LENGTH: Curl.HASH_LENGTH,
             STATE_LENGTH: Curl.STATE_LENGTH,
-            NUMBER_OF_ROUNDS: Curl.NUMBER_OF_ROUNDS
+            NUMBER_OF_ROUNDS: this._numberOfRounds
         };
     }
 
@@ -67,7 +76,7 @@ export class Curl implements ITritsHasher {
      * @param offset The offset into the trits to absorb from.
      * @param length The number of trits to absorb.
      */
-    public absorb(trits: Trits, offset: number, length: number): void {
+    public absorb(trits: number[], offset: number, length: number): void {
         if (trits === undefined || trits === null) {
             throw new CoreError("Trits can not be null or undefined");
         }
@@ -80,22 +89,19 @@ export class Curl implements ITritsHasher {
 
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toArray();
 
         do {
             let i = 0;
             const limit = localLength < Curl.HASH_LENGTH ? localLength : Curl.HASH_LENGTH;
 
             while (i < limit) {
-                this._state[i++] = tritsData[localOffset++];
+                this._state[i++] = trits[localOffset++];
             }
 
             this.transform();
 
             localLength -= Curl.HASH_LENGTH;
         } while (localLength > 0);
-
-        trits.fromArray(tritsData);
     }
 
     /**
@@ -104,7 +110,7 @@ export class Curl implements ITritsHasher {
      * @param offset The offset into the trits to squeeze from.
      * @param length The number of trits to squeeze.
      */
-    public squeeze(trits: Trits, offset: number, length: number): void {
+    public squeeze(trits: number[], offset: number, length: number): void {
         if (trits === undefined || trits === null) {
             throw new CoreError("Trits can not be null or undefined");
         }
@@ -116,7 +122,6 @@ export class Curl implements ITritsHasher {
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toArray();
 
         do {
 
@@ -124,15 +129,13 @@ export class Curl implements ITritsHasher {
             const limit = localLength < Curl.HASH_LENGTH ? length : Curl.HASH_LENGTH;
 
             while (i < limit) {
-                tritsData[localOffset++] = this._state[i++];
+                trits[localOffset++] = this._state[i++];
             }
 
             this.transform();
 
             localLength -= Curl.HASH_LENGTH;
         } while (localLength > 0);
-
-        trits.fromArray(tritsData);
     }
 
     /**
@@ -143,7 +146,7 @@ export class Curl implements ITritsHasher {
         let stateCopy = [];
         let index = 0;
 
-        for (let round = 0; round < Curl.NUMBER_OF_ROUNDS; round++) {
+        for (let round = 0; round < this._numberOfRounds; round++) {
             stateCopy = this._state.slice();
 
             for (let i = 0; i < Curl.STATE_LENGTH; i++) {

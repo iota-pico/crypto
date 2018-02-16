@@ -1,5 +1,3 @@
-import { Trits } from "@iota-pico/data/dist/data/trits";
-
 /**
  * Represents an interface to hash trits.
  * @interface
@@ -34,7 +32,7 @@ export interface ITritsHasher {
      * @param offset The offset into the trits to absorb from.
      * @param length The number of trits to absorb.
      */
-    absorb(trits: Trits, offset: number, length: number): void;
+    absorb(trits: number[], offset: number, length: number): void;
 
     /**
      * Squeeze trits into the hash.
@@ -42,5 +40,5 @@ export interface ITritsHasher {
      * @param offset The offset into the trits to squeeze from.
      * @param length The number of trits to squeeze.
      */
-    squeeze(trits: Trits, offset: number, length: number): void;
+    squeeze(trits: number[], offset: number, length: number): void;
 }

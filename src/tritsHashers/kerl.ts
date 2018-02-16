@@ -1,6 +1,5 @@
 import { CoreError } from "@iota-pico/core/dist/error/coreError";
 import { TritsWordConverter } from "@iota-pico/data/dist/converters/tritsWordConverter";
-import { Trits } from "@iota-pico/data/dist/data/trits";
 import * as CryptoJS from "crypto-js";
 import { ITritsHasher } from "../interfaces/ITritsHasher";
 
@@ -65,7 +64,7 @@ export class Kerl implements ITritsHasher {
      * @param offset The offset into the trits to absorb from.
      * @param length The number of trits to absorb.
      */
-    public absorb(trits: Trits, offset: number, length: number): void {
+    public absorb(trits: number[], offset: number, length: number): void {
         if (trits === undefined || trits === null) {
             throw new CoreError("Trits can not be null or undefined");
         }
@@ -76,29 +75,26 @@ export class Kerl implements ITritsHasher {
             throw new CoreError("Length can not be null or undefined");
         }
         if (length && ((length % 243) !== 0)) {
-            throw new CoreError("Illegal length provided");
+            throw new CoreError("Illegal length provided", { length });
         }
 
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toArray();
 
         do {
             const limit = localLength < Kerl.HASH_LENGTH ? localLength : Kerl.HASH_LENGTH;
 
-            const tritState = tritsData.slice(localOffset, localOffset + limit);
+            const tritState = trits.slice(localOffset, localOffset + limit);
             localOffset += limit;
 
             // convert trit state to words
-            const wordsToAbsorb = TritsWordConverter.tritsToWords(Trits.fromArray(tritState));
+            const wordsToAbsorb = TritsWordConverter.tritsToWords(tritState);
 
             // absorb the trit stat as wordarray
             this._hasher.update(CryptoJS.lib.WordArray.create(wordsToAbsorb));
 
             localLength -= Kerl.HASH_LENGTH;
         } while (localLength > 0);
-
-        trits.fromArray(tritsData);
     }
 
     /**
@@ -107,7 +103,7 @@ export class Kerl implements ITritsHasher {
      * @param offset The offset into the trits to squeeze from.
      * @param length The number of trits to squeeze.
      */
-    public squeeze(trits: Trits, offset: number, length: number): void {
+    public squeeze(trits: number[], offset: number, length: number): void {
         if (trits === undefined || trits === null) {
             throw new CoreError("Trits can not be null or undefined");
         }
@@ -123,7 +119,6 @@ export class Kerl implements ITritsHasher {
 
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toArray();
 
         do {
             // get the hash digest
@@ -131,13 +126,13 @@ export class Kerl implements ITritsHasher {
             const final = kCopy.finalize();
 
             // Convert words to trits and then map it into the internal state
-            const tritState = TritsWordConverter.wordsToTrits(final.words).toArray();
+            const tritState = TritsWordConverter.wordsToTrits(final.words);
 
             let i = 0;
             const limit = localLength < Kerl.HASH_LENGTH ? localLength : Kerl.HASH_LENGTH;
 
             while (i < limit) {
-                tritsData[localOffset++] = tritState[i++];
+                trits[localOffset++] = tritState[i++];
             }
 
             this.reset();
@@ -150,7 +145,5 @@ export class Kerl implements ITritsHasher {
 
             localLength -= Kerl.HASH_LENGTH;
         } while (localLength > 0);
-
-        trits.fromArray(tritsData);
     }
 }

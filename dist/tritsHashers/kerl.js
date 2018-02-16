@@ -9,7 +9,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const coreError_1 = require("@iota-pico/core/dist/error/coreError");
 const tritsWordConverter_1 = require("@iota-pico/data/dist/converters/tritsWordConverter");
-const trits_1 = require("@iota-pico/data/dist/data/trits");
 const CryptoJS = __importStar(require("crypto-js"));
 /**
  * Implementation of ITritsHasher using Kerl algorithm.
@@ -72,22 +71,20 @@ class Kerl {
             throw new coreError_1.CoreError("Length can not be null or undefined");
         }
         if (length && ((length % 243) !== 0)) {
-            throw new coreError_1.CoreError("Illegal length provided");
+            throw new coreError_1.CoreError("Illegal length provided", { length });
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toArray();
         do {
             const limit = localLength < Kerl.HASH_LENGTH ? localLength : Kerl.HASH_LENGTH;
-            const tritState = tritsData.slice(localOffset, localOffset + limit);
+            const tritState = trits.slice(localOffset, localOffset + limit);
             localOffset += limit;
             // convert trit state to words
-            const wordsToAbsorb = tritsWordConverter_1.TritsWordConverter.tritsToWords(trits_1.Trits.fromArray(tritState));
+            const wordsToAbsorb = tritsWordConverter_1.TritsWordConverter.tritsToWords(tritState);
             // absorb the trit stat as wordarray
             this._hasher.update(CryptoJS.lib.WordArray.create(wordsToAbsorb));
             localLength -= Kerl.HASH_LENGTH;
         } while (localLength > 0);
-        trits.fromArray(tritsData);
     }
     /**
      * Squeeze trits into the hash.
@@ -110,17 +107,16 @@ class Kerl {
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toArray();
         do {
             // get the hash digest
             const kCopy = this._hasher.clone();
             const final = kCopy.finalize();
             // Convert words to trits and then map it into the internal state
-            const tritState = tritsWordConverter_1.TritsWordConverter.wordsToTrits(final.words).toArray();
+            const tritState = tritsWordConverter_1.TritsWordConverter.wordsToTrits(final.words);
             let i = 0;
             const limit = localLength < Kerl.HASH_LENGTH ? localLength : Kerl.HASH_LENGTH;
             while (i < limit) {
-                tritsData[localOffset++] = tritState[i++];
+                trits[localOffset++] = tritState[i++];
             }
             this.reset();
             for (i = 0; i < final.words.length; i++) {
@@ -129,7 +125,6 @@ class Kerl {
             this._hasher.update(final);
             localLength -= Kerl.HASH_LENGTH;
         } while (localLength > 0);
-        trits.fromArray(tritsData);
     }
 }
 Kerl.HASH_LENGTH = 243;

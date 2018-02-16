@@ -25,8 +25,8 @@ export class TritsHasherFactory extends FactoryBase<ITritsHasher> {
     public static instance(): FactoryBase<ITritsHasher> {
         if (!TritsHasherFactory._instance) {
             TritsHasherFactory._instance = new TritsHasherFactory();
-            TritsHasherFactory._instance.register("curl", () => new Curl());
-            TritsHasherFactory._instance.register("kerl", () => new Kerl());
+            TritsHasherFactory._instance.register("curl", (...args) => new Curl(...args));
+            TritsHasherFactory._instance.register("kerl", (...args) => new Kerl());
         }
         return TritsHasherFactory._instance;
     }

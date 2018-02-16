@@ -8,6 +8,13 @@ const coreError_1 = require("@iota-pico/core/dist/error/coreError");
  */
 class Curl {
     /**
+     * Create a new instance of Curl.
+     * @param rounds The number of rounds to use.
+     */
+    constructor(rounds = Curl.NUMBER_OF_ROUNDS) {
+        this._numberOfRounds = rounds;
+    }
+    /**
      * Get the constant for the hasher.
      * @returns The constants.
      */
@@ -15,7 +22,7 @@ class Curl {
         return {
             HASH_LENGTH: Curl.HASH_LENGTH,
             STATE_LENGTH: Curl.STATE_LENGTH,
-            NUMBER_OF_ROUNDS: Curl.NUMBER_OF_ROUNDS
+            NUMBER_OF_ROUNDS: this._numberOfRounds
         };
     }
     /**
@@ -64,17 +71,15 @@ class Curl {
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toArray();
         do {
             let i = 0;
             const limit = localLength < Curl.HASH_LENGTH ? localLength : Curl.HASH_LENGTH;
             while (i < limit) {
-                this._state[i++] = tritsData[localOffset++];
+                this._state[i++] = trits[localOffset++];
             }
             this.transform();
             localLength -= Curl.HASH_LENGTH;
         } while (localLength > 0);
-        trits.fromArray(tritsData);
     }
     /**
      * Squeeze trits into the hash.
@@ -94,17 +99,15 @@ class Curl {
         }
         let localOffset = offset;
         let localLength = length;
-        const tritsData = trits.toArray();
         do {
             let i = 0;
             const limit = localLength < Curl.HASH_LENGTH ? length : Curl.HASH_LENGTH;
             while (i < limit) {
-                tritsData[localOffset++] = this._state[i++];
+                trits[localOffset++] = this._state[i++];
             }
             this.transform();
             localLength -= Curl.HASH_LENGTH;
         } while (localLength > 0);
-        trits.fromArray(tritsData);
     }
     /**
      * Transform the hash.
@@ -113,7 +116,7 @@ class Curl {
     transform() {
         let stateCopy = [];
         let index = 0;
-        for (let round = 0; round < Curl.NUMBER_OF_ROUNDS; round++) {
+        for (let round = 0; round < this._numberOfRounds; round++) {
             stateCopy = this._state.slice();
             for (let i = 0; i < Curl.STATE_LENGTH; i++) {
                 this._state[i] = Curl.TRUTH_TABLE[stateCopy[index] + (stateCopy[index += (index < 365 ? 364 : -365)] << 2) + 5];

@@ -45,7 +45,7 @@ Implementation of ITritsHasher using Kerl algorithm. [https://github.com/iotaled
 ### ⊕ **new Kerl**(): [Kerl](kerl.md)
 
 
-*Defined in [tritsHashers/kerl.ts:17](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/kerl.ts#L17)*
+*Defined in [tritsHashers/kerl.ts:16](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/kerl.ts#L16)*
 
 
 
@@ -66,7 +66,7 @@ Create a new instance of Kerl.
 
 **●  BIT_HASH_LENGTH**:  *`number`*  = 384
 
-*Defined in [tritsHashers/kerl.ts:14](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/kerl.ts#L14)*
+*Defined in [tritsHashers/kerl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/kerl.ts#L13)*
 
 
 
@@ -80,7 +80,7 @@ ___
 
 **●  HASH_LENGTH**:  *`number`*  = 243
 
-*Defined in [tritsHashers/kerl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/kerl.ts#L13)*
+*Defined in [tritsHashers/kerl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/kerl.ts#L12)*
 
 
 
@@ -94,13 +94,13 @@ ___
 
 ###  absorb
 
-► **absorb**(trits: *`Trits`*, offset: *`number`*, length: *`number`*): `void`
+► **absorb**(trits: *`number`[]*, offset: *`number`*, length: *`number`*): `void`
 
 
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[absorb](../interfaces/itritshasher.md#absorb)*
 
-*Defined in [tritsHashers/kerl.ts:68](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/kerl.ts#L68)*
+*Defined in [tritsHashers/kerl.ts:67](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/kerl.ts#L67)*
 
 
 
@@ -111,7 +111,7 @@ Absorb trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `Trits`   |  The trits to absorb. |
+| trits | `number`[]   |  The trits to absorb. |
 | offset | `number`   |  The offset into the trits to absorb from. |
 | length | `number`   |  The number of trits to absorb. |
 
@@ -137,7 +137,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getConstants](../interfaces/itritshasher.md#getconstants)*
 
-*Defined in [tritsHashers/kerl.ts:33](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/kerl.ts#L33)*
+*Defined in [tritsHashers/kerl.ts:32](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/kerl.ts#L32)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getState](../interfaces/itritshasher.md#getstate)*
 
-*Defined in [tritsHashers/kerl.ts:44](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/kerl.ts#L44)*
+*Defined in [tritsHashers/kerl.ts:43](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/kerl.ts#L43)*
 
 
 
@@ -195,7 +195,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[initialize](../interfaces/itritshasher.md#initialize)*
 
-*Defined in [tritsHashers/kerl.ts:52](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/kerl.ts#L52)*
+*Defined in [tritsHashers/kerl.ts:51](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/kerl.ts#L51)*
 
 
 
@@ -230,7 +230,7 @@ ___
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[reset](../interfaces/itritshasher.md#reset)*
 
-*Defined in [tritsHashers/kerl.ts:58](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/kerl.ts#L58)*
+*Defined in [tritsHashers/kerl.ts:57](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/kerl.ts#L57)*
 
 
 
@@ -251,13 +251,13 @@ ___
 
 ###  squeeze
 
-► **squeeze**(trits: *`Trits`*, offset: *`number`*, length: *`number`*): `void`
+► **squeeze**(trits: *`number`[]*, offset: *`number`*, length: *`number`*): `void`
 
 
 
 *Implementation of [ITritsHasher](../interfaces/itritshasher.md).[squeeze](../interfaces/itritshasher.md#squeeze)*
 
-*Defined in [tritsHashers/kerl.ts:110](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/tritsHashers/kerl.ts#L110)*
+*Defined in [tritsHashers/kerl.ts:106](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/tritsHashers/kerl.ts#L106)*
 
 
 
@@ -268,7 +268,7 @@ Squeeze trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `Trits`   |  The trits to squeeze. |
+| trits | `number`[]   |  The trits to squeeze. |
 | offset | `number`   |  The offset into the trits to squeeze from. |
 | length | `number`   |  The number of trits to squeeze. |
 

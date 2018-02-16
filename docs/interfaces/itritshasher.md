@@ -20,11 +20,11 @@ Represents an interface to hash trits.
 
 ###  absorb
 
-► **absorb**(trits: *`Trits`*, offset: *`number`*, length: *`number`*): `void`
+► **absorb**(trits: *`number`[]*, offset: *`number`*, length: *`number`*): `void`
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:37](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/interfaces/ITritsHasher.ts#L37)*
+*Defined in [interfaces/ITritsHasher.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L35)*
 
 
 
@@ -35,7 +35,7 @@ Absorb trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `Trits`   |  The trits to absorb. |
+| trits | `number`[]   |  The trits to absorb. |
 | offset | `number`   |  The offset into the trits to absorb from. |
 | length | `number`   |  The number of trits to absorb. |
 
@@ -59,7 +59,7 @@ ___
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/interfaces/ITritsHasher.ts#L12)*
+*Defined in [interfaces/ITritsHasher.ts:10](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L10)*
 
 
 
@@ -86,7 +86,7 @@ ___
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:18](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/interfaces/ITritsHasher.ts#L18)*
+*Defined in [interfaces/ITritsHasher.ts:16](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L16)*
 
 
 
@@ -113,7 +113,7 @@ ___
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:24](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/interfaces/ITritsHasher.ts#L24)*
+*Defined in [interfaces/ITritsHasher.ts:22](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L22)*
 
 
 
@@ -146,7 +146,7 @@ ___
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:29](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/interfaces/ITritsHasher.ts#L29)*
+*Defined in [interfaces/ITritsHasher.ts:27](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L27)*
 
 
 
@@ -167,11 +167,11 @@ ___
 
 ###  squeeze
 
-► **squeeze**(trits: *`Trits`*, offset: *`number`*, length: *`number`*): `void`
+► **squeeze**(trits: *`number`[]*, offset: *`number`*, length: *`number`*): `void`
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:45](https://github.com/iotaeco/iota-pico-crypto/blob/9348f7e/src/interfaces/ITritsHasher.ts#L45)*
+*Defined in [interfaces/ITritsHasher.ts:43](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L43)*
 
 
 
@@ -182,7 +182,7 @@ Squeeze trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `Trits`   |  The trits to squeeze. |
+| trits | `number`[]   |  The trits to squeeze. |
 | offset | `number`   |  The offset into the trits to squeeze from. |
 | length | `number`   |  The number of trits to squeeze. |
 
