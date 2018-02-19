@@ -2,7 +2,9 @@
 
 ## v0.7.0
 
-* Curl and Kerl algorithm updated to use immutable Trits
+* Curl and Kerl algorithm updated to use raw number array for speed
+* Added code coverage to testing
+
 
 ## v0.6.1
 
