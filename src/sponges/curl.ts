@@ -1,12 +1,12 @@
 import { CoreError } from "@iota-pico/core/dist/error/coreError";
-import { ITritsHasher } from "../interfaces/ITritsHasher";
+import { ISponge } from "../interfaces/ISponge";
 
 /**
- * Implementation of ITritsHasher using Curl algorithm.
+ * Implementation of ISponge using Curl algorithm.
  * https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js
  * @interface
  */
-export class Curl implements ITritsHasher {
+export class Curl implements ISponge {
     public static readonly HASH_LENGTH: number = 243;
     public static readonly NUMBER_OF_ROUNDS: number = 81;
     public static readonly STATE_LENGTH: number = Curl.HASH_LENGTH * 3;

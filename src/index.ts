@@ -1,8 +1,9 @@
 /**
  * Combined index of all the modules.
  */
-export * from "./factories/tritsHasherFactory";
+export * from "./digests/sha3";
+export * from "./factories/spongeFactory";
 export * from "./interfaces/ICurlProofOfWork";
-export * from "./interfaces/ITritsHasher";
-export * from "./tritsHashers/curl";
-export * from "./tritsHashers/kerl";
+export * from "./interfaces/ISponge";
+export * from "./sponges/curl";
+export * from "./sponges/kerl";

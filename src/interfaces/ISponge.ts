@@ -2,7 +2,7 @@
  * Represents an interface to hash trits.
  * @interface
  */
-export interface ITritsHasher {
+export interface ISponge {
     /**
      * Get the constant for the hasher.
      * @returns The constants.

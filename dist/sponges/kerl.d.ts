@@ -1,9 +1,9 @@
-import { ITritsHasher } from "../interfaces/ITritsHasher";
+import { ISponge } from "../interfaces/ISponge";
 /**
- * Implementation of ITritsHasher using Kerl algorithm.
+ * Implementation of ISponge using Kerl algorithm.
  * https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java
  */
-export declare class Kerl implements ITritsHasher {
+export declare class Kerl implements ISponge {
     static readonly HASH_LENGTH: number;
     static readonly BIT_HASH_LENGTH: number;
     static readonly BYTE_HASH_LENGTH: number;

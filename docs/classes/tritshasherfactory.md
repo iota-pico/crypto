@@ -25,6 +25,7 @@ Factory to generate tritsHashers.
 ### Methods
 
 * [create](tritshasherfactory.md#create)
+* [exists](tritshasherfactory.md#exists)
 * [getInstance](tritshasherfactory.md#getinstance)
 * [register](tritshasherfactory.md#register)
 * [unregister](tritshasherfactory.md#unregister)
@@ -44,7 +45,7 @@ Factory to generate tritsHashers.
 
 *Inherited from FactoryBase.create*
 
-*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:23*
+*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:29*
 
 
 
@@ -72,6 +73,43 @@ A new instance of the type if it exists, or undefined if it does not.
 
 ___
 
+<a id="exists"></a>
+
+###  exists
+
+► **exists**(name: *`string`*): `boolean`
+
+
+
+*Inherited from FactoryBase.exists*
+
+*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:22*
+
+
+
+Does the factory contain a specific type.
+
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  The name of the type to look for. |
+
+
+
+
+
+**Returns:** `boolean`
+True if the type exists.
+
+
+
+
+
+
+___
+
 <a id="getinstance"></a>
 
 ### «Protected» getInstance
@@ -80,7 +118,7 @@ ___
 
 
 
-*Defined in [factories/tritsHasherFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/factories/tritsHasherFactory.ts#L35)*
+*Defined in [factories/tritsHasherFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/factories/tritsHasherFactory.ts#L35)*
 
 
 
@@ -173,7 +211,7 @@ ___
 
 
 
-*Defined in [factories/tritsHasherFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/factories/tritsHasherFactory.ts#L25)*
+*Defined in [factories/tritsHasherFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/factories/tritsHasherFactory.ts#L25)*
 
 
 

@@ -4,7 +4,7 @@
 import { Trits } from "@iota-pico/data/dist/data/trits";
 import { Trytes } from "@iota-pico/data/dist/data/trytes";
 import * as chai from "chai";
-import { Curl } from "../../src/tritsHashers/curl";
+import { Curl } from "../../src/sponges/curl";
 
 describe("Curl", () => {
     it("can be created", () => {

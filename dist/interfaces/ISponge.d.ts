@@ -1,16 +1,8 @@
-import { ITritsHasher } from "../interfaces/ITritsHasher";
 /**
- * Implementation of ITritsHasher using Kerl algorithm.
- * https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java
+ * Represents an interface to hash trits.
+ * @interface
  */
-export declare class Kerl implements ITritsHasher {
-    static readonly HASH_LENGTH: number;
-    static readonly BIT_HASH_LENGTH: number;
-    static readonly BYTE_HASH_LENGTH: number;
-    /**
-     * Create a new instance of Kerl.
-     */
-    constructor();
+export interface ISponge {
     /**
      * Get the constant for the hasher.
      * @returns The constants.

@@ -24,7 +24,7 @@ Represents an interface to hash trits.
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L35)*
+*Defined in [interfaces/ITritsHasher.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/interfaces/ITritsHasher.ts#L35)*
 
 
 
@@ -59,7 +59,7 @@ ___
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:10](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L10)*
+*Defined in [interfaces/ITritsHasher.ts:10](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/interfaces/ITritsHasher.ts#L10)*
 
 
 
@@ -86,7 +86,7 @@ ___
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:16](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L16)*
+*Defined in [interfaces/ITritsHasher.ts:16](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/interfaces/ITritsHasher.ts#L16)*
 
 
 
@@ -113,7 +113,7 @@ ___
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:22](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L22)*
+*Defined in [interfaces/ITritsHasher.ts:22](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/interfaces/ITritsHasher.ts#L22)*
 
 
 
@@ -146,7 +146,7 @@ ___
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:27](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L27)*
+*Defined in [interfaces/ITritsHasher.ts:27](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/interfaces/ITritsHasher.ts#L27)*
 
 
 
@@ -171,7 +171,7 @@ ___
 
 
 
-*Defined in [interfaces/ITritsHasher.ts:43](https://github.com/iotaeco/iota-pico-crypto/blob/d392672/src/interfaces/ITritsHasher.ts#L43)*
+*Defined in [interfaces/ITritsHasher.ts:43](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/interfaces/ITritsHasher.ts#L43)*
 
 
 

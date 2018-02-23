@@ -1,35 +1,32 @@
 import { CoreError } from "@iota-pico/core/dist/error/coreError";
-import { TritsWordConverter } from "@iota-pico/data/dist/converters/tritsWordConverter";
-import * as CryptoJS from "crypto-js";
-import { ITritsHasher } from "../interfaces/ITritsHasher";
+import { TritsConverter } from "@iota-pico/data/dist/converters/tritsConverter";
+import { Sha3 } from "../digests/sha3";
+import { ISponge } from "../interfaces/ISponge";
 
 /**
- * Implementation of ITritsHasher using Kerl algorithm.
- * https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/kerl/kerl.js
- * @interface
+ * Implementation of ISponge using Kerl algorithm.
+ * https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java
  */
-export class Kerl implements ITritsHasher {
+export class Kerl implements ISponge {
     public static readonly HASH_LENGTH: number = 243;
     public static readonly BIT_HASH_LENGTH: number = 384;
+    public static readonly BYTE_HASH_LENGTH: number = Kerl.BIT_HASH_LENGTH / 8;
 
     /* @internal */
-    private readonly _hasher: CryptoJS.HashAlgorithm;
+    private readonly _keccak: Sha3;
 
     /**
      * Create a new instance of Kerl.
      */
     constructor() {
-        this._hasher = CryptoJS.algo.SHA3.create();
-        this._hasher.init({
-            outputLength: Kerl.BIT_HASH_LENGTH
-        });
+        this._keccak = new Sha3(384, Sha3.KECCAK_PADDING, 384);
     }
 
     /**
      * Get the constant for the hasher.
      * @returns The constants.
      */
-    public getConstants(): { [name: string]: number} {
+    public getConstants(): { [name: string]: number } {
         return {
             HASH_LENGTH: Kerl.HASH_LENGTH,
             BIT_HASH_LENGTH: Kerl.BIT_HASH_LENGTH
@@ -55,7 +52,7 @@ export class Kerl implements ITritsHasher {
      * Reset the hasher.
      */
     public reset(): void {
-        this._hasher.reset();
+        this._keccak.reset();
     }
 
     /**
@@ -82,17 +79,16 @@ export class Kerl implements ITritsHasher {
         let localLength = length;
 
         do {
-            const limit = localLength < Kerl.HASH_LENGTH ? localLength : Kerl.HASH_LENGTH;
+            const tritState = trits.slice(localOffset, localOffset + Kerl.HASH_LENGTH);
 
-            const tritState = trits.slice(localOffset, localOffset + limit);
-            localOffset += limit;
+            tritState[Kerl.HASH_LENGTH - 1] = 0;
+            const bigInt = TritsConverter.tritsToBigInteger(tritState, 0, tritState.length);
+            const byteState = new ArrayBuffer(Kerl.BYTE_HASH_LENGTH);
+            TritsConverter.bigIntegerToBytes(bigInt, new Int8Array(byteState), 0);
 
-            // convert trit state to words
-            const wordsToAbsorb = TritsWordConverter.tritsToWords(tritState);
+            this._keccak.update(byteState);
 
-            // absorb the trit stat as wordarray
-            this._hasher.update(CryptoJS.lib.WordArray.create(wordsToAbsorb));
-
+            localOffset += Kerl.HASH_LENGTH;
             localLength -= Kerl.HASH_LENGTH;
         } while (localLength > 0);
     }
@@ -121,27 +117,27 @@ export class Kerl implements ITritsHasher {
         let localLength = length;
 
         do {
-            // get the hash digest
-            const kCopy = this._hasher.clone();
-            const final = kCopy.finalize();
+            const byteStateBuffer = this._keccak.digest();
+            const byteState = new Int8Array(byteStateBuffer);
 
-            // Convert words to trits and then map it into the internal state
-            const tritState = TritsWordConverter.wordsToTrits(final.words);
+            const bigInt = TritsConverter.bytesToBigInteger(byteState, 0, Kerl.BYTE_HASH_LENGTH);
+            const tritState = Array(Kerl.HASH_LENGTH);
+
+            TritsConverter.bigIntegerToTrits(bigInt, tritState, 0, Kerl.HASH_LENGTH);
+
+            tritState[Kerl.HASH_LENGTH - 1] = 0;
 
             let i = 0;
-            const limit = localLength < Kerl.HASH_LENGTH ? localLength : Kerl.HASH_LENGTH;
-
-            while (i < limit) {
+            while (i < Kerl.HASH_LENGTH) {
                 trits[localOffset++] = tritState[i++];
             }
 
-            this.reset();
-
-            for (i = 0; i < final.words.length; i++) {
-                final.words[i] = final.words[i] ^ 0xFFFFFFFF;
+            const dv = new DataView(byteStateBuffer);
+            for (i = 0; i < byteState.length; i++) {
+                dv.setUint8(i, byteState[i] ^ 0xFF);
             }
 
-            this._hasher.update(final);
+            this._keccak.update(byteStateBuffer);
 
             localLength -= Kerl.HASH_LENGTH;
         } while (localLength > 0);

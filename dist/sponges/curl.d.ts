@@ -1,16 +1,18 @@
-import { ITritsHasher } from "../interfaces/ITritsHasher";
+import { ISponge } from "../interfaces/ISponge";
 /**
- * Implementation of ITritsHasher using Kerl algorithm.
- * https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java
+ * Implementation of ISponge using Curl algorithm.
+ * https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js
+ * @interface
  */
-export declare class Kerl implements ITritsHasher {
+export declare class Curl implements ISponge {
     static readonly HASH_LENGTH: number;
-    static readonly BIT_HASH_LENGTH: number;
-    static readonly BYTE_HASH_LENGTH: number;
+    static readonly NUMBER_OF_ROUNDS: number;
+    static readonly STATE_LENGTH: number;
     /**
-     * Create a new instance of Kerl.
+     * Create a new instance of Curl.
+     * @param rounds The number of rounds to use.
      */
-    constructor();
+    constructor(rounds?: number);
     /**
      * Get the constant for the hasher.
      * @returns The constants.
