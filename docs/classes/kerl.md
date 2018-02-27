@@ -5,24 +5,17 @@
 # Class: Kerl
 
 
-Implementation of ITritsHasher using Kerl algorithm. [https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java](https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java)
+Implementation of ISponge using Kerl algorithm. [https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java](https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java)
 
 ## Implements
 
-* [ITritsHasher](../interfaces/itritshasher.md)
+* [ISponge](../interfaces/isponge.md)
 
 ## Index
 
 ### Constructors
 
 * [constructor](kerl.md#constructor)
-
-
-### Properties
-
-* [BIT_HASH_LENGTH](kerl.md#bit_hash_length)
-* [BYTE_HASH_LENGTH](kerl.md#byte_hash_length)
-* [HASH_LENGTH](kerl.md#hash_length)
 
 
 ### Methods
@@ -44,7 +37,7 @@ Implementation of ITritsHasher using Kerl algorithm. [https://github.com/iotaled
 ### ⊕ **new Kerl**(): [Kerl](kerl.md)
 
 
-*Defined in [tritsHashers/kerl.ts:16](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/kerl.ts#L16)*
+*Defined in [sponges/kerl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/kerl.ts#L21)*
 
 
 
@@ -58,62 +51,18 @@ Create a new instance of Kerl.
 ---
 
 
-## Properties
-<a id="bit_hash_length"></a>
-
-### «Static» BIT_HASH_LENGTH
-
-**●  BIT_HASH_LENGTH**:  *`number`*  = 384
-
-*Defined in [tritsHashers/kerl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/kerl.ts#L12)*
-
-
-
-
-
-___
-
-<a id="byte_hash_length"></a>
-
-### «Static» BYTE_HASH_LENGTH
-
-**●  BYTE_HASH_LENGTH**:  *`number`*  =  Kerl.BIT_HASH_LENGTH / 8
-
-*Defined in [tritsHashers/kerl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/kerl.ts#L13)*
-
-
-
-
-
-___
-
-<a id="hash_length"></a>
-
-### «Static» HASH_LENGTH
-
-**●  HASH_LENGTH**:  *`number`*  = 243
-
-*Defined in [tritsHashers/kerl.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/kerl.ts#L11)*
-
-
-
-
-
-___
-
-
 ## Methods
 <a id="absorb"></a>
 
 ###  absorb
 
-► **absorb**(trits: *`number`[]*, offset: *`number`*, length: *`number`*): `void`
+► **absorb**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[absorb](../interfaces/itritshasher.md#absorb)*
+*Implementation of [ISponge](../interfaces/isponge.md).[absorb](../interfaces/isponge.md#absorb)*
 
-*Defined in [tritsHashers/kerl.ts:64](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/kerl.ts#L64)*
+*Defined in [sponges/kerl.ts:70](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/kerl.ts#L70)*
 
 
 
@@ -124,7 +73,7 @@ Absorb trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `number`[]   |  The trits to absorb. |
+| trits | `Int8Array`   |  The trits to absorb. |
 | offset | `number`   |  The offset into the trits to absorb from. |
 | length | `number`   |  The number of trits to absorb. |
 
@@ -148,9 +97,9 @@ ___
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getConstants](../interfaces/itritshasher.md#getconstants)*
+*Implementation of [ISponge](../interfaces/isponge.md).[getConstants](../interfaces/isponge.md#getconstants)*
 
-*Defined in [tritsHashers/kerl.ts:29](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/kerl.ts#L29)*
+*Defined in [sponges/kerl.ts:34](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/kerl.ts#L34)*
 
 
 
@@ -173,13 +122,13 @@ ___
 
 ###  getState
 
-► **getState**(): `number`[]
+► **getState**(): `Int8Array`
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getState](../interfaces/itritshasher.md#getstate)*
+*Implementation of [ISponge](../interfaces/isponge.md).[getState](../interfaces/isponge.md#getstate)*
 
-*Defined in [tritsHashers/kerl.ts:40](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/kerl.ts#L40)*
+*Defined in [sponges/kerl.ts:46](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/kerl.ts#L46)*
 
 
 
@@ -188,7 +137,7 @@ Get the state.
 
 
 
-**Returns:** `number`[]
+**Returns:** `Int8Array`
 The state.
 
 
@@ -202,13 +151,13 @@ ___
 
 ###  initialize
 
-► **initialize**(state?: *`number`[]*): `void`
+► **initialize**(state?: *`Int8Array`*): `void`
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[initialize](../interfaces/itritshasher.md#initialize)*
+*Implementation of [ISponge](../interfaces/isponge.md).[initialize](../interfaces/isponge.md#initialize)*
 
-*Defined in [tritsHashers/kerl.ts:48](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/kerl.ts#L48)*
+*Defined in [sponges/kerl.ts:54](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/kerl.ts#L54)*
 
 
 
@@ -219,7 +168,7 @@ Initialise the hasher.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| state | `number`[]   |  The initial state for the hasher. |
+| state | `Int8Array`   |  The initial state for the hasher. |
 
 
 
@@ -241,9 +190,9 @@ ___
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[reset](../interfaces/itritshasher.md#reset)*
+*Implementation of [ISponge](../interfaces/isponge.md).[reset](../interfaces/isponge.md#reset)*
 
-*Defined in [tritsHashers/kerl.ts:54](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/kerl.ts#L54)*
+*Defined in [sponges/kerl.ts:60](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/kerl.ts#L60)*
 
 
 
@@ -264,13 +213,13 @@ ___
 
 ###  squeeze
 
-► **squeeze**(trits: *`number`[]*, offset: *`number`*, length: *`number`*): `void`
+► **squeeze**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[squeeze](../interfaces/itritshasher.md#squeeze)*
+*Implementation of [ISponge](../interfaces/isponge.md).[squeeze](../interfaces/isponge.md#squeeze)*
 
-*Defined in [tritsHashers/kerl.ts:102](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/kerl.ts#L102)*
+*Defined in [sponges/kerl.ts:111](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/kerl.ts#L111)*
 
 
 
@@ -281,7 +230,7 @@ Squeeze trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `number`[]   |  The trits to squeeze. |
+| trits | `Int8Array`   |  The trits to squeeze. |
 | offset | `number`   |  The offset into the trits to squeeze from. |
 | length | `number`   |  The number of trits to squeeze. |
 

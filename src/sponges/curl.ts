@@ -1,4 +1,6 @@
-import { CoreError } from "@iota-pico/core/dist/error/coreError";
+import { NumberHelper } from "@iota-pico/core/dist/helpers/numberHelper";
+import { ObjectHelper } from "@iota-pico/core/dist/helpers/objectHelper";
+import { CryptoError } from "../error/cryptoError";
 import { ISponge } from "../interfaces/ISponge";
 
 /**
@@ -12,10 +14,10 @@ export class Curl implements ISponge {
     public static readonly STATE_LENGTH: number = Curl.HASH_LENGTH * 3;
 
     /* @internal */
-    private static readonly TRUTH_TABLE: number[] = [1, 0, -1, 2, 1, -1, 0, 2, -1, 1, 0];
+    private static readonly TRUTH_TABLE: Int8Array = new Int8Array([1, 0, -1, 2, 1, -1, 0, 2, -1, 1, 0]);
 
     /* @internal */
-    private _state: number[];
+    private _state: Int8Array;
     /* @internal */
     private readonly _numberOfRounds: number;
 
@@ -43,7 +45,7 @@ export class Curl implements ISponge {
      * Get the state.
      * @returns The state.
      */
-    public getState(): number[] {
+    public getState(): Int8Array {
         return this._state;
     }
 
@@ -51,15 +53,11 @@ export class Curl implements ISponge {
      * Initialise the hasher.
      * @param state The initial state for the hasher.
      */
-    public initialize(state?: number[]): void {
+    public initialize(state?: Int8Array): void {
         if (state) {
             this._state = state;
         } else {
-            this._state = [];
-
-            for (let i = 0; i < Curl.STATE_LENGTH; i++) {
-                this._state[i] = 0;
-            }
+            this._state = new Int8Array(Curl.STATE_LENGTH);
         }
     }
 
@@ -76,15 +74,18 @@ export class Curl implements ISponge {
      * @param offset The offset into the trits to absorb from.
      * @param length The number of trits to absorb.
      */
-    public absorb(trits: number[], offset: number, length: number): void {
-        if (trits === undefined || trits === null) {
-            throw new CoreError("Trits can not be null or undefined");
+    public absorb(trits: Int8Array, offset: number, length: number): void {
+        if (!ObjectHelper.isType(trits, Int8Array) || trits.length === 0) {
+            throw new CryptoError("Trits must be a non empty Int8Array");
         }
-        if (offset === undefined || offset === null) {
-            throw new CoreError("Offset can not be null or undefined");
+        if (!NumberHelper.isInteger(offset) || offset < 0) {
+            throw new CryptoError("Offset must be a number >= 0");
         }
-        if (length === undefined || length === null) {
-            throw new CoreError("Length can not be null or undefined");
+        if (!NumberHelper.isInteger(length) || length < 0) {
+            throw new CryptoError("Length must be a number >= 0");
+        }
+        if (length + offset > trits.length) {
+            throw new CryptoError("The offset + length is beyond the length of the trits");
         }
 
         let localOffset = offset;
@@ -110,16 +111,20 @@ export class Curl implements ISponge {
      * @param offset The offset into the trits to squeeze from.
      * @param length The number of trits to squeeze.
      */
-    public squeeze(trits: number[], offset: number, length: number): void {
-        if (trits === undefined || trits === null) {
-            throw new CoreError("Trits can not be null or undefined");
+    public squeeze(trits: Int8Array, offset: number, length: number): void {
+        if (!ObjectHelper.isType(trits, Int8Array) || trits.length === 0) {
+            throw new CryptoError("Trits must be a non empty Int8Array");
         }
-        if (offset === undefined || offset === null) {
-            throw new CoreError("Offset can not be null or undefined");
+        if (!NumberHelper.isInteger(offset) || offset < 0) {
+            throw new CryptoError("Offset must be a number >= 0");
         }
-        if (length === undefined || length === null) {
-            throw new CoreError("Length can not be null or undefined");
+        if (!NumberHelper.isInteger(length) || length < 0) {
+            throw new CryptoError("Length must be a number >= 0");
         }
+        if (length + offset > trits.length) {
+            throw new CryptoError("The offset + length is beyond the length of the trits");
+        }
+
         let localOffset = offset;
         let localLength = length;
 
@@ -143,11 +148,11 @@ export class Curl implements ISponge {
      * @internal
      */
     private transform(): void {
-        let stateCopy = [];
+        let stateCopy: Int8Array;
         let index = 0;
 
         for (let round = 0; round < this._numberOfRounds; round++) {
-            stateCopy = this._state.slice();
+            stateCopy = new Int8Array(this._state.slice());
 
             for (let i = 0; i < Curl.STATE_LENGTH; i++) {
 

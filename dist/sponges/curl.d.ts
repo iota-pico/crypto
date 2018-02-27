@@ -24,12 +24,12 @@ export declare class Curl implements ISponge {
      * Get the state.
      * @returns The state.
      */
-    getState(): number[];
+    getState(): Int8Array;
     /**
      * Initialise the hasher.
      * @param state The initial state for the hasher.
      */
-    initialize(state?: number[]): void;
+    initialize(state?: Int8Array): void;
     /**
      * Reset the hasher.
      */
@@ -40,12 +40,12 @@ export declare class Curl implements ISponge {
      * @param offset The offset into the trits to absorb from.
      * @param length The number of trits to absorb.
      */
-    absorb(trits: number[], offset: number, length: number): void;
+    absorb(trits: Int8Array, offset: number, length: number): void;
     /**
      * Squeeze trits into the hash.
      * @param trits The trits to squeeze.
      * @param offset The offset into the trits to squeeze from.
      * @param length The number of trits to squeeze.
      */
-    squeeze(trits: number[], offset: number, length: number): void;
+    squeeze(trits: Int8Array, offset: number, length: number): void;
 }

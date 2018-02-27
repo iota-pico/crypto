@@ -4,9 +4,6 @@ import { ISponge } from "../interfaces/ISponge";
  * https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java
  */
 export declare class Kerl implements ISponge {
-    static readonly HASH_LENGTH: number;
-    static readonly BIT_HASH_LENGTH: number;
-    static readonly BYTE_HASH_LENGTH: number;
     /**
      * Create a new instance of Kerl.
      */
@@ -22,12 +19,12 @@ export declare class Kerl implements ISponge {
      * Get the state.
      * @returns The state.
      */
-    getState(): number[];
+    getState(): Int8Array;
     /**
      * Initialise the hasher.
      * @param state The initial state for the hasher.
      */
-    initialize(state?: number[]): void;
+    initialize(state?: Int8Array): void;
     /**
      * Reset the hasher.
      */
@@ -38,12 +35,12 @@ export declare class Kerl implements ISponge {
      * @param offset The offset into the trits to absorb from.
      * @param length The number of trits to absorb.
      */
-    absorb(trits: number[], offset: number, length: number): void;
+    absorb(trits: Int8Array, offset: number, length: number): void;
     /**
      * Squeeze trits into the hash.
      * @param trits The trits to squeeze.
      * @param offset The offset into the trits to squeeze from.
      * @param length The number of trits to squeeze.
      */
-    squeeze(trits: number[], offset: number, length: number): void;
+    squeeze(trits: Int8Array, offset: number, length: number): void;
 }

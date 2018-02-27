@@ -5,13 +5,13 @@
 # Class: Curl
 
 
-Implementation of ITritsHasher using Curl algorithm. [https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js](https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js)
+Implementation of ISponge using Curl algorithm. [https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js](https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js)
 *__interface__*: 
 
 
 ## Implements
 
-* [ITritsHasher](../interfaces/itritshasher.md)
+* [ISponge](../interfaces/isponge.md)
 
 ## Index
 
@@ -46,7 +46,7 @@ Implementation of ITritsHasher using Curl algorithm. [https://github.com/iotaled
 ### ⊕ **new Curl**(rounds?: *`number`*): [Curl](curl.md)
 
 
-*Defined in [tritsHashers/curl.ts:20](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/curl.ts#L20)*
+*Defined in [sponges/curl.ts:22](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/curl.ts#L22)*
 
 
 
@@ -75,7 +75,7 @@ Create a new instance of Curl.
 
 **●  HASH_LENGTH**:  *`number`*  = 243
 
-*Defined in [tritsHashers/curl.ts:10](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/curl.ts#L10)*
+*Defined in [sponges/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/curl.ts#L12)*
 
 
 
@@ -89,7 +89,7 @@ ___
 
 **●  NUMBER_OF_ROUNDS**:  *`number`*  = 81
 
-*Defined in [tritsHashers/curl.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/curl.ts#L11)*
+*Defined in [sponges/curl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/curl.ts#L13)*
 
 
 
@@ -103,7 +103,7 @@ ___
 
 **●  STATE_LENGTH**:  *`number`*  =  Curl.HASH_LENGTH * 3
 
-*Defined in [tritsHashers/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/curl.ts#L12)*
+*Defined in [sponges/curl.ts:14](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/curl.ts#L14)*
 
 
 
@@ -117,13 +117,13 @@ ___
 
 ###  absorb
 
-► **absorb**(trits: *`number`[]*, offset: *`number`*, length: *`number`*): `void`
+► **absorb**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[absorb](../interfaces/itritshasher.md#absorb)*
+*Implementation of [ISponge](../interfaces/isponge.md).[absorb](../interfaces/isponge.md#absorb)*
 
-*Defined in [tritsHashers/curl.ts:79](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/curl.ts#L79)*
+*Defined in [sponges/curl.ts:77](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/curl.ts#L77)*
 
 
 
@@ -134,7 +134,7 @@ Absorb trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `number`[]   |  The trits to absorb. |
+| trits | `Int8Array`   |  The trits to absorb. |
 | offset | `number`   |  The offset into the trits to absorb from. |
 | length | `number`   |  The number of trits to absorb. |
 
@@ -158,9 +158,9 @@ ___
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getConstants](../interfaces/itritshasher.md#getconstants)*
+*Implementation of [ISponge](../interfaces/isponge.md).[getConstants](../interfaces/isponge.md#getconstants)*
 
-*Defined in [tritsHashers/curl.ts:34](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/curl.ts#L34)*
+*Defined in [sponges/curl.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/curl.ts#L36)*
 
 
 
@@ -183,13 +183,13 @@ ___
 
 ###  getState
 
-► **getState**(): `number`[]
+► **getState**(): `Int8Array`
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[getState](../interfaces/itritshasher.md#getstate)*
+*Implementation of [ISponge](../interfaces/isponge.md).[getState](../interfaces/isponge.md#getstate)*
 
-*Defined in [tritsHashers/curl.ts:46](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/curl.ts#L46)*
+*Defined in [sponges/curl.ts:48](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/curl.ts#L48)*
 
 
 
@@ -198,7 +198,7 @@ Get the state.
 
 
 
-**Returns:** `number`[]
+**Returns:** `Int8Array`
 The state.
 
 
@@ -212,13 +212,13 @@ ___
 
 ###  initialize
 
-► **initialize**(state?: *`number`[]*): `void`
+► **initialize**(state?: *`Int8Array`*): `void`
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[initialize](../interfaces/itritshasher.md#initialize)*
+*Implementation of [ISponge](../interfaces/isponge.md).[initialize](../interfaces/isponge.md#initialize)*
 
-*Defined in [tritsHashers/curl.ts:54](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/curl.ts#L54)*
+*Defined in [sponges/curl.ts:56](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/curl.ts#L56)*
 
 
 
@@ -229,7 +229,7 @@ Initialise the hasher.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| state | `number`[]   |  The initial state for the hasher. |
+| state | `Int8Array`   |  The initial state for the hasher. |
 
 
 
@@ -251,9 +251,9 @@ ___
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[reset](../interfaces/itritshasher.md#reset)*
+*Implementation of [ISponge](../interfaces/isponge.md).[reset](../interfaces/isponge.md#reset)*
 
-*Defined in [tritsHashers/curl.ts:69](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/curl.ts#L69)*
+*Defined in [sponges/curl.ts:67](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/curl.ts#L67)*
 
 
 
@@ -274,13 +274,13 @@ ___
 
 ###  squeeze
 
-► **squeeze**(trits: *`number`[]*, offset: *`number`*, length: *`number`*): `void`
+► **squeeze**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
 
 
-*Implementation of [ITritsHasher](../interfaces/itritshasher.md).[squeeze](../interfaces/itritshasher.md#squeeze)*
+*Implementation of [ISponge](../interfaces/isponge.md).[squeeze](../interfaces/isponge.md#squeeze)*
 
-*Defined in [tritsHashers/curl.ts:113](https://github.com/iotaeco/iota-pico-crypto/blob/989dccf/src/tritsHashers/curl.ts#L113)*
+*Defined in [sponges/curl.ts:114](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/sponges/curl.ts#L114)*
 
 
 
@@ -291,7 +291,7 @@ Squeeze trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `number`[]   |  The trits to squeeze. |
+| trits | `Int8Array`   |  The trits to squeeze. |
 | offset | `number`   |  The offset into the trits to squeeze from. |
 | length | `number`   |  The number of trits to squeeze. |
 

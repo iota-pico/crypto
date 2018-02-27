@@ -32,10 +32,10 @@ Sha3 implementation.
 <a id="constructor"></a>
 
 
-### ⊕ **new Sha3**(bits: *`number`*, padding: *`number`[]*, outputBits: *`number`*): [Sha3](sha3.md)
+### ⊕ **new Sha3**(bits: *`number`*, padding: *`Uint32Array`*, outputBits: *`number`*): [Sha3](sha3.md)
 
 
-*Defined in digests/sha3.ts:43*
+*Defined in [digests/sha3.ts:42](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/digests/sha3.ts#L42)*
 
 
 
@@ -47,7 +47,7 @@ Create a new instance of SHA3.
 | Param | Type | Description |
 | ------ | ------ | ------ |
 | bits | `number`   |  The number of input bits. |
-| padding | `number`[]   |  The padding to use. |
+| padding | `Uint32Array`   |  The padding to use. |
 | outputBits | `number`   |  The number of output bits. |
 
 
@@ -64,9 +64,9 @@ Create a new instance of SHA3.
 
 ### «Static» KECCAK_PADDING
 
-**●  KECCAK_PADDING**:  *`number`[]*  =  [1, 256, 65536, 16777216]
+**●  KECCAK_PADDING**:  *`Uint32Array`*  =  new Uint32Array([1, 256, 65536, 16777216])
 
-*Defined in digests/sha3.ts:10*
+*Defined in [digests/sha3.ts:9](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/digests/sha3.ts#L9)*
 
 
 
@@ -84,7 +84,7 @@ ___
 
 
 
-*Defined in digests/sha3.ts:133*
+*Defined in [digests/sha3.ts:115](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/digests/sha3.ts#L115)*
 
 
 
@@ -111,7 +111,7 @@ ___
 
 
 
-*Defined in digests/sha3.ts:65*
+*Defined in [digests/sha3.ts:64](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/digests/sha3.ts#L64)*
 
 
 
@@ -132,11 +132,11 @@ ___
 
 ###  update
 
-► **update**(input: *`number`[]⎮`ArrayBuffer`⎮`Uint8Array`*): `void`
+► **update**(input: *`ArrayBuffer`*): `void`
 
 
 
-*Defined in digests/sha3.ts:80*
+*Defined in [digests/sha3.ts:76](https://github.com/iotaeco/iota-pico-crypto/blob/b5488d6/src/digests/sha3.ts#L76)*
 
 
 
@@ -147,7 +147,7 @@ Update the digest.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| input | `number`[]⎮`ArrayBuffer`⎮`Uint8Array`   |  Array of data to use in the update. |
+| input | `ArrayBuffer`   |  Array of data to use in the update. |
 
 
 

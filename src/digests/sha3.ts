@@ -1,24 +1,23 @@
-import { CoreError } from "@iota-pico/core/dist/error/coreError";
-import { ArrayHelper } from "@iota-pico/core/dist/helpers/arrayHelper";
 import { ObjectHelper } from "@iota-pico/core/dist/helpers/objectHelper";
+import { CryptoError } from "../error/cryptoError";
 
 /**
  * Sha3 implementation.
  */
 export class Sha3 {
     /* Padding to use for Keccak */
-    public static readonly KECCAK_PADDING: number[] = [1, 256, 65536, 16777216];
+    public static readonly KECCAK_PADDING: Uint32Array = new Uint32Array([1, 256, 65536, 16777216]);
     /* @internal */
-    private static readonly SHIFT: number[] = [0, 8, 16, 24];
+    private static readonly SHIFT: Uint8Array = new Uint8Array([0, 8, 16, 24]);
     /* @internal */
-    private static readonly ROUND_CONSTANTS: number[] = [1, 0, 32898, 0, 32906, 2147483648, 2147516416, 2147483648, 32907, 0, 2147483649,
+    private static readonly ROUND_CONSTANTS: Uint32Array = new Uint32Array([1, 0, 32898, 0, 32906, 2147483648, 2147516416, 2147483648, 32907, 0, 2147483649,
         0, 2147516545, 2147483648, 32777, 2147483648, 138, 0, 136, 0, 2147516425, 0,
         2147483658, 0, 2147516555, 0, 139, 2147483648, 32905, 2147483648, 32771,
         2147483648, 32770, 2147483648, 128, 2147483648, 32778, 0, 2147483658, 2147483648,
-        2147516545, 2147483648, 32896, 2147483648, 2147483649, 0, 2147516424, 2147483648];
+        2147516545, 2147483648, 32896, 2147483648, 2147483649, 0, 2147516424, 2147483648]);
 
     /* @internal */
-    private readonly _padding: number[];
+    private readonly _padding: Uint32Array;
     /* @internal */
     private readonly _outputBits: number;
     /* @internal */
@@ -30,9 +29,9 @@ export class Sha3 {
     /* @internal */
     private readonly _extraBytes: number;
     /* @internal */
-    private _blocks: number[];
+    private _blocks: Uint32Array;
     /* @internal */
-    private _state: number[];
+    private _state: Uint32Array;
     /* @internal */
     private _reset: boolean;
     /* @internal */
@@ -48,7 +47,7 @@ export class Sha3 {
      * @param padding The padding to use.
      * @param outputBits The number of output bits.
      */
-    constructor(bits: number, padding: number[], outputBits: number) {
+    constructor(bits: number, padding: Uint32Array, outputBits: number) {
         this._padding = padding;
         this._outputBits = outputBits;
         this._blockCount = (1600 - (bits << 1)) >> 5;
@@ -66,59 +65,42 @@ export class Sha3 {
         this._reset = true;
         this._block = 0;
         this._start = 0;
-        this._blocks = [];
-        this._state = [];
-        for (let i = 0; i < 50; ++i) {
-            this._state[i] = 0;
-        }
+        this._blocks = new Uint32Array(this._blockCount + 1);
+        this._state = new Uint32Array(50);
     }
 
     /**
      * Update the digest.
      * @param input Array of data to use in the update.
      */
-    public update(input: number[] | ArrayBuffer | Uint8Array): void {
-        if (ObjectHelper.isEmpty(input)) {
-            throw new CoreError("Input can not be undefined or null");
+    public update(input: ArrayBuffer): void {
+        if (!ObjectHelper.isType(input, ArrayBuffer)) {
+            throw new CryptoError("Input is not of type ArrayBuffer");
         }
-        let message: number[] | Uint8Array;
-        if (ObjectHelper.isType(input, ArrayBuffer)) {
-            message = new Uint8Array(input);
-        } else if (ArrayHelper.isTyped(input, Number)) {
-            message = <number[]>input;
-        } else if (ObjectHelper.isType(input, Uint8Array)) {
-            message = <Uint8Array>input;
-        } else {
-            throw new CoreError("Input is not of the valid types");
-        }
-
-        const blocks = this._blocks;
-        const byteCount = this._byteCount;
+        const message: Uint8Array = new Uint8Array(input);
         const length = message.length;
-        const blockCount = this._blockCount;
         let index = 0;
-        const s = this._state;
         let i;
 
         while (index < length) {
             if (this._reset) {
                 this._reset = false;
-                blocks[0] = this._block;
-                for (i = 1; i < blockCount + 1; ++i) {
-                    blocks[i] = 0;
+                this._blocks[0] = this._block;
+                for (i = 1; i < this._blockCount + 1; ++i) {
+                    this._blocks[i] = 0;
                 }
             }
-            for (i = this._start; index < length && i < byteCount; ++index) {
-                blocks[i >> 2] |= message[index] << Sha3.SHIFT[i++ & 3];
+            for (i = this._start; index < length && i < this._byteCount; ++index) {
+                this._blocks[i >> 2] |= message[index] << Sha3.SHIFT[i++ & 3];
             }
             this._lastByteIndex = i;
-            if (i >= byteCount) {
-                this._start = i - byteCount;
-                this._block = blocks[blockCount];
-                for (i = 0; i < blockCount; ++i) {
-                    s[i] ^= blocks[i];
+            if (i >= this._byteCount) {
+                this._start = i - this._byteCount;
+                this._block = this._blocks[this._blockCount];
+                for (i = 0; i < this._blockCount; ++i) {
+                    this._state[i] ^= this._blocks[i];
                 }
-                this.keccakPermutation(s);
+                this.keccakPermutation(this._state);
                 this._reset = true;
             } else {
                 this._start = i;
@@ -133,30 +115,23 @@ export class Sha3 {
     public digest(): ArrayBuffer {
         this.finalize();
 
-        const blockCount = this._blockCount;
-        const s = this._state;
-        const outputBlocks = this._outputBlocks;
-        const extraBytes = this._extraBytes;
         let i = 0;
         let j = 0;
         const bytes = this._outputBits >> 3;
         let buffer;
-        if (extraBytes) {
-            buffer = new ArrayBuffer((outputBlocks + 1) << 2);
+        if (this._extraBytes) {
+            buffer = new ArrayBuffer((this._outputBlocks + 1) << 2);
         } else {
             buffer = new ArrayBuffer(bytes);
         }
         const array = new Uint32Array(buffer);
-        while (j < outputBlocks) {
-            for (i = 0; i < blockCount && j < outputBlocks; ++i, ++j) {
-                array[j] = s[i];
-            }
-            if (j % blockCount === 0) {
-                this.keccakPermutation(s);
+        while (j < this._outputBlocks) {
+            for (i = 0; i < this._blockCount && j < this._outputBlocks; ++i, ++j) {
+                array[j] = this._state[i];
             }
         }
-        if (extraBytes) {
-            array[i] = s[i];
+        if (this._extraBytes) {
+            array[i] = this._state[i];
             buffer = buffer.slice(0, bytes);
         }
         this.reset();
@@ -166,26 +141,23 @@ export class Sha3 {
 
     /* @internal */
     private finalize(): void {
-        const blocks = this._blocks;
         let i = this._lastByteIndex;
-        const blockCount = this._blockCount;
-        const s = this._state;
-        blocks[i >> 2] |= this._padding[i & 3];
+        this._blocks[i >> 2] |= this._padding[i & 3];
         if (this._lastByteIndex === this._byteCount) {
-            blocks[0] = blocks[blockCount];
-            for (i = 1; i < blockCount + 1; ++i) {
-                blocks[i] = 0;
+            this._blocks[0] = this._blocks[this._blockCount];
+            for (i = 1; i < this._blockCount + 1; ++i) {
+                this._blocks[i] = 0;
             }
         }
-        blocks[blockCount - 1] |= 0x80000000;
-        for (i = 0; i < blockCount; ++i) {
-            s[i] ^= blocks[i];
+        this._blocks[this._blockCount - 1] |= 0x80000000;
+        for (i = 0; i < this._blockCount; ++i) {
+            this._state[i] ^= this._blocks[i];
         }
-        this.keccakPermutation(s);
+        this.keccakPermutation(this._state);
     }
 
     /* @internal */
-    private keccakPermutation(s: number[]): void {
+    private keccakPermutation(s: Uint32Array): void {
         // tslint:disable-next-line:one-variable-per-declaration
         let h, l, n, c0, c1, c2, c3, c4, c5, c6, c7, c8, c9,
             b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17,

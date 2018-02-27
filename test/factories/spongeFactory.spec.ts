@@ -17,19 +17,19 @@ describe("SpongeFactory", () => {
             public getConstants(): { [name: string]: number } {
                 throw new Error("Method not implemented.");
             }
-            public getState(): number[] {
+            public getState(): Int8Array {
                 throw new Error("Method not implemented.");
             }
-            public initialize(state?: number[]): void {
+            public initialize(state?: Int8Array): void {
                 throw new Error("Method not implemented.");
             }
             public reset(): void {
                 throw new Error("Method not implemented.");
             }
-            public absorb(trits: number[], offset: number, length: number): void {
+            public absorb(trits: Int8Array, offset: number, length: number): void {
                 throw new Error("Method not implemented.");
             }
-            public squeeze(trits: number[], offset: number, length: number): void {
+            public squeeze(trits: Int8Array, offset: number, length: number): void {
                 throw new Error("Method not implemented.");
             }
         }

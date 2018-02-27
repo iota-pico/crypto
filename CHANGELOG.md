@@ -2,11 +2,12 @@
 
 ## v0.7.0
 
-* Curl and Kerl algorithm updated to use raw number array for speed
+* number[] arrays converted to Int8Array for performance (requires polyfill for old browsers)
 * Kerl rewritten to match java implementation
 * Sha3/Keccak implementation added
+* Added BigInteger support for use by Kerl
 * Added code coverage to testing
-
+* Rename trits hashers to be sponge
 
 ## v0.6.1
 

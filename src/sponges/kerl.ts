@@ -1,6 +1,8 @@
-import { CoreError } from "@iota-pico/core/dist/error/coreError";
-import { TritsConverter } from "@iota-pico/data/dist/converters/tritsConverter";
+import { NumberHelper } from "@iota-pico/core/dist/helpers/numberHelper";
+import { ObjectHelper } from "@iota-pico/core/dist/helpers/objectHelper";
 import { Sha3 } from "../digests/sha3";
+import { CryptoError } from "../error/cryptoError";
+import { BigIntegerHelper } from "../helpers/bigIntegerHelper";
 import { ISponge } from "../interfaces/ISponge";
 
 /**
@@ -8,9 +10,12 @@ import { ISponge } from "../interfaces/ISponge";
  * https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java
  */
 export class Kerl implements ISponge {
-    public static readonly HASH_LENGTH: number = 243;
-    public static readonly BIT_HASH_LENGTH: number = 384;
-    public static readonly BYTE_HASH_LENGTH: number = Kerl.BIT_HASH_LENGTH / 8;
+    /* @internal */
+    private static readonly HASH_LENGTH: number = 243;
+    /* @internal */
+    private static readonly BIT_HASH_LENGTH: number = 384;
+    /* @internal */
+    private static readonly BYTE_HASH_LENGTH: number = Kerl.BIT_HASH_LENGTH / 8;
 
     /* @internal */
     private readonly _keccak: Sha3;
@@ -29,7 +34,8 @@ export class Kerl implements ISponge {
     public getConstants(): { [name: string]: number } {
         return {
             HASH_LENGTH: Kerl.HASH_LENGTH,
-            BIT_HASH_LENGTH: Kerl.BIT_HASH_LENGTH
+            BIT_HASH_LENGTH: Kerl.BIT_HASH_LENGTH,
+            BYTE_HASH_LENGTH: Kerl.BYTE_HASH_LENGTH
         };
     }
 
@@ -37,7 +43,7 @@ export class Kerl implements ISponge {
      * Get the state.
      * @returns The state.
      */
-    public getState(): number[] {
+    public getState(): Int8Array {
         return undefined;
     }
 
@@ -45,7 +51,7 @@ export class Kerl implements ISponge {
      * Initialise the hasher.
      * @param state The initial state for the hasher.
      */
-    public initialize(state?: number[]): void {
+    public initialize(state?: Int8Array): void {
     }
 
     /**
@@ -61,18 +67,21 @@ export class Kerl implements ISponge {
      * @param offset The offset into the trits to absorb from.
      * @param length The number of trits to absorb.
      */
-    public absorb(trits: number[], offset: number, length: number): void {
-        if (trits === undefined || trits === null) {
-            throw new CoreError("Trits can not be null or undefined");
+    public absorb(trits: Int8Array, offset: number, length: number): void {
+        if (!ObjectHelper.isType(trits, Int8Array) || trits.length === 0) {
+            throw new CryptoError("Trits must be a non empty Int8Array");
         }
-        if (offset === undefined || offset === null) {
-            throw new CoreError("Offset can not be null or undefined");
+        if (!NumberHelper.isInteger(offset) || offset < 0) {
+            throw new CryptoError("Offset must be a number >= 0");
         }
-        if (length === undefined || length === null) {
-            throw new CoreError("Length can not be null or undefined");
+        if (!NumberHelper.isInteger(length) || length < 0) {
+            throw new CryptoError("Length must be a number >= 0");
         }
-        if (length && ((length % 243) !== 0)) {
-            throw new CoreError("Illegal length provided", { length });
+        if (length + offset > trits.length) {
+            throw new CryptoError("The offset + length is beyond the length of the trits");
+        }
+        if (length % 243 !== 0) {
+            throw new CryptoError(`Length must be a multiple of ${Kerl.HASH_LENGTH}`, { length });
         }
 
         let localOffset = offset;
@@ -82,9 +91,9 @@ export class Kerl implements ISponge {
             const tritState = trits.slice(localOffset, localOffset + Kerl.HASH_LENGTH);
 
             tritState[Kerl.HASH_LENGTH - 1] = 0;
-            const bigInt = TritsConverter.tritsToBigInteger(tritState, 0, tritState.length);
+            const bigInt = BigIntegerHelper.tritsToBigInteger(tritState, 0, tritState.length);
             const byteState = new ArrayBuffer(Kerl.BYTE_HASH_LENGTH);
-            TritsConverter.bigIntegerToBytes(bigInt, new Int8Array(byteState), 0);
+            BigIntegerHelper.bigIntegerToBytes(bigInt, byteState, 0);
 
             this._keccak.update(byteState);
 
@@ -99,18 +108,21 @@ export class Kerl implements ISponge {
      * @param offset The offset into the trits to squeeze from.
      * @param length The number of trits to squeeze.
      */
-    public squeeze(trits: number[], offset: number, length: number): void {
-        if (trits === undefined || trits === null) {
-            throw new CoreError("Trits can not be null or undefined");
+    public squeeze(trits: Int8Array, offset: number, length: number): void {
+        if (!ObjectHelper.isType(trits, Int8Array) || trits.length === 0) {
+            throw new CryptoError("Trits must be a non empty Int8Array");
         }
-        if (offset === undefined || offset === null) {
-            throw new CoreError("Offset can not be null or undefined");
+        if (!NumberHelper.isInteger(offset) || offset < 0) {
+            throw new CryptoError("Offset must be a number >= 0");
         }
-        if (length === undefined || length === null) {
-            throw new CoreError("Length can not be null or undefined");
+        if (!NumberHelper.isInteger(length) || length < 0) {
+            throw new CryptoError("Length must be a number >= 0");
         }
-        if (length && ((length % 243) !== 0)) {
-            throw new CoreError("Illegal length provided");
+        if (length + offset > trits.length) {
+            throw new CryptoError("The offset + length is beyond the length of the trits");
+        }
+        if (length % 243 !== 0) {
+            throw new CryptoError(`Length must be a multiple of ${Kerl.HASH_LENGTH}`, { length });
         }
 
         let localOffset = offset;
@@ -118,12 +130,11 @@ export class Kerl implements ISponge {
 
         do {
             const byteStateBuffer = this._keccak.digest();
-            const byteState = new Int8Array(byteStateBuffer);
 
-            const bigInt = TritsConverter.bytesToBigInteger(byteState, 0, Kerl.BYTE_HASH_LENGTH);
-            const tritState = Array(Kerl.HASH_LENGTH);
+            const bigInt = BigIntegerHelper.bytesToBigInteger(byteStateBuffer, 0, Kerl.BYTE_HASH_LENGTH);
 
-            TritsConverter.bigIntegerToTrits(bigInt, tritState, 0, Kerl.HASH_LENGTH);
+            const tritState: Int8Array = new Int8Array(Kerl.HASH_LENGTH);
+            BigIntegerHelper.bigIntegerToTrits(bigInt, tritState, 0, Kerl.HASH_LENGTH);
 
             tritState[Kerl.HASH_LENGTH - 1] = 0;
 
@@ -133,8 +144,8 @@ export class Kerl implements ISponge {
             }
 
             const dv = new DataView(byteStateBuffer);
-            for (i = 0; i < byteState.length; i++) {
-                dv.setUint8(i, byteState[i] ^ 0xFF);
+            for (i = 0; i < dv.byteLength; i++) {
+                dv.setUint8(i, dv.getUint8(i) ^ 0xFF);
             }
 
             this._keccak.update(byteStateBuffer);
