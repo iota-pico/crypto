@@ -144,18 +144,8 @@ export class BigIntegerHelper {
         const signedBytes = new Int8Array(matches
             .map(hex => parseInt(`0x${hex}`, 16)));
 
-        // if the whole number is negative then
-        // change to 2's complements by noting all the numbers
-        // and adding 1 to the last i.e. ~bignum+1
         if (isNeg === -1) {
-            for (let b = 0; b < signedBytes.length; b++) {
-                signedBytes[b] = ~signedBytes[b];
-            }
-            // Add 1 to last number, if the number is 0xFF continue to carry
-            let c = signedBytes.length - 1;
-            do {
-                signedBytes[c]++;
-            } while (signedBytes[c--] === 0 && c > 0);
+            BigIntegerHelper.twosComplement(signedBytes);
         }
 
         const dataView = new DataView(destination);
@@ -204,6 +194,7 @@ export class BigIntegerHelper {
         // Remove the initial padding leaving at least one byte
         let paddingOffset = 0;
         const firstByte = signedBytes[0];
+        const isNeg = firstByte < 0;
 
         // If the first padding character is negative then reverse the 2s complement
         // but first strip of the leading padding
@@ -215,26 +206,31 @@ export class BigIntegerHelper {
             signedBytes = signedBytes.slice(paddingOffset);
         }
 
-        // if the whole number is negative then
-        // change to 2's complements by noting all the numbers
-        // and adding 1 to the last i.e. ~bignum+1
-        if (firstByte < 0) {
-            for (let b = 0; b < signedBytes.length; b++) {
-                signedBytes[b] = ~signedBytes[b];
-            }
-            // Add 1 to last number, if the number is 0xFF continue to carry
-            let c = signedBytes.length - 1;
-            do {
-                signedBytes[c]++;
-            } while (signedBytes[c--] === 0 && c > 0);
+        if (isNeg) {
+            BigIntegerHelper.twosComplement(signedBytes);
         }
 
-        let hexString = firstByte < 0 ? "-" : "";
+        let hexString = isNeg ? "-" : "";
         const dv = new DataView(signedBytes.buffer);
         for (let h = 0; h < dv.byteLength; h++) {
             hexString += `00${dv.getUint8(h).toString(16)}`.slice(-2);
         }
 
         return bigInteger(hexString, 16);
+    }
+
+    /* @internal */
+    private static twosComplement(signedBytes: Int8Array): void {
+        // if the whole number is negative then
+        // change to 2's complements by noting all the numbers
+        // and adding 1 to the last i.e. ~bignum+1
+        for (let b = 0; b < signedBytes.length; b++) {
+            signedBytes[b] = ~signedBytes[b];
+        }
+        // Add 1 to last number, if the number is 0xFF continue to carry
+        let c = signedBytes.length - 1;
+        do {
+            signedBytes[c]++;
+        } while (signedBytes[c--] === 0 && c > 0);
     }
 }
