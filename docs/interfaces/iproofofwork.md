@@ -19,7 +19,7 @@ Represents an interface to proof of work.
 
 
 
-*Defined in interfaces/IProofOfWork.ts:12*
+*Defined in [interfaces/IProofOfWork.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/005babd/src/interfaces/IProofOfWork.ts#L13)*
 
 
 
@@ -36,15 +36,42 @@ Allow the proof of work to perform any initialization. Will throw an exception i
 
 ___
 
+<a id="performssingle"></a>
+
+###  performsSingle
+
+► **performsSingle**(): `boolean`
+
+
+
+*Defined in [interfaces/IProofOfWork.ts:19](https://github.com/iotaeco/iota-pico-crypto/blob/005babd/src/interfaces/IProofOfWork.ts#L19)*
+
+
+
+Performs single conversion per pow call.
+
+
+
+
+**Returns:** `boolean`
+True if pow only does one conversion.
+
+
+
+
+
+
+___
+
 <a id="pow"></a>
 
 ###  pow
 
-► **pow**(trytes: *`Trytes`*, minWeightMagnitude: *`number`*): `Promise`.<`Trytes`>
+► **pow**(trunkTransaction: *`Hash`*, branchTransaction: *`Hash`*, trytes: *`Trytes`[]*, minWeightMagnitude: *`number`*): `Promise`.<`Trytes`[]>
 
 
 
-*Defined in interfaces/IProofOfWork.ts:20*
+*Defined in [interfaces/IProofOfWork.ts:29](https://github.com/iotaeco/iota-pico-crypto/blob/005babd/src/interfaces/IProofOfWork.ts#L29)*
 
 
 
@@ -55,14 +82,16 @@ Perform a proof of work on the data.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trytes | `Trytes`   |  The trytes to perform the pow on. |
+| trunkTransaction | `Hash`   |  The trunkTransaction to use for the pow. |
+| branchTransaction | `Hash`   |  The branchTransaction to use for the pow. |
+| trytes | `Trytes`[]   |  The trytes to perform the pow on. |
 | minWeightMagnitude | `number`   |  The minimum weight magnitude. |
 
 
 
 
 
-**Returns:** `Promise`.<`Trytes`>
+**Returns:** `Promise`.<`Trytes`[]>
 The trytes produced by the proof of work.
 
 
