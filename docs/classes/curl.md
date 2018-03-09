@@ -6,8 +6,6 @@
 
 
 Implementation of ISponge using Curl algorithm. [https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js](https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js)
-*__interface__*: 
-
 
 ## Implements
 
@@ -46,7 +44,7 @@ Implementation of ISponge using Curl algorithm. [https://github.com/iotaledger/i
 ### ⊕ **new Curl**(rounds?: *`number`*): [Curl](curl.md)
 
 
-*Defined in [sponges/curl.ts:22](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/sponges/curl.ts#L22)*
+*Defined in [sponges/curl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/sponges/curl.ts#L21)*
 
 
 
@@ -75,7 +73,7 @@ Create a new instance of Curl.
 
 **●  HASH_LENGTH**:  *`number`*  = 243
 
-*Defined in [sponges/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/sponges/curl.ts#L12)*
+*Defined in [sponges/curl.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/sponges/curl.ts#L11)*
 
 
 
@@ -89,7 +87,7 @@ ___
 
 **●  NUMBER_OF_ROUNDS**:  *`number`*  = 81
 
-*Defined in [sponges/curl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/sponges/curl.ts#L13)*
+*Defined in [sponges/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/sponges/curl.ts#L12)*
 
 
 
@@ -103,7 +101,7 @@ ___
 
 **●  STATE_LENGTH**:  *`number`*  =  Curl.HASH_LENGTH * 3
 
-*Defined in [sponges/curl.ts:14](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/sponges/curl.ts#L14)*
+*Defined in [sponges/curl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/sponges/curl.ts#L13)*
 
 
 
@@ -123,7 +121,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[absorb](../interfaces/isponge.md#absorb)*
 
-*Defined in [sponges/curl.ts:77](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/sponges/curl.ts#L77)*
+*Defined in [sponges/curl.ts:76](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/sponges/curl.ts#L76)*
 
 
 
@@ -160,7 +158,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getConstants](../interfaces/isponge.md#getconstants)*
 
-*Defined in [sponges/curl.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/sponges/curl.ts#L36)*
+*Defined in [sponges/curl.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/sponges/curl.ts#L35)*
 
 
 
@@ -189,7 +187,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getState](../interfaces/isponge.md#getstate)*
 
-*Defined in [sponges/curl.ts:48](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/sponges/curl.ts#L48)*
+*Defined in [sponges/curl.ts:47](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/sponges/curl.ts#L47)*
 
 
 
@@ -218,7 +216,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[initialize](../interfaces/isponge.md#initialize)*
 
-*Defined in [sponges/curl.ts:56](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/sponges/curl.ts#L56)*
+*Defined in [sponges/curl.ts:55](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/sponges/curl.ts#L55)*
 
 
 
@@ -253,7 +251,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[reset](../interfaces/isponge.md#reset)*
 
-*Defined in [sponges/curl.ts:67](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/sponges/curl.ts#L67)*
+*Defined in [sponges/curl.ts:66](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/sponges/curl.ts#L66)*
 
 
 
@@ -280,7 +278,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[squeeze](../interfaces/isponge.md#squeeze)*
 
-*Defined in [sponges/curl.ts:114](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/sponges/curl.ts#L114)*
+*Defined in [sponges/curl.ts:113](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/sponges/curl.ts#L113)*
 
 
 

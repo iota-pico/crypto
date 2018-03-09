@@ -14,7 +14,7 @@ class SpongeFactory extends factoryBase_1.FactoryBase {
         super();
     }
     /**
-     * Get the instance of the factory and add some default instances.
+     * Get the instance of the factory.
      * @returns The factory instance.
      */
     static instance() {

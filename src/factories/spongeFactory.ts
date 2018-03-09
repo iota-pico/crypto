@@ -19,7 +19,7 @@ export class SpongeFactory extends FactoryBase<ISponge> {
     }
 
     /**
-     * Get the instance of the factory and add some default instances.
+     * Get the instance of the factory.
      * @returns The factory instance.
      */
     public static instance(): FactoryBase<ISponge> {

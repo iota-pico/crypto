@@ -118,7 +118,7 @@ ___
 
 
 
-*Defined in [factories/spongeFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/factories/spongeFactory.ts#L35)*
+*Defined in [factories/spongeFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/factories/spongeFactory.ts#L35)*
 
 
 
@@ -211,11 +211,11 @@ ___
 
 
 
-*Defined in [factories/spongeFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/6b875ed/src/factories/spongeFactory.ts#L25)*
+*Defined in [factories/spongeFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/factories/spongeFactory.ts#L25)*
 
 
 
-Get the instance of the factory and add some default instances.
+Get the instance of the factory.
 
 
 

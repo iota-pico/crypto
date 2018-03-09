@@ -1,6 +1,7 @@
 import { NumberHelper } from "@iota-pico/core/dist/helpers/numberHelper";
 import { ObjectHelper } from "@iota-pico/core/dist/helpers/objectHelper";
-import bigInteger from "big-integer";
+// tslint:disable-next-line:import-name
+import bigInt from "big-integer";
 import { CryptoError } from "../error/cryptoError";
 
 /**
@@ -9,11 +10,11 @@ import { CryptoError } from "../error/cryptoError";
  */
 export class BigIntegerHelper {
     /* @internal */
-    private static readonly RADIX: bigInteger.BigInteger = bigInteger(3);
+    private static readonly RADIX: bigInt.BigInteger = bigInt(3);
     /* @internal */
-    private static readonly MAX_TRIT_VALUE: bigInteger.BigInteger = BigIntegerHelper.RADIX.minus(1).divide(2);
+    private static readonly MAX_TRIT_VALUE: bigInt.BigInteger = BigIntegerHelper.RADIX.minus(1).divide(2);
     /* @internal */
-    private static readonly MIN_TRIT_VALUE: bigInteger.BigInteger = BigIntegerHelper.MAX_TRIT_VALUE.negate();
+    private static readonly MIN_TRIT_VALUE: bigInt.BigInteger = BigIntegerHelper.MAX_TRIT_VALUE.negate();
 
     /* @internal */
     private static readonly BIT_HASH_LENGTH: number = 384;
@@ -26,7 +27,7 @@ export class BigIntegerHelper {
      * @param offset Offset within the array to start.
      * @param length The length of the trits array to convert.
      */
-    public static tritsToBigInteger(trits: Int8Array, offset: number, length: number): bigInteger.BigInteger {
+    public static tritsToBigInteger(trits: Int8Array, offset: number, length: number): bigInt.BigInteger {
         if (!ObjectHelper.isType(trits, Int8Array) || trits.length === 0) {
             throw new CryptoError("The trits must be a non empty Int8Array");
         }
@@ -43,10 +44,10 @@ export class BigIntegerHelper {
             throw new CryptoError("The offset + length is beyond the length of the array");
         }
 
-        let value = bigInteger.zero;
+        let value = bigInt.zero;
 
         for (let i = length - 1; i >= 0; i--) {
-            value = value.multiply(BigIntegerHelper.RADIX).add(bigInteger(trits[offset + i]));
+            value = value.multiply(BigIntegerHelper.RADIX).add(bigInt(trits[offset + i]));
         }
 
         return value;
@@ -59,8 +60,8 @@ export class BigIntegerHelper {
      * @param offset The offset to place the trits in the array.
      * @param length The length of the array.
      */
-    public static bigIntegerToTrits(value: bigInteger.BigInteger, trits: Int8Array, offset: number, length: number): void {
-        if (!ObjectHelper.isType(value, bigInteger)) {
+    public static bigIntegerToTrits(value: bigInt.BigInteger, trits: Int8Array, offset: number, length: number): void {
+        if (!ObjectHelper.isType(value, bigInt)) {
             throw new CryptoError("The value must be a bigInteger type");
         }
 
@@ -80,7 +81,7 @@ export class BigIntegerHelper {
             throw new CryptoError("The offset + length is beyond the length of the array");
         }
 
-        let absoluteValue = value.compareTo(bigInteger.zero) < 0 ? value.negate() : value;
+        let absoluteValue = value.compareTo(bigInt.zero) < 0 ? value.negate() : value;
 
         for (let i = 0; i < length; i++) {
             const divRemainder = absoluteValue.divmod(BigIntegerHelper.RADIX);
@@ -89,12 +90,12 @@ export class BigIntegerHelper {
 
             if (remainder > BigIntegerHelper.MAX_TRIT_VALUE) {
                 remainder = BigIntegerHelper.MIN_TRIT_VALUE;
-                absoluteValue = absoluteValue.add(bigInteger["1"]);
+                absoluteValue = absoluteValue.add(bigInt["1"]);
             }
             trits[offset + i] = remainder.toJSNumber();
         }
 
-        if (value.compareTo(bigInteger.zero) < 0) {
+        if (value.compareTo(bigInt.zero) < 0) {
             for (let i = 0; i < length; i++) {
                 // Avoid negative zero
                 trits[offset + i] = trits[offset + i] === 0 ? 0 : -trits[offset + i];
@@ -108,8 +109,8 @@ export class BigIntegerHelper {
      * @param destination The destination array to store the bytes.
      * @param offset The offset within the array to store the bytes.
      */
-    public static bigIntegerToBytes(value: bigInteger.BigInteger, destination: ArrayBuffer, offset: number): void {
-        if (!ObjectHelper.isType(value, bigInteger)) {
+    public static bigIntegerToBytes(value: bigInt.BigInteger, destination: ArrayBuffer, offset: number): void {
+        if (!ObjectHelper.isType(value, bigInt)) {
             throw new CryptoError("The value must be a bigInteger type");
         }
 
@@ -167,7 +168,7 @@ export class BigIntegerHelper {
      * @param offset The offset within the bytes to start conversion.
      * @param length The length of the bytes to use for conversion.
      */
-    public static bytesToBigInteger(source: ArrayBuffer, offset: number, length: number): bigInteger.BigInteger {
+    public static bytesToBigInteger(source: ArrayBuffer, offset: number, length: number): bigInt.BigInteger {
         if (!ObjectHelper.isType(source, ArrayBuffer) || source.byteLength === 0) {
             throw new CryptoError("The source must be a non empty number array");
         }
@@ -216,7 +217,7 @@ export class BigIntegerHelper {
             hexString += `00${dv.getUint8(h).toString(16)}`.slice(-2);
         }
 
-        return bigInteger(hexString, 16);
+        return bigInt(hexString, 16);
     }
 
     /* @internal */

@@ -2,7 +2,6 @@ import { ISponge } from "../interfaces/ISponge";
 /**
  * Implementation of ISponge using Curl algorithm.
  * https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js
- * @interface
  */
 export declare class Curl implements ISponge {
     static readonly HASH_LENGTH: number;
