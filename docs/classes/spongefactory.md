@@ -118,7 +118,7 @@ ___
 
 
 
-*Defined in [factories/spongeFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/factories/spongeFactory.ts#L35)*
+*Defined in [factories/spongeFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/factories/spongeFactory.ts#L35)*
 
 
 
@@ -211,7 +211,7 @@ ___
 
 
 
-*Defined in [factories/spongeFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/98242c3/src/factories/spongeFactory.ts#L25)*
+*Defined in [factories/spongeFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/factories/spongeFactory.ts#L25)*
 
 
 
