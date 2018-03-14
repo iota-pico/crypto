@@ -14,7 +14,7 @@ describe("SpongeFactory", () => {
     it("can register a type", () => {
         const obj = SpongeFactory.instance();
         class TestSponge implements ISponge {
-            public getConstants(): { [name: string]: number } {
+            public getConstant(name: string): number {
                 throw new Error("Method not implemented.");
             }
             public getState(): Int8Array {

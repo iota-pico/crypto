@@ -13,12 +13,11 @@ export declare class Curl implements ISponge {
      */
     constructor(rounds?: number);
     /**
-     * Get the constant for the hasher.
-     * @returns The constants.
+     * Get the constant for the spone.
+     * @name The name of the contant to get.
+     * @returns The constant.
      */
-    getConstants(): {
-        [name: string]: number;
-    };
+    getConstant(name: string): number;
     /**
      * Get the state.
      * @returns The state.

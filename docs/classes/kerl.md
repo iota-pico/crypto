@@ -21,7 +21,7 @@ Implementation of ISponge using Kerl algorithm. [https://github.com/iotaledger/i
 ### Methods
 
 * [absorb](kerl.md#absorb)
-* [getConstants](kerl.md#getconstants)
+* [getConstant](kerl.md#getconstant)
 * [getState](kerl.md#getstate)
 * [initialize](kerl.md#initialize)
 * [reset](kerl.md#reset)
@@ -37,7 +37,7 @@ Implementation of ISponge using Kerl algorithm. [https://github.com/iotaledger/i
 ### ⊕ **new Kerl**(): [Kerl](kerl.md)
 
 
-*Defined in [sponges/kerl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/sponges/kerl.ts#L21)*
+*Defined in [sponges/kerl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/sponges/kerl.ts#L21)*
 
 
 
@@ -62,7 +62,7 @@ Create a new instance of Kerl.
 
 *Implementation of [ISponge](../interfaces/isponge.md).[absorb](../interfaces/isponge.md#absorb)*
 
-*Defined in [sponges/kerl.ts:70](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/sponges/kerl.ts#L70)*
+*Defined in [sponges/kerl.ts:75](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/sponges/kerl.ts#L75)*
 
 
 
@@ -89,27 +89,37 @@ Absorb trits into the hash.
 
 ___
 
-<a id="getconstants"></a>
+<a id="getconstant"></a>
 
-###  getConstants
+###  getConstant
 
-► **getConstants**(): `object`
-
-
-
-*Implementation of [ISponge](../interfaces/isponge.md).[getConstants](../interfaces/isponge.md#getconstants)*
-
-*Defined in [sponges/kerl.ts:34](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/sponges/kerl.ts#L34)*
+► **getConstant**(name: *`string`*): `number`
 
 
 
-Get the constant for the hasher.
+*Implementation of [ISponge](../interfaces/isponge.md).[getConstant](../interfaces/isponge.md#getconstant)*
+
+*Defined in [sponges/kerl.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/sponges/kerl.ts#L35)*
+
+
+
+Get the constant for the spone.
+*__name__*: The name of the contant to get.
+
+
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  - |
 
 
 
 
-**Returns:** `object`
-The constants.
+
+**Returns:** `number`
+The constant.
 
 
 
@@ -128,7 +138,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getState](../interfaces/isponge.md#getstate)*
 
-*Defined in [sponges/kerl.ts:46](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/sponges/kerl.ts#L46)*
+*Defined in [sponges/kerl.ts:51](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/sponges/kerl.ts#L51)*
 
 
 
@@ -157,7 +167,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[initialize](../interfaces/isponge.md#initialize)*
 
-*Defined in [sponges/kerl.ts:54](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/sponges/kerl.ts#L54)*
+*Defined in [sponges/kerl.ts:59](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/sponges/kerl.ts#L59)*
 
 
 
@@ -192,7 +202,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[reset](../interfaces/isponge.md#reset)*
 
-*Defined in [sponges/kerl.ts:60](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/sponges/kerl.ts#L60)*
+*Defined in [sponges/kerl.ts:65](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/sponges/kerl.ts#L65)*
 
 
 
@@ -219,7 +229,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[squeeze](../interfaces/isponge.md#squeeze)*
 
-*Defined in [sponges/kerl.ts:111](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/sponges/kerl.ts#L111)*
+*Defined in [sponges/kerl.ts:116](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/sponges/kerl.ts#L116)*
 
 
 

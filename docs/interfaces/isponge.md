@@ -24,7 +24,7 @@ Represents an interface to hash trits.
 
 
 
-*Defined in [interfaces/ISponge.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/interfaces/ISponge.ts#L35)*
+*Defined in [interfaces/ISponge.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/interfaces/ISponge.ts#L36)*
 
 
 
@@ -51,25 +51,35 @@ Absorb trits into the hash.
 
 ___
 
-<a id="getconstants"></a>
+<a id="getconstant"></a>
 
-###  getConstants
+###  getConstant
 
-► **getConstants**(): `object`
-
-
-
-*Defined in [interfaces/ISponge.ts:10](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/interfaces/ISponge.ts#L10)*
+► **getConstant**(name: *`string`*): `number`
 
 
 
-Get the constant for the hasher.
+*Defined in [interfaces/ISponge.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/interfaces/ISponge.ts#L11)*
+
+
+
+Get the constant for the spone.
+*__name__*: The name of the contant to get.
+
+
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| name | `string`   |  - |
 
 
 
 
-**Returns:** `object`
-The constants.
+
+**Returns:** `number`
+The constant.
 
 
 
@@ -86,7 +96,7 @@ ___
 
 
 
-*Defined in [interfaces/ISponge.ts:16](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/interfaces/ISponge.ts#L16)*
+*Defined in [interfaces/ISponge.ts:17](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/interfaces/ISponge.ts#L17)*
 
 
 
@@ -113,7 +123,7 @@ ___
 
 
 
-*Defined in [interfaces/ISponge.ts:22](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/interfaces/ISponge.ts#L22)*
+*Defined in [interfaces/ISponge.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/interfaces/ISponge.ts#L23)*
 
 
 
@@ -146,7 +156,7 @@ ___
 
 
 
-*Defined in [interfaces/ISponge.ts:27](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/interfaces/ISponge.ts#L27)*
+*Defined in [interfaces/ISponge.ts:28](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/interfaces/ISponge.ts#L28)*
 
 
 
@@ -171,7 +181,7 @@ ___
 
 
 
-*Defined in [interfaces/ISponge.ts:43](https://github.com/iotaeco/iota-pico-crypto/blob/a8978ee/src/interfaces/ISponge.ts#L43)*
+*Defined in [interfaces/ISponge.ts:44](https://github.com/iotaeco/iota-pico-crypto/blob/acc7b26/src/interfaces/ISponge.ts#L44)*
 
 
 

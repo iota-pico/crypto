@@ -16,12 +16,17 @@ describe("Kerl", () => {
         chai.should().exist(obj);
     });
 
-    describe("getConstants", () => {
+    describe("getConstant", () => {
         it("can get constants", () => {
             const obj = new Kerl();
-            chai.expect(obj.getConstants().HASH_LENGTH).to.equal(243);
-            chai.expect(obj.getConstants().BIT_HASH_LENGTH).to.equal(384);
-            chai.expect(obj.getConstants().BYTE_HASH_LENGTH).to.equal(48);
+            chai.expect(obj.getConstant("HASH_LENGTH")).to.equal(243);
+            chai.expect(obj.getConstant("BIT_HASH_LENGTH")).to.equal(384);
+            chai.expect(obj.getConstant("BYTE_HASH_LENGTH")).to.equal(48);
+        });
+
+        it("can fail with unknown constant", () => {
+            const obj = new Kerl();
+            chai.expect(() => obj.getConstant("foo")).to.throw("Unknown");
         });
     });
 
@@ -140,8 +145,8 @@ describe("Kerl", () => {
             obj.initialize();
             obj.absorb(trits, 0, trits.length);
 
-            const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH);
-            obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH);
+            const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH"));
+            obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH"));
 
             chai.expect(Trits.fromArray(hashTrits).toTrytes().toString())
                 .equal("EJEAOOZYSAWFPZQESYDHZCGYNSTWXUMVJOVDWUNZJXDGWCLUFGIMZRMGCAZGKNPLBRLGUNYWKLJTYEAQX");
@@ -154,8 +159,8 @@ describe("Kerl", () => {
 
             obj.initialize();
             obj.absorb(trits, 0, trits.length);
-            const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH);
-            obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH);
+            const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH"));
+            obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH"));
 
             chai.expect(Trits.fromArray(hashTrits).toTrytes().toString())
                 .equal("LUCKQVACOGBFYSPPVSSOXJEKNSQQRQKPZC9NXFSMQNRQCGGUL9OHVVKBDSKEQEBKXRNUJSRXYVHJTXBPD");
@@ -167,8 +172,8 @@ describe("Kerl", () => {
 
             obj.initialize();
             obj.absorb(trits, 0, trits.length);
-            const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH * 2);
-            obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH * 2);
+            const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH") * 2);
+            obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH") * 2);
 
             chai.expect(Trits.fromArray(hashTrits).toTrytes().toString())
                 .equal("G9JYBOMPUXHYHKSNRNMMSSZCSHOFYOYNZRSZMAAYWDYEIMVVOGKPJBVBM9TDPULSFUNMTVXRKFIDOHUXXVYDLFSZYZTWQYTE9SPYYWYTXJYQ9IFGYOLZXWZBKWZN9QOOTBQMWMUBLEWUEEASRHRTNIQWJQNDWRYLCA");
@@ -181,8 +186,8 @@ describe("Kerl", () => {
 
             obj.initialize();
             obj.absorb(trits, 0, trits.length);
-            const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH * 2);
-            obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH * 2);
+            const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH") * 2);
+            obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH") * 2);
 
             chai.expect(Trits.fromArray(hashTrits).toTrytes().toString())
                 .equal("LUCKQVACOGBFYSPPVSSOXJEKNSQQRQKPZC9NXFSMQNRQCGGUL9OHVVKBDSKEQEBKXRNUJSRXYVHJTXBPDWQGNSCDCBAIRHAQCOWZEBSNHIJIGPZQITIBJQ9LNTDIBTCQ9EUWKHFLGFUVGGUWJONK9GBCDUIMAYMMQX");
@@ -199,8 +204,8 @@ describe("Kerl", () => {
                 obj.initialize();
                 obj.absorb(trits, 0, trits.length);
 
-                const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH);
-                obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH);
+                const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH"));
+                obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH"));
 
                 if (i % (numTestRounds / 10) === 0) {
                     // tslint:disable-next-line:no-console
@@ -221,8 +226,8 @@ describe("Kerl", () => {
                 obj.initialize();
                 obj.absorb(trits, 0, trits.length);
 
-                const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH);
-                obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH);
+                const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH"));
+                obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH"));
 
                 if (i % (numTestRounds / 10) === 0) {
                     // tslint:disable-next-line:no-console
@@ -243,8 +248,8 @@ describe("Kerl", () => {
                 obj.initialize();
                 obj.absorb(trits, 0, trits.length);
 
-                const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH * 2);
-                obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH * 2);
+                const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH") * 2);
+                obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH") * 2);
 
                 if (i % (numTestRounds / 10) === 0) {
                     // tslint:disable-next-line:no-console
@@ -265,8 +270,8 @@ describe("Kerl", () => {
                 obj.initialize();
                 obj.absorb(trits, 0, trits.length);
 
-                const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH * 2);
-                obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH * 2);
+                const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH") * 2);
+                obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH") * 2);
 
                 if (i % (numTestRounds / 10) === 0) {
                     // tslint:disable-next-line:no-console

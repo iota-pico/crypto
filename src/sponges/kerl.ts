@@ -28,15 +28,20 @@ export class Kerl implements ISponge {
     }
 
     /**
-     * Get the constant for the hasher.
-     * @returns The constants.
+     * Get the constant for the spone.
+     * @name The name of the contant to get.
+     * @returns The constant.
      */
-    public getConstants(): { [name: string]: number } {
-        return {
-            HASH_LENGTH: Kerl.HASH_LENGTH,
-            BIT_HASH_LENGTH: Kerl.BIT_HASH_LENGTH,
-            BYTE_HASH_LENGTH: Kerl.BYTE_HASH_LENGTH
-        };
+    public getConstant(name: string): number {
+        switch (name) {
+            case "HASH_LENGTH":
+            case "BIT_HASH_LENGTH":
+            case "BYTE_HASH_LENGTH":
+            {
+                return Kerl[name];
+            }
+            default: throw new CryptoError(`Unknown constant requested ${name}`);
+        }
     }
 
     /**

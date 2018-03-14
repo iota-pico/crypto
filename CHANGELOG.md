@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.7.0
+## v0.9.0
 
 * number[] arrays converted to Int8Array for performance (requires polyfill for old browsers)
 * Kerl rewritten to match java implementation

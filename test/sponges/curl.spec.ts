@@ -16,18 +16,22 @@ describe("Curl", () => {
         chai.should().exist(obj);
     });
 
-    describe("getConstants", () => {
+    describe("getConstant", () => {
         it("can get constants", () => {
             const obj = new Curl();
-            chai.expect(obj.getConstants().HASH_LENGTH).to.equal(243);
-            chai.expect(obj.getConstants().NUMBER_OF_ROUNDS).to.equal(81);
-            chai.expect(obj.getConstants().STATE_LENGTH).to.equal(729);
+            chai.expect(obj.getConstant("HASH_LENGTH")).to.equal(243);
+            chai.expect(obj.getConstant("NUMBER_OF_ROUNDS")).to.equal(81);
+            chai.expect(obj.getConstant("STATE_LENGTH")).to.equal(729);
         });
         it("can get constants with different rounds", () => {
             const obj = new Curl(27);
-            chai.expect(obj.getConstants().HASH_LENGTH).to.equal(243);
-            chai.expect(obj.getConstants().NUMBER_OF_ROUNDS).to.equal(27);
-            chai.expect(obj.getConstants().STATE_LENGTH).to.equal(729);
+            chai.expect(obj.getConstant("HASH_LENGTH")).to.equal(243);
+            chai.expect(obj.getConstant("NUMBER_OF_ROUNDS")).to.equal(27);
+            chai.expect(obj.getConstant("STATE_LENGTH")).to.equal(729);
+        });
+        it("can fail with unknown constant", () => {
+            const obj = new Curl();
+            chai.expect(() => obj.getConstant("foo")).to.throw("Unknown");
         });
     });
 
@@ -162,8 +166,8 @@ describe("Curl", () => {
 
             obj.initialize();
             obj.absorb(trits, 0, trits.length);
-            const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH);
-            obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH);
+            const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH"));
+            obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH"));
 
             chai.expect(Array.from(hashTrits))
                 // tslint:disable-next-line:max-line-length
@@ -180,8 +184,8 @@ describe("Curl", () => {
 
             obj.initialize();
             obj.absorb(trits, 0, trits.length);
-            const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH);
-            obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH);
+            const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH"));
+            obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH"));
 
             chai.expect(Array.from(hashTrits))
                 // tslint:disable-next-line:max-line-length
@@ -197,8 +201,8 @@ describe("Curl", () => {
 
             obj.initialize();
             obj.absorb(trits, 0, trits.length);
-            const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH * 2);
-            obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH * 2);
+            const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH") * 2);
+            obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH") * 2);
 
             chai.expect(Array.from(hashTrits))
                 // tslint:disable-next-line:max-line-length
@@ -215,8 +219,8 @@ describe("Curl", () => {
 
             obj.initialize();
             obj.absorb(trits, 0, trits.length);
-            const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH * 2);
-            obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH * 2);
+            const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH") * 2);
+            obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH") * 2);
 
             chai.expect(Array.from(hashTrits))
                 // tslint:disable-next-line:max-line-length
@@ -237,8 +241,8 @@ describe("Curl", () => {
                 obj.initialize();
                 obj.absorb(trits, 0, trits.length);
 
-                const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH);
-                obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH);
+                const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH"));
+                obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH"));
 
                 if (i % (numTestRounds / 10) === 0) {
                     // tslint:disable-next-line:no-console
@@ -259,8 +263,8 @@ describe("Curl", () => {
                 obj.initialize();
                 obj.absorb(trits, 0, trits.length);
 
-                const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH);
-                obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH);
+                const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH"));
+                obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH"));
 
                 if (i % (numTestRounds / 10) === 0) {
                     // tslint:disable-next-line:no-console
@@ -281,8 +285,8 @@ describe("Curl", () => {
                 obj.initialize();
                 obj.absorb(trits, 0, trits.length);
 
-                const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH * 2);
-                obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH * 2);
+                const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH") * 2);
+                obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH") * 2);
 
                 if (i % (numTestRounds / 10) === 0) {
                     // tslint:disable-next-line:no-console
@@ -303,8 +307,8 @@ describe("Curl", () => {
                 obj.initialize();
                 obj.absorb(trits, 0, trits.length);
 
-                const hashTrits = new Int8Array(obj.getConstants().HASH_LENGTH * 2);
-                obj.squeeze(hashTrits, 0, obj.getConstants().HASH_LENGTH * 2);
+                const hashTrits = new Int8Array(obj.getConstant("HASH_LENGTH") * 2);
+                obj.squeeze(hashTrits, 0, obj.getConstant("HASH_LENGTH") * 2);
 
                 if (i % (numTestRounds / 10) === 0) {
                     // tslint:disable-next-line:no-console

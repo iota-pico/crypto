@@ -29,15 +29,22 @@ export class Curl implements ISponge {
     }
 
     /**
-     * Get the constant for the hasher.
-     * @returns The constants.
+     * Get the constant for the spone.
+     * @name The name of the contant to get.
+     * @returns The constant.
      */
-    public getConstants(): { [name: string]: number} {
-        return {
-            HASH_LENGTH: Curl.HASH_LENGTH,
-            STATE_LENGTH: Curl.STATE_LENGTH,
-            NUMBER_OF_ROUNDS: this._numberOfRounds
-        };
+    public getConstant(name: string): number {
+        switch (name) {
+            case "NUMBER_OF_ROUNDS": {
+                return this._numberOfRounds;
+            }
+            case "HASH_LENGTH":
+            case "STATE_LENGTH":
+            {
+                return Curl[name];
+            }
+            default: throw new CryptoError(`Unknown constant requested ${name}`);
+        }
     }
 
     /**
