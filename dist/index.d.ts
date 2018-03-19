@@ -3,6 +3,7 @@
  */
 export * from "./digests/sha3";
 export * from "./error/cryptoError";
+export * from "./factories/proofOfWorkFactory";
 export * from "./factories/spongeFactory";
 export * from "./hash/iss";
 export * from "./helpers/bigIntegerHelper";

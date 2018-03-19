@@ -1,18 +1,18 @@
-[@iota-pico/crypto](../README.md) > [SpongeFactory](../classes/spongefactory.md)
+[@iota-pico/crypto](../README.md) > [ProofOfWorkFactory](../classes/proofofworkfactory.md)
 
 
 
-# Class: SpongeFactory
+# Class: ProofOfWorkFactory
 
 
-Factory to generate sponges.
+Factory to generate proof of work.
 
 ## Hierarchy
 
 
- `FactoryBase`.<[ISponge](../interfaces/isponge.md)>
+ `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
 
-**↳ SpongeFactory**
+**↳ ProofOfWorkFactory**
 
 
 
@@ -24,12 +24,12 @@ Factory to generate sponges.
 
 ### Methods
 
-* [create](spongefactory.md#create)
-* [exists](spongefactory.md#exists)
-* [getInstance](spongefactory.md#getinstance)
-* [register](spongefactory.md#register)
-* [unregister](spongefactory.md#unregister)
-* [instance](spongefactory.md#instance)
+* [create](proofofworkfactory.md#create)
+* [exists](proofofworkfactory.md#exists)
+* [getInstance](proofofworkfactory.md#getinstance)
+* [register](proofofworkfactory.md#register)
+* [unregister](proofofworkfactory.md#unregister)
+* [instance](proofofworkfactory.md#instance)
 
 
 
@@ -39,7 +39,7 @@ Factory to generate sponges.
 
 ###  create
 
-► **create**(name: *`string`*, ...args: *`any`[]*): [ISponge](../interfaces/isponge.md)
+► **create**(name: *`string`*, ...args: *`any`[]*): [IProofOfWork](../interfaces/iproofofwork.md)
 
 
 
@@ -63,7 +63,7 @@ Create an instance of an object from the factory.
 
 
 
-**Returns:** [ISponge](../interfaces/isponge.md)
+**Returns:** [IProofOfWork](../interfaces/iproofofwork.md)
 A new instance of the type if it exists, or undefined if it does not.
 
 
@@ -114,17 +114,17 @@ ___
 
 ### «Protected» getInstance
 
-► **getInstance**(): `FactoryBase`.<[ISponge](../interfaces/isponge.md)>
+► **getInstance**(): `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
 
 
 
-*Defined in [factories/spongeFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/9d14e7c/src/factories/spongeFactory.ts#L35)*
+*Defined in factories/proofOfWorkFactory.ts:31*
 
 
 
 
 
-**Returns:** `FactoryBase`.<[ISponge](../interfaces/isponge.md)>
+**Returns:** `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
 
 
 
@@ -207,11 +207,11 @@ ___
 
 ### «Static» instance
 
-► **instance**(): `FactoryBase`.<[ISponge](../interfaces/isponge.md)>
+► **instance**(): `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
 
 
 
-*Defined in [factories/spongeFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/9d14e7c/src/factories/spongeFactory.ts#L25)*
+*Defined in factories/proofOfWorkFactory.ts:23*
 
 
 
@@ -220,7 +220,7 @@ Get the instance of the factory.
 
 
 
-**Returns:** `FactoryBase`.<[ISponge](../interfaces/isponge.md)>
+**Returns:** `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
 The factory instance.
 
 

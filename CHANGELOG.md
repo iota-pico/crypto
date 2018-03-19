@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.9.1
+
+* Added ProofOfWorkFactory
+
 ## v0.9.0
 
 * number[] arrays converted to Int8Array for performance (requires polyfill for old browsers)

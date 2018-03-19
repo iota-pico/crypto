@@ -12,6 +12,7 @@
 * [Curl](classes/curl.md)
 * [ISS](classes/iss.md)
 * [Kerl](classes/kerl.md)
+* [ProofOfWorkFactory](classes/proofofworkfactory.md)
 * [Sha3](classes/sha3.md)
 * [SpongeFactory](classes/spongefactory.md)
 

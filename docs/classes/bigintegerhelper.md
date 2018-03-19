@@ -28,7 +28,7 @@ Helper class to convert between BigInteger and other types. Converted from [http
 
 
 
-*Defined in [helpers/bigIntegerHelper.ts:112](https://github.com/iotaeco/iota-pico-crypto/blob/f7f8e46/src/helpers/bigIntegerHelper.ts#L112)*
+*Defined in [helpers/bigIntegerHelper.ts:112](https://github.com/iotaeco/iota-pico-crypto/blob/9d14e7c/src/helpers/bigIntegerHelper.ts#L112)*
 
 
 
@@ -63,7 +63,7 @@ ___
 
 
 
-*Defined in [helpers/bigIntegerHelper.ts:63](https://github.com/iotaeco/iota-pico-crypto/blob/f7f8e46/src/helpers/bigIntegerHelper.ts#L63)*
+*Defined in [helpers/bigIntegerHelper.ts:63](https://github.com/iotaeco/iota-pico-crypto/blob/9d14e7c/src/helpers/bigIntegerHelper.ts#L63)*
 
 
 
@@ -99,7 +99,7 @@ ___
 
 
 
-*Defined in [helpers/bigIntegerHelper.ts:171](https://github.com/iotaeco/iota-pico-crypto/blob/f7f8e46/src/helpers/bigIntegerHelper.ts#L171)*
+*Defined in [helpers/bigIntegerHelper.ts:171](https://github.com/iotaeco/iota-pico-crypto/blob/9d14e7c/src/helpers/bigIntegerHelper.ts#L171)*
 
 
 
@@ -134,7 +134,7 @@ ___
 
 
 
-*Defined in [helpers/bigIntegerHelper.ts:30](https://github.com/iotaeco/iota-pico-crypto/blob/f7f8e46/src/helpers/bigIntegerHelper.ts#L30)*
+*Defined in [helpers/bigIntegerHelper.ts:30](https://github.com/iotaeco/iota-pico-crypto/blob/9d14e7c/src/helpers/bigIntegerHelper.ts#L30)*
 
 
 
