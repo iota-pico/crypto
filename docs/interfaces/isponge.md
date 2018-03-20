@@ -24,7 +24,7 @@ Represents an interface to hash trits.
 
 
 
-*Defined in [interfaces/ISponge.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/interfaces/ISponge.ts#L36)*
+*Defined in [interfaces/ISponge.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/interfaces/ISponge.ts#L36)*
 
 
 
@@ -59,7 +59,7 @@ ___
 
 
 
-*Defined in [interfaces/ISponge.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/interfaces/ISponge.ts#L11)*
+*Defined in [interfaces/ISponge.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/interfaces/ISponge.ts#L11)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 
 
-*Defined in [interfaces/ISponge.ts:17](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/interfaces/ISponge.ts#L17)*
+*Defined in [interfaces/ISponge.ts:17](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/interfaces/ISponge.ts#L17)*
 
 
 
@@ -123,7 +123,7 @@ ___
 
 
 
-*Defined in [interfaces/ISponge.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/interfaces/ISponge.ts#L23)*
+*Defined in [interfaces/ISponge.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/interfaces/ISponge.ts#L23)*
 
 
 
@@ -156,7 +156,7 @@ ___
 
 
 
-*Defined in [interfaces/ISponge.ts:28](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/interfaces/ISponge.ts#L28)*
+*Defined in [interfaces/ISponge.ts:28](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/interfaces/ISponge.ts#L28)*
 
 
 
@@ -181,7 +181,7 @@ ___
 
 
 
-*Defined in [interfaces/ISponge.ts:44](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/interfaces/ISponge.ts#L44)*
+*Defined in [interfaces/ISponge.ts:44](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/interfaces/ISponge.ts#L44)*
 
 
 

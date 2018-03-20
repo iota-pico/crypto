@@ -23,7 +23,7 @@ Represents an interface to proof of work.
 
 
 
-*Defined in [interfaces/IProofOfWork.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/interfaces/IProofOfWork.ts#L13)*
+*Defined in [interfaces/IProofOfWork.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/interfaces/IProofOfWork.ts#L13)*
 
 
 
@@ -48,7 +48,7 @@ ___
 
 
 
-*Defined in [interfaces/IProofOfWork.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/interfaces/IProofOfWork.ts#L23)*
+*Defined in [interfaces/IProofOfWork.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/interfaces/IProofOfWork.ts#L23)*
 
 
 
