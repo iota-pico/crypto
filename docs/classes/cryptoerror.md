@@ -54,7 +54,7 @@ A crypto implementation of an error.
 
 *Overrides CoreError.__constructor*
 
-*Defined in [error/cryptoError.ts:6](https://github.com/iotaeco/iota-pico-crypto/blob/9d14e7c/src/error/cryptoError.ts#L6)*
+*Defined in [error/cryptoError.ts:6](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/error/cryptoError.ts#L6)*
 
 
 

@@ -88,7 +88,7 @@ describe("Sha3", () => {
 
     describe("data matching", () => {
         it("hash matches", () => {
-            const numTestRounds = 10000; // sha3Json.length
+            const numTestRounds = sha3Json.length;
             for (let i = 0; i < numTestRounds; i++) {
                 const obj = new Sha3(384, Sha3.KECCAK_PADDING, 384);
                 const input = sha3Json[i].input;

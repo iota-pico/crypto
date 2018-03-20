@@ -118,7 +118,7 @@ ___
 
 
 
-*Defined in factories/proofOfWorkFactory.ts:31*
+*Defined in [factories/proofOfWorkFactory.ts:31](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/factories/proofOfWorkFactory.ts#L31)*
 
 
 
@@ -211,7 +211,7 @@ ___
 
 
 
-*Defined in factories/proofOfWorkFactory.ts:23*
+*Defined in [factories/proofOfWorkFactory.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/factories/proofOfWorkFactory.ts#L23)*
 
 
 

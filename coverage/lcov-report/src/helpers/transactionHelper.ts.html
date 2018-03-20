@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/factories/proofOfWorkFactory.ts</title>
+    <title>Code coverage report for src/helpers/transactionHelper.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\..\prettify.css" />
     <link rel="stylesheet" href="..\..\base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\index.html">All files</a> / <a href="index.html">src/factories</a> proofOfWorkFactory.ts
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/helpers</a> transactionHelper.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>7/7</span>
+        <span class='fraction'>16/16</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>1/1</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>7/7</span>
+        <span class='fraction'>16/16</span>
       </div>
     </div>
     <p class="quiet">
@@ -81,6 +81,11 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -93,59 +98,54 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FactoryBase } from "@iota-pico/core/dist/factories/factoryBase";
-import { IProofOfWork } from "../interfaces/IProofOfWork";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ObjectHelper } from "@iota-pico/core/dist/helpers/objectHelper";
+import { Hash } from "@iota-pico/data/dist/data/hash";
+import { Transaction } from "@iota-pico/data/dist/data/transaction";
+import { Trits } from "@iota-pico/data/dist/data/trits";
+import { CryptoError } from "../error/cryptoError";
+import { SpongeFactory } from "../factories/spongeFactory";
 &nbsp;
 /**
- * Factory to generate proof of work.
+ * Helper class for transactions.
+ * Converted https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/signing/signing.js
  */
-export class ProofOfWorkFactory extends FactoryBase&lt;IProofOfWork&gt; {
-    /* @internal */
-    private static _instance: ProofOfWorkFactory;
-&nbsp;
+export class TransactionHelper {
     /**
-     * Don't allow manual construction of the factory.
-     * @internal
+     * Create the hash for a transaction.
+     * @param transaction The transaction to generate the hash.
+     * @returns The hash of thr transaction.
      */
-    private constructor() {
-        super();
-    }
-&nbsp;
-    /**
-     * Get the instance of the factory.
-     * @returns The factory instance.
-     */
-    public static instance(): FactoryBase&lt;IProofOfWork&gt; {
-        if (!ProofOfWorkFactory._instance) {
-            ProofOfWorkFactory._instance = new ProofOfWorkFactory();
+    public static hash(transaction: Transaction): Hash {
+        if (!ObjectHelper.isType(transaction, Transaction)) {
+            throw new CryptoError("The transaction must be of type Transaction");
         }
-        return ProofOfWorkFactory._instance;
-    }
 &nbsp;
-    /* @internal */
-    protected getInstance(): FactoryBase&lt;IProofOfWork&gt; {
-        return ProofOfWorkFactory.instance();
+        const curl = SpongeFactory.instance().create("curl");
+        const transactionTrits = Trits.fromTrytes(transaction.toTrytes()).toArray();
+&nbsp;
+        curl.initialize();
+        curl.absorb(transactionTrits, 0, transactionTrits.length);
+&nbsp;
+        const hashTrits = new Int8Array(curl.getConstant("HASH_LENGTH"));
+        curl.squeeze(hashTrits, 0, hashTrits.length);
+&nbsp;
+        return Hash.fromTrytes(Trits.fromArray(hashTrits).toTrytes());
     }
 }
 &nbsp;</pre></td></tr>

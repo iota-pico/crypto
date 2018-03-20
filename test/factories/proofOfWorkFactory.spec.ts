@@ -19,9 +19,6 @@ describe("ProofOfWorkFactory", () => {
             public async initialize(): Promise<void> {
                 throw new Error("Method not implemented.");
             }
-            public performsSingle(): boolean {
-                throw new Error("Method not implemented.");
-            }
             public async pow(trunkTransaction: Hash, branchTransaction: Hash, trytes: Trytes[], minWeightMagnitude: number): Promise<Trytes[]> {
                 throw new Error("Method not implemented.");
             }

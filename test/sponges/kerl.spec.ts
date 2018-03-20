@@ -196,7 +196,7 @@ describe("Kerl", () => {
 
     describe("data matching", () => {
         it("single absorb and single squeeze", () => {
-            const numTestRounds = 10000; // kerlSingleAbsorbSingleSqueezeJson.length;
+            const numTestRounds = 1000; // kerlSingleAbsorbSingleSqueezeJson.length;
             for (let i = 0; i < numTestRounds; i++) {
                 const obj = new Kerl();
                 const trits = Trits.fromTrytes(Trytes.fromString(kerlSingleAbsorbSingleSqueezeJson[i].trytes)).toArray();
@@ -218,7 +218,7 @@ describe("Kerl", () => {
         });
 
         it("multi absorb and single squeeze", () => {
-            const numTestRounds = 10000; // kerlMultiAbsorbSingleSqueezeJson.length;
+            const numTestRounds = 1000; // kerlMultiAbsorbSingleSqueezeJson.length;
             for (let i = 0; i < numTestRounds; i++) {
                 const obj = new Kerl();
                 const trits = Trits.fromTrytes(Trytes.fromString(kerlMultiAbsorbSingleSqueezeJson[i].trytes)).toArray();
@@ -240,7 +240,7 @@ describe("Kerl", () => {
         });
 
         it("single absorb and multi squeeze", () => {
-            const numTestRounds = 10000; // kerlSingleAbsorbMultiSqueezeJson.length;
+            const numTestRounds = 1000; // kerlSingleAbsorbMultiSqueezeJson.length;
             for (let i = 0; i < numTestRounds; i++) {
                 const obj = new Kerl();
                 const trits = Trits.fromTrytes(Trytes.fromString(kerlSingleAbsorbMultiSqueezeJson[i].trytes)).toArray();
@@ -262,7 +262,7 @@ describe("Kerl", () => {
         });
 
         it("multi absorb and multi squeeze", () => {
-            const numTestRounds = 10000; // kerlMultiAbsorbMultiSqueezeJson.length;
+            const numTestRounds = 1000; // kerlMultiAbsorbMultiSqueezeJson.length;
             for (let i = 0; i < numTestRounds; i++) {
                 const obj = new Kerl();
                 const trits = Trits.fromTrytes(Trytes.fromString(kerlMultiAbsorbMultiSqueezeJson[i].trytes)).toArray();

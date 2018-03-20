@@ -11,6 +11,8 @@ __export(require("./factories/proofOfWorkFactory"));
 __export(require("./factories/spongeFactory"));
 __export(require("./hash/iss"));
 __export(require("./helpers/bigIntegerHelper"));
+__export(require("./helpers/transactionHelper"));
+__export(require("./proofOfWork/proofOfWorkBase"));
 __export(require("./sponges/curl"));
 __export(require("./sponges/kerl"));
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBOztHQUVHO0FBQ0gsb0NBQStCO0FBQy9CLHlDQUFvQztBQUNwQyxvREFBK0M7QUFDL0MsK0NBQTBDO0FBQzFDLGdDQUEyQjtBQUMzQixnREFBMkM7QUFHM0Msb0NBQStCO0FBQy9CLG9DQUErQiJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBOztHQUVHO0FBQ0gsb0NBQStCO0FBQy9CLHlDQUFvQztBQUNwQyxvREFBK0M7QUFDL0MsK0NBQTBDO0FBQzFDLGdDQUEyQjtBQUMzQixnREFBMkM7QUFDM0MsaURBQTRDO0FBRzVDLG1EQUE4QztBQUM5QyxvQ0FBK0I7QUFDL0Isb0NBQStCIn0=

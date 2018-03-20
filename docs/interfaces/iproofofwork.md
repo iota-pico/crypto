@@ -9,6 +9,10 @@ Represents an interface to proof of work.
 *__interface__*: 
 
 
+## Implemented by
+
+* [ProofOfWorkBase](../classes/proofofworkbase.md)
+
 
 ## Methods
 <a id="initialize"></a>
@@ -19,7 +23,7 @@ Represents an interface to proof of work.
 
 
 
-*Defined in [interfaces/IProofOfWork.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/9d14e7c/src/interfaces/IProofOfWork.ts#L13)*
+*Defined in [interfaces/IProofOfWork.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/interfaces/IProofOfWork.ts#L13)*
 
 
 
@@ -36,33 +40,6 @@ Allow the proof of work to perform any initialization. Will throw an exception i
 
 ___
 
-<a id="performssingle"></a>
-
-###  performsSingle
-
-► **performsSingle**(): `boolean`
-
-
-
-*Defined in [interfaces/IProofOfWork.ts:19](https://github.com/iotaeco/iota-pico-crypto/blob/9d14e7c/src/interfaces/IProofOfWork.ts#L19)*
-
-
-
-Performs single conversion per pow call.
-
-
-
-
-**Returns:** `boolean`
-True if pow only does one conversion.
-
-
-
-
-
-
-___
-
 <a id="pow"></a>
 
 ###  pow
@@ -71,7 +48,7 @@ ___
 
 
 
-*Defined in [interfaces/IProofOfWork.ts:29](https://github.com/iotaeco/iota-pico-crypto/blob/9d14e7c/src/interfaces/IProofOfWork.ts#L29)*
+*Defined in [interfaces/IProofOfWork.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/d6e0a8f/src/interfaces/IProofOfWork.ts#L23)*
 
 
 

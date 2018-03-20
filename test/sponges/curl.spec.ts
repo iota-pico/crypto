@@ -233,7 +233,7 @@ describe("Curl", () => {
 
     describe("data matching", () => {
         it("single absorb and single squeeze", () => {
-            const numTestRounds = 10000; // curlSingleAbsorbSingleSqueezeJson.length;
+            const numTestRounds = 1000; // curlSingleAbsorbSingleSqueezeJson.length;
             for (let i = 0; i < numTestRounds; i++) {
                 const obj = new Curl();
                 const trits = Trits.fromTrytes(Trytes.fromString(curlSingleAbsorbSingleSqueezeJson[i].trytes)).toArray();
@@ -255,7 +255,7 @@ describe("Curl", () => {
         });
 
         it("multi absorb and single squeeze", () => {
-            const numTestRounds = 10000; // curlMultiAbsorbSingleSqueezeJson.length;
+            const numTestRounds = 1000; // curlMultiAbsorbSingleSqueezeJson.length;
             for (let i = 0; i < numTestRounds; i++) {
                 const obj = new Curl();
                 const trits = Trits.fromTrytes(Trytes.fromString(curlMultiAbsorbSingleSqueezeJson[i].trytes)).toArray();
@@ -277,7 +277,7 @@ describe("Curl", () => {
         });
 
         it("single absorb and multi squeeze", () => {
-            const numTestRounds = 10000; // curlSingleAbsorbMultiSqueezeJson.length;
+            const numTestRounds = 1000; // curlSingleAbsorbMultiSqueezeJson.length;
             for (let i = 0; i < numTestRounds; i++) {
                 const obj = new Curl();
                 const trits = Trits.fromTrytes(Trytes.fromString(curlSingleAbsorbMultiSqueezeJson[i].trytes)).toArray();
@@ -299,7 +299,7 @@ describe("Curl", () => {
         });
 
         it("multi absorb and multi squeeze", () => {
-            const numTestRounds = 10000; // curlMultiAbsorbMultiSqueezeJson.length;
+            const numTestRounds = 1000; // curlMultiAbsorbMultiSqueezeJson.length;
             for (let i = 0; i < numTestRounds; i++) {
                 const obj = new Curl();
                 const trits = Trits.fromTrytes(Trytes.fromString(curlMultiAbsorbMultiSqueezeJson[i].trytes)).toArray();

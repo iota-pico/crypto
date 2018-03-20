@@ -13,12 +13,6 @@ export interface IProofOfWork {
     initialize(): Promise<void>;
 
     /**
-     * Performs single conversion per pow call.
-     * @returns True if pow only does one conversion.
-     */
-    performsSingle(): boolean;
-
-    /**
      * Perform a proof of work on the data.
      * @param trunkTransaction The trunkTransaction to use for the pow.
      * @param branchTransaction The branchTransaction to use for the pow.
