@@ -30,7 +30,7 @@ ISS Hashing functions. Converted [https://github.com/iotaledger/iri/src/main/jav
 
 
 
-*Defined in [hash/iss.ts:141](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/hash/iss.ts#L141)*
+*Defined in [hash/iss.ts:141](https://github.com/iotaeco/iota-pico-crypto/blob/f6aa426/src/hash/iss.ts#L141)*
 
 
 
@@ -65,7 +65,7 @@ ___
 
 
 
-*Defined in [hash/iss.ts:168](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/hash/iss.ts#L168)*
+*Defined in [hash/iss.ts:168](https://github.com/iotaeco/iota-pico-crypto/blob/f6aa426/src/hash/iss.ts#L168)*
 
 
 
@@ -101,7 +101,7 @@ ___
 
 
 
-*Defined in [hash/iss.ts:85](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/hash/iss.ts#L85)*
+*Defined in [hash/iss.ts:85](https://github.com/iotaeco/iota-pico-crypto/blob/f6aa426/src/hash/iss.ts#L85)*
 
 
 
@@ -136,7 +136,7 @@ ___
 
 
 
-*Defined in [hash/iss.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/hash/iss.ts#L36)*
+*Defined in [hash/iss.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/f6aa426/src/hash/iss.ts#L36)*
 
 
 
@@ -173,7 +173,7 @@ ___
 
 
 
-*Defined in [hash/iss.ts:206](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/hash/iss.ts#L206)*
+*Defined in [hash/iss.ts:206](https://github.com/iotaeco/iota-pico-crypto/blob/f6aa426/src/hash/iss.ts#L206)*
 
 
 
@@ -208,7 +208,7 @@ ___
 
 
 
-*Defined in [hash/iss.ts:260](https://github.com/iotaeco/iota-pico-crypto/blob/28c9f3a/src/hash/iss.ts#L260)*
+*Defined in [hash/iss.ts:260](https://github.com/iotaeco/iota-pico-crypto/blob/f6aa426/src/hash/iss.ts#L260)*
 
 
 
