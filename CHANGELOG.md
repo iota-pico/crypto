@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.9.3
+
+* Added sponge type default parameter to ISS methods
+* Added subseed() method to ISS
+* Added subseedToDigest() method to ISS
+* Added curl27 and curl81 defaults to SpongeFactory
+
 ## v0.9.2
 
 * Added ProofOfWorkHelper to share common code for pow modules

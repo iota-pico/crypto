@@ -26,6 +26,8 @@ export class SpongeFactory extends FactoryBase<ISponge> {
         if (!SpongeFactory._instance) {
             SpongeFactory._instance = new SpongeFactory();
             SpongeFactory._instance.register("curl", (...args) => new Curl(...args));
+            SpongeFactory._instance.register("curl81", (...args) => new Curl(81));
+            SpongeFactory._instance.register("curl27", (...args) => new Curl(27));
             SpongeFactory._instance.register("kerl", (...args) => new Kerl());
         }
         return SpongeFactory._instance;

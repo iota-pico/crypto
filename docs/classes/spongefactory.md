@@ -28,6 +28,7 @@ Factory to generate sponges.
 * [exists](spongefactory.md#exists)
 * [getInstance](spongefactory.md#getinstance)
 * [register](spongefactory.md#register)
+* [types](spongefactory.md#types)
 * [unregister](spongefactory.md#unregister)
 * [instance](spongefactory.md#instance)
 
@@ -45,7 +46,7 @@ Factory to generate sponges.
 
 *Inherited from FactoryBase.create*
 
-*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:29*
+*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:35*
 
 
 
@@ -118,7 +119,7 @@ ___
 
 
 
-*Defined in [factories/spongeFactory.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/f6aa426/src/factories/spongeFactory.ts#L35)*
+*Defined in [factories/spongeFactory.ts:37](https://github.com/iotaeco/iota-pico-crypto/blob/2f8109e/src/factories/spongeFactory.ts#L37)*
 
 
 
@@ -161,6 +162,35 @@ Register a new type with the factory.
 
 
 **Returns:** `void`
+
+
+
+
+
+___
+
+<a id="types"></a>
+
+###  types
+
+► **types**(): `string`[]
+
+
+
+*Inherited from FactoryBase.types*
+
+*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:28*
+
+
+
+List the types in the factory.
+
+
+
+
+**Returns:** `string`[]
+True if the type exists.
+
 
 
 
@@ -211,7 +241,7 @@ ___
 
 
 
-*Defined in [factories/spongeFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/f6aa426/src/factories/spongeFactory.ts#L25)*
+*Defined in [factories/spongeFactory.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/2f8109e/src/factories/spongeFactory.ts#L25)*
 
 
 

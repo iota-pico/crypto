@@ -25,15 +25,67 @@ export class ISS {
     private static readonly MIN_TRYTE_VALUE: number = -13;
     /* @internal */
     private static readonly MAX_TRYTE_VALUE: number = 13;
+    /* @internal */
+    private static readonly MIN_TRIT_VALUE: number = -1;
+    /* @internal */
+    private static readonly MAX_TRIT_VALUE: number = 1;
+    /* @internal */
+    private static readonly RADIX: number = 3;
+
+    /**
+     * Get the subseed for the seed and index.
+     * @param seed The seed.
+     * @param index The index for the seed.
+     * @param spongeType The sponge type to use for operations.
+     * @return The subseed.
+     */
+    public static subseed(seed: Int8Array, index: number, spongeType: string = "curl27"): Int8Array {
+        if (!ObjectHelper.isType(seed, Int8Array)) {
+            throw new CryptoError("The seed must be of type Int8Array");
+        }
+
+        if (!NumberHelper.isInteger(index) || index < 0) {
+            throw new CryptoError("The index must be an integer >= 0");
+        }
+
+        if (!SpongeFactory.instance().exists(spongeType)) {
+            throw new CryptoError(`The spongeType must be one of [${SpongeFactory.instance().types().join(", ")}]`);
+        }
+
+        const sponge = SpongeFactory.instance().create(spongeType);
+        const hashLength = sponge.getConstant("HASH_LENGTH");
+        sponge.initialize();
+
+        const subseedPreimage = seed.slice();
+        let localIndex = index;
+
+        while (localIndex-- > 0) {
+            for (let i = 0; i < subseedPreimage.length; i++) {
+                if (++subseedPreimage[i] > ISS.MAX_TRIT_VALUE) {
+                    subseedPreimage[i] = ISS.MIN_TRIT_VALUE;
+                } else {
+                    break;
+                }
+            }
+        }
+
+        const subseed = new Int8Array(hashLength);
+
+        sponge.absorb(subseedPreimage, 0, subseedPreimage.length);
+        sponge.squeeze(subseed, 0, subseed.length);
+
+        return subseed;
+    }
 
     /**
      * Create the key for the seed.
      * @param seed The seed to create the key for.
      * @param index The index to use for the seed.
      * @param length The security level to create the key.
+     * @param spongeType The sponge type to use for operations.
      * @returns the key.
      */
-    public static key(seed: Hash, index: number, security: AddressSecurity): Int8Array {
+    public static key(seed: Hash, index: number, security: AddressSecurity, spongeType: string = "kerl"): Int8Array {
         if (!ObjectHelper.isType(seed, Hash)) {
             throw new CryptoError("The seed must be of type Hash");
         }
@@ -46,20 +98,24 @@ export class ISS {
             throw new CryptoError(`The security must be an integer >= 1 and <= 3`);
         }
 
+        if (!SpongeFactory.instance().exists(spongeType)) {
+            throw new CryptoError(`The spongeType must be one of [${SpongeFactory.instance().types().join(", ")}]`);
+        }
+
         const seedTrits = Trits.fromTrytes(seed.toTrytes());
         const indexTrits = Trits.fromNumber(index);
         const subseed = Trits.add(seedTrits, indexTrits).toArray();
         const subseedLength = subseed.length;
 
-        const kerl = SpongeFactory.instance().create("kerl");
-        const hashLength = kerl.getConstant("HASH_LENGTH");
+        const sponge = SpongeFactory.instance().create(spongeType);
+        const hashLength = sponge.getConstant("HASH_LENGTH");
 
-        kerl.initialize();
-        kerl.absorb(subseed, 0, subseedLength);
-        kerl.squeeze(subseed, 0, subseedLength);
+        sponge.initialize();
+        sponge.absorb(subseed, 0, subseedLength);
+        sponge.squeeze(subseed, 0, subseedLength);
 
-        kerl.reset();
-        kerl.absorb(subseed, 0, subseedLength);
+        sponge.reset();
+        sponge.absorb(subseed, 0, subseedLength);
 
         const key = new Int8Array(ISS.NUMBER_OF_FRAGMENT_CHUNKS * hashLength * security);
         let offset = 0;
@@ -68,7 +124,7 @@ export class ISS {
 
         while (localLength-- > 0) {
             for (let i = 0; i < ISS.NUMBER_OF_FRAGMENT_CHUNKS; i++) {
-                kerl.squeeze(buffer, 0, subseedLength);
+                sponge.squeeze(buffer, 0, subseedLength);
                 for (let j = 0; j < hashLength; j++) {
                     key[offset++] = buffer[j];
                 }
@@ -80,15 +136,20 @@ export class ISS {
     /**
      * Create the digests for the given subseed.
      * @param subseed To create the digests for.
+     * @param spongeType The sponge type to use for operations.
      * @returns The digests.
      */
-    public static digests(subseed: Int8Array): Int8Array {
+    public static digests(subseed: Int8Array, spongeType: string = "kerl"): Int8Array {
         if (!ObjectHelper.isType(subseed, Int8Array)) {
             throw new CryptoError("The subseed must be of type Int8Array");
         }
 
-        const hash = SpongeFactory.instance().create("kerl");
-        const hashLength: number = hash.getConstant("HASH_LENGTH");
+        if (!SpongeFactory.instance().exists(spongeType)) {
+            throw new CryptoError(`The spongeType must be one of [${SpongeFactory.instance().types().join(", ")}]`);
+        }
+
+        const sponge = SpongeFactory.instance().create(spongeType);
+        const hashLength: number = sponge.getConstant("HASH_LENGTH");
         const fragmentLength = hashLength * ISS.NUMBER_OF_FRAGMENT_CHUNKS;
 
         if (subseed.length % fragmentLength !== 0) {
@@ -111,9 +172,9 @@ export class ISS {
                 buffer = keyFragment.slice(jMul, jMul + hashLength);
 
                 for (let k = 0; k < tryteRange; k++) {
-                    hash.reset();
-                    hash.absorb(buffer, 0, buffer.length);
-                    hash.squeeze(buffer, 0, hashLength);
+                    sponge.reset();
+                    sponge.absorb(buffer, 0, buffer.length);
+                    sponge.squeeze(buffer, 0, hashLength);
                 }
 
                 for (let k = 0; k < hashLength; k++) {
@@ -121,9 +182,9 @@ export class ISS {
                 }
             }
 
-            hash.reset();
-            hash.absorb(keyFragment, 0, keyFragment.length);
-            hash.squeeze(buffer, 0, hashLength);
+            sponge.reset();
+            sponge.absorb(keyFragment, 0, keyFragment.length);
+            sponge.squeeze(buffer, 0, hashLength);
 
             const iMul2 = i * hashLength;
             for (let j = 0; j < hashLength; j++) {
@@ -136,25 +197,30 @@ export class ISS {
     /**
      * Create the address for the digests.
      * @param digests The digests to create the address for.
+     * @param spongeType The sponge type to use for operations.
      * @returns the address trits.
      */
-    public static address(digests: Int8Array): Int8Array {
+    public static address(digests: Int8Array, spongeType: string = "kerl"): Int8Array {
         if (!ObjectHelper.isType(digests, Int8Array)) {
             throw new CryptoError("The digests must be of type Int8Array");
         }
 
-        const kerl = SpongeFactory.instance().create("kerl");
-        const kerlHashLength = kerl.getConstant("HASH_LENGTH");
-
-        if (digests.length % kerlHashLength !== 0) {
-            throw new CryptoError(`Invalid digests length, must be a multiple of ${kerlHashLength}`);
+        if (!SpongeFactory.instance().exists(spongeType)) {
+            throw new CryptoError(`The spongeType must be one of [${SpongeFactory.instance().types().join(", ")}]`);
         }
 
-        kerl.initialize();
-        kerl.absorb(digests, 0, digests.length);
+        const sponge = SpongeFactory.instance().create(spongeType);
+        const hashLength = sponge.getConstant("HASH_LENGTH");
 
-        const addressTrits = new Int8Array(kerlHashLength);
-        kerl.squeeze(addressTrits, 0, addressTrits.length);
+        if (digests.length % hashLength !== 0) {
+            throw new CryptoError(`Invalid digests length, must be a multiple of ${hashLength}`);
+        }
+
+        sponge.initialize();
+        sponge.absorb(digests, 0, digests.length);
+
+        const addressTrits = new Int8Array(hashLength);
+        sponge.squeeze(addressTrits, 0, addressTrits.length);
 
         return addressTrits;
     }
@@ -163,9 +229,10 @@ export class ISS {
      * Create digest of the normalized bundle fragment.
      * @param normalizedBundleFragment The fragment to create digest.
      * @param signatureMessageFragment The trits for signature message fragment.
+     * @param spongeType The sponge type to use for operations.
      * @returns The digest of the bundle and signature message fragment.
      */
-    public static digest(normalizedBundleFragment: Int8Array, signatureMessageFragment: Int8Array): Int8Array {
+    public static digest(normalizedBundleFragment: Int8Array, signatureMessageFragment: Int8Array, spongeType: string = "kerl"): Int8Array {
         if (!ObjectHelper.isType(normalizedBundleFragment, Int8Array)) {
             throw new CryptoError("The normalizedBundleFragment must be of type Int8Array");
         }
@@ -174,48 +241,107 @@ export class ISS {
             throw new CryptoError("The signatureMessageFragment must be of type Int8Array");
         }
 
+        if (!SpongeFactory.instance().exists(spongeType)) {
+            throw new CryptoError(`The spongeType must be one of [${SpongeFactory.instance().types().join(", ")}]`);
+        }
+
         let buffer: Int8Array;
 
-        const kerl = SpongeFactory.instance().create("kerl");
-        const hashLength = kerl.getConstant("HASH_LENGTH");
-        kerl.initialize();
+        const sponge = SpongeFactory.instance().create(spongeType);
+        const hashLength = sponge.getConstant("HASH_LENGTH");
+        sponge.initialize();
 
         for (let i = 0; i < ISS.NUMBER_OF_FRAGMENT_CHUNKS; i++) {
             buffer = new Int8Array(signatureMessageFragment.slice(i * hashLength, (i + 1) * hashLength));
 
             for (let j = normalizedBundleFragment[i] - ISS.MIN_TRYTE_VALUE; j > 0; j--) {
-                const jKerl = SpongeFactory.instance().create("kerl");
+                const sponge2 = SpongeFactory.instance().create(spongeType);
 
-                jKerl.initialize();
-                jKerl.absorb(buffer, 0, buffer.length);
-                jKerl.squeeze(buffer, 0, jKerl.getConstant("HASH_LENGTH"));
+                sponge2.initialize();
+                sponge2.absorb(buffer, 0, buffer.length);
+                sponge2.squeeze(buffer, 0, sponge2.getConstant("HASH_LENGTH"));
             }
 
-            kerl.absorb(buffer, 0, buffer.length);
+            sponge.absorb(buffer, 0, buffer.length);
         }
 
-        kerl.squeeze(buffer, 0, kerl.getConstant("HASH_LENGTH"));
+        sponge.squeeze(buffer, 0, sponge.getConstant("HASH_LENGTH"));
         return buffer;
+    }
+
+    /**
+     * Get the digest for the subseed.
+     * @param subseed The subseed to get the digest for.
+     * @param security The security level.
+     * @param spongeType The sponge type to use for operations.
+     * @returns The digest.
+     */
+    public static subseedToDigest(subseed: Int8Array, security: AddressSecurity, spongeType: string = "curl27"): Int8Array {
+        if (!ObjectHelper.isType(subseed, Int8Array)) {
+            throw new CryptoError("The subseed must be of type Int8Array");
+        }
+
+        if (!NumberHelper.isInteger(security) || security < AddressSecurity.low || security > AddressSecurity.high) {
+            throw new CryptoError(`The security must be an integer >= 1 and <= 3`);
+        }
+
+        if (!SpongeFactory.instance().exists(spongeType)) {
+            throw new CryptoError(`The spongeType must be one of [${SpongeFactory.instance().types().join(", ")}]`);
+        }
+
+        const c1 = SpongeFactory.instance().create(spongeType);
+        const c2 = SpongeFactory.instance().create(spongeType);
+        const c3 = SpongeFactory.instance().create(spongeType);
+        c1.initialize();
+        c2.initialize();
+        c3.initialize();
+
+        const hashLength = c1.getConstant("HASH_LENGTH");
+        const keyLength = ((hashLength / 3) / ISS.RADIX) * hashLength;
+
+        const length = security * keyLength / hashLength;
+        let out = new Int8Array(hashLength);
+
+        c1.absorb(subseed, 0, subseed.length);
+        for (let i = 0; i < length; i++) {
+            c1.squeeze(out, 0, out.length);
+
+            for (let j = 0; j < (ISS.MAX_TRYTE_VALUE - ISS.MIN_TRYTE_VALUE + 1); j++) {
+                c2.reset();
+                c2.absorb(out, 0, out.length);
+                out = c2.getState().slice(0, hashLength);
+            }
+
+            c3.absorb(out, 0, out.length);
+        }
+
+        c3.squeeze(out, 0, out.length);
+
+        return out;
     }
 
     /**
      * Create a normalized bundle.
      * @param bundleHash The hash of the bundle.
+     * @param spongeType The sponge type to use for operations.
      * @returns the normalized bundle.
      */
-    public static normalizedBundle(bundleHash: Hash): Int8Array {
+    public static normalizedBundle(bundleHash: Hash, spongeType: string = "curl81"): Int8Array {
         if (!ObjectHelper.isType(bundleHash, Hash)) {
             throw new CryptoError("The bundleHash must be of type Hash");
         }
 
-        const curl = SpongeFactory.instance().create("curl");
+        if (!SpongeFactory.instance().exists(spongeType)) {
+            throw new CryptoError(`The spongeType must be one of [${SpongeFactory.instance().types().join(", ")}]`);
+        }
 
-        const curlHashLength = curl.getConstant("HASH_LENGTH");
+        const sponge = SpongeFactory.instance().create(spongeType);
+        const hashLength = sponge.getConstant("HASH_LENGTH");
 
         const normalizedBundle = new Int8Array(ISS.NUMBER_OF_FRAGMENT_CHUNKS * ISS.NUMBER_OF_SECURITY_LEVELS);
         const hashString = bundleHash.toTrytes().toString();
 
-        const normalizedFragmentLength = curlHashLength / ISS.TRYTE_WIDTH / ISS.NUMBER_OF_SECURITY_LEVELS;
+        const normalizedFragmentLength = hashLength / ISS.TRYTE_WIDTH / ISS.NUMBER_OF_SECURITY_LEVELS;
 
         for (let i = 0; i < ISS.NUMBER_OF_SECURITY_LEVELS; i++) {
             let sum = 0;
@@ -255,9 +381,10 @@ export class ISS {
      * @param expectedAddress The address.
      * @param signatureMessageFragments The signature message fragments.
      * @param bundleHash The hash for the bundle.
+     * @param spongeType The sponge type to use for operations.
      * @returns True if the signature message fragment are signed by the expected address.
      */
-    public static validateSignatures(expectedAddress: Address, signatureMessageFragments: SignatureMessageFragment[], bundleHash: Hash): boolean {
+    public static validateSignatures(expectedAddress: Address, signatureMessageFragments: SignatureMessageFragment[], bundleHash: Hash, spongeType: string = "kerl"): boolean {
         if (!ObjectHelper.isType(expectedAddress, Address)) {
             throw new CryptoError("The expectedAddress must be of type Hash");
         }
@@ -270,11 +397,15 @@ export class ISS {
             throw new CryptoError("The bundleHash must be of type Hash");
         }
 
+        if (!SpongeFactory.instance().exists(spongeType)) {
+            throw new CryptoError(`The spongeType must be one of [${SpongeFactory.instance().types().join(", ")}]`);
+        }
+
         const normalizedBundleFragments = [];
         const normalizedBundleHash = ISS.normalizedBundle(bundleHash);
 
-        const kerl = SpongeFactory.instance().create("kerl");
-        const hashLength = kerl.getConstant("HASH_LENGTH");
+        const sponge = SpongeFactory.instance().create(spongeType);
+        const hashLength = sponge.getConstant("HASH_LENGTH");
 
         for (let f = 0; f < 3; f++) {
             normalizedBundleFragments[f] = normalizedBundleHash.slice(f * ISS.NUMBER_OF_FRAGMENT_CHUNKS, (f + 1) * ISS.NUMBER_OF_FRAGMENT_CHUNKS);
@@ -291,5 +422,47 @@ export class ISS {
         }
 
         return expectedAddress.toTrytes().toString() === Trits.fromArray(ISS.address(digests)).toTrytes().toString();
+    }
+
+    /**
+     * Create a signed signature message fragment.
+     * @param normalizedBundleFragment The fragment to sign.
+     * @param keyFragment The key fragment to sign with.
+     * @param spongeType The sponge type to use for operations.
+     * @return The signed fragment.
+     */
+    public static signatureMessageFragment(normalizedBundleFragment: Int8Array, keyFragment: Int8Array, spongeType: string = "kerl"): Int8Array {
+        if (!ObjectHelper.isType(normalizedBundleFragment, Int8Array)) {
+            throw new CryptoError("The normalizedBundleFragment must be of type Int8Array");
+        }
+        if (!ObjectHelper.isType(keyFragment, Int8Array)) {
+            throw new CryptoError("The keyFragment must be of type Int8Array");
+        }
+        if (!SpongeFactory.instance().exists(spongeType)) {
+            throw new CryptoError(`The spongeType must be one of [${SpongeFactory.instance().types().join(", ")}]`);
+        }
+
+        const signatureMessageFragment = keyFragment.slice();
+        let hash: Int8Array;
+
+        const kerl = SpongeFactory.instance().create(spongeType);
+        const hashLength = kerl.getConstant("HASH_LENGTH");
+
+        for (let i = 0; i < 27; i++) {
+            hash = signatureMessageFragment.slice(i * hashLength, (i + 1) * hashLength);
+
+            for (let j = 0; j < 13 - normalizedBundleFragment[i]; j++) {
+                kerl.initialize();
+                kerl.reset();
+                kerl.absorb(hash, 0, hashLength);
+                kerl.squeeze(hash, 0, hashLength);
+            }
+
+            for (let j = 0; j < hashLength; j++) {
+                signatureMessageFragment[i * hashLength + j] = hash[j];
+            }
+        }
+
+        return signatureMessageFragment;
     }
 }

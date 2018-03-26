@@ -28,6 +28,7 @@ Factory to generate proof of work.
 * [exists](proofofworkfactory.md#exists)
 * [getInstance](proofofworkfactory.md#getinstance)
 * [register](proofofworkfactory.md#register)
+* [types](proofofworkfactory.md#types)
 * [unregister](proofofworkfactory.md#unregister)
 * [instance](proofofworkfactory.md#instance)
 
@@ -45,7 +46,7 @@ Factory to generate proof of work.
 
 *Inherited from FactoryBase.create*
 
-*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:29*
+*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:35*
 
 
 
@@ -118,7 +119,7 @@ ___
 
 
 
-*Defined in [factories/proofOfWorkFactory.ts:31](https://github.com/iotaeco/iota-pico-crypto/blob/f6aa426/src/factories/proofOfWorkFactory.ts#L31)*
+*Defined in [factories/proofOfWorkFactory.ts:31](https://github.com/iotaeco/iota-pico-crypto/blob/2f8109e/src/factories/proofOfWorkFactory.ts#L31)*
 
 
 
@@ -161,6 +162,35 @@ Register a new type with the factory.
 
 
 **Returns:** `void`
+
+
+
+
+
+___
+
+<a id="types"></a>
+
+###  types
+
+► **types**(): `string`[]
+
+
+
+*Inherited from FactoryBase.types*
+
+*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:28*
+
+
+
+List the types in the factory.
+
+
+
+
+**Returns:** `string`[]
+True if the type exists.
+
 
 
 
@@ -211,7 +241,7 @@ ___
 
 
 
-*Defined in [factories/proofOfWorkFactory.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/f6aa426/src/factories/proofOfWorkFactory.ts#L23)*
+*Defined in [factories/proofOfWorkFactory.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/2f8109e/src/factories/proofOfWorkFactory.ts#L23)*
 
 
 
