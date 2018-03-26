@@ -40,7 +40,7 @@ Base class for proof of work.
 ### ⊕ **new ProofOfWorkBase**(timeService?: *`ITimeService`*): [ProofOfWorkBase](proofofworkbase.md)
 
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/2f8109e/src/proofOfWork/proofOfWorkBase.ts#L25)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/proofOfWork/proofOfWorkBase.ts#L25)*
 
 
 
@@ -69,7 +69,7 @@ Create an instance of ProofOfWork.
 
 **●  _timeService**:  *`ITimeService`* 
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/2f8109e/src/proofOfWork/proofOfWorkBase.ts#L25)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:25](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/proofOfWork/proofOfWorkBase.ts#L25)*
 
 
 
@@ -83,7 +83,7 @@ ___
 
 **●  MAX_TIMESTAMP_VALUE**:  *`number`*  =  (Math.pow(3, 27) - 1) / 2
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:22](https://github.com/iotaeco/iota-pico-crypto/blob/2f8109e/src/proofOfWork/proofOfWorkBase.ts#L22)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:22](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/proofOfWork/proofOfWorkBase.ts#L22)*
 
 
 
@@ -106,7 +106,7 @@ ___
 
 *Implementation of [IProofOfWork](../interfaces/iproofofwork.md).[initialize](../interfaces/iproofofwork.md#initialize)*
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:39](https://github.com/iotaeco/iota-pico-crypto/blob/2f8109e/src/proofOfWork/proofOfWorkBase.ts#L39)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:39](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/proofOfWork/proofOfWorkBase.ts#L39)*
 
 
 
@@ -133,7 +133,7 @@ ___
 
 *Implementation of [IProofOfWork](../interfaces/iproofofwork.md).[pow](../interfaces/iproofofwork.md#pow)*
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:51](https://github.com/iotaeco/iota-pico-crypto/blob/2f8109e/src/proofOfWork/proofOfWorkBase.ts#L51)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:51](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/proofOfWork/proofOfWorkBase.ts#L51)*
 
 
 
@@ -171,7 +171,7 @@ ___
 
 
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:118](https://github.com/iotaeco/iota-pico-crypto/blob/2f8109e/src/proofOfWork/proofOfWorkBase.ts#L118)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:118](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/proofOfWork/proofOfWorkBase.ts#L118)*
 
 
 

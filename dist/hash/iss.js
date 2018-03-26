@@ -20,7 +20,7 @@ class ISS {
      * @param seed The seed.
      * @param index The index for the seed.
      * @param spongeType The sponge type to use for operations.
-     * @return The subseed.
+     * @returns The subseed.
      */
     static subseed(seed, index, spongeType = "curl27") {
         if (!objectHelper_1.ObjectHelper.isType(seed, Int8Array)) {
@@ -335,7 +335,7 @@ class ISS {
      * @param normalizedBundleFragment The fragment to sign.
      * @param keyFragment The key fragment to sign with.
      * @param spongeType The sponge type to use for operations.
-     * @return The signed fragment.
+     * @returns The signed fragment.
      */
     static signatureMessageFragment(normalizedBundleFragment, keyFragment, spongeType = "kerl") {
         if (!objectHelper_1.ObjectHelper.isType(normalizedBundleFragment, Int8Array)) {

@@ -12,7 +12,7 @@ export declare class ISS {
      * @param seed The seed.
      * @param index The index for the seed.
      * @param spongeType The sponge type to use for operations.
-     * @return The subseed.
+     * @returns The subseed.
      */
     static subseed(seed: Int8Array, index: number, spongeType?: string): Int8Array;
     /**
@@ -75,7 +75,7 @@ export declare class ISS {
      * @param normalizedBundleFragment The fragment to sign.
      * @param keyFragment The key fragment to sign with.
      * @param spongeType The sponge type to use for operations.
-     * @return The signed fragment.
+     * @returns The signed fragment.
      */
     static signatureMessageFragment(normalizedBundleFragment: Int8Array, keyFragment: Int8Array, spongeType?: string): Int8Array;
 }

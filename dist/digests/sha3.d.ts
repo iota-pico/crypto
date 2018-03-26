@@ -21,7 +21,7 @@ export declare class Sha3 {
     update(input: ArrayBuffer): void;
     /**
      * Finalize and return the hash for the digest, will also reset the state.
-     * @return Array buffer containing the digest.
+     * @returns Array buffer containing the digest.
      */
     digest(): ArrayBuffer;
 }
