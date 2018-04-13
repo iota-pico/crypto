@@ -25,7 +25,7 @@ Helper class for transactions. Converted [https://github.com/iotaledger/iota.lib
 
 
 
-*Defined in [helpers/transactionHelper.ts:18](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/helpers/transactionHelper.ts#L18)*
+*Defined in [helpers/transactionHelper.ts:18](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/helpers/transactionHelper.ts#L18)*
 
 
 

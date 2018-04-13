@@ -37,7 +37,7 @@ Implementation of ISponge using Kerl algorithm. [https://github.com/iotaledger/i
 ### ⊕ **new Kerl**(): [Kerl](kerl.md)
 
 
-*Defined in [sponges/kerl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/sponges/kerl.ts#L21)*
+*Defined in [sponges/kerl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L21)*
 
 
 
@@ -62,7 +62,7 @@ Create a new instance of Kerl.
 
 *Implementation of [ISponge](../interfaces/isponge.md).[absorb](../interfaces/isponge.md#absorb)*
 
-*Defined in [sponges/kerl.ts:75](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/sponges/kerl.ts#L75)*
+*Defined in [sponges/kerl.ts:75](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L75)*
 
 
 
@@ -99,7 +99,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getConstant](../interfaces/isponge.md#getconstant)*
 
-*Defined in [sponges/kerl.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/sponges/kerl.ts#L35)*
+*Defined in [sponges/kerl.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L35)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getState](../interfaces/isponge.md#getstate)*
 
-*Defined in [sponges/kerl.ts:51](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/sponges/kerl.ts#L51)*
+*Defined in [sponges/kerl.ts:51](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L51)*
 
 
 
@@ -167,7 +167,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[initialize](../interfaces/isponge.md#initialize)*
 
-*Defined in [sponges/kerl.ts:59](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/sponges/kerl.ts#L59)*
+*Defined in [sponges/kerl.ts:59](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L59)*
 
 
 
@@ -202,7 +202,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[reset](../interfaces/isponge.md#reset)*
 
-*Defined in [sponges/kerl.ts:65](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/sponges/kerl.ts#L65)*
+*Defined in [sponges/kerl.ts:65](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L65)*
 
 
 
@@ -229,7 +229,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[squeeze](../interfaces/isponge.md#squeeze)*
 
-*Defined in [sponges/kerl.ts:116](https://github.com/iotaeco/iota-pico-crypto/blob/f665795/src/sponges/kerl.ts#L116)*
+*Defined in [sponges/kerl.ts:116](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L116)*
 
 
 
