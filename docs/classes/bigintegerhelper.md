@@ -1,11 +1,12 @@
 [@iota-pico/crypto](../README.md) > [BigIntegerHelper](../classes/bigintegerhelper.md)
 
-
-
 # Class: BigIntegerHelper
 
-
 Helper class to convert between BigInteger and other types. Converted from [https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java](https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java)
+
+## Hierarchy
+
+**BigIntegerHelper**
 
 ## Index
 
@@ -16,24 +17,19 @@ Helper class to convert between BigInteger and other types. Converted from [http
 * [bytesToBigInteger](bigintegerhelper.md#bytestobiginteger)
 * [tritsToBigInteger](bigintegerhelper.md#tritstobiginteger)
 
-
-
 ---
+
 ## Methods
+
 <a id="bigintegertobytes"></a>
 
-### «Static» bigIntegerToBytes
+### `<Static>` bigIntegerToBytes
 
-► **bigIntegerToBytes**(value: *`BigInteger`*, destination: *`ArrayBuffer`*, offset: *`number`*): `void`
+▸ **bigIntegerToBytes**(value: *`BigInteger`*, destination: *`ArrayBuffer`*, offset: *`number`*): `void`
 
-
-
-*Defined in [helpers/bigIntegerHelper.ts:112](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/helpers/bigIntegerHelper.ts#L112)*
-
-
+*Defined in [helpers/bigIntegerHelper.ts:112](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/helpers/bigIntegerHelper.ts#L112)*
 
 Convert the bigInteger into bytes.
-
 
 **Parameters:**
 
@@ -43,32 +39,19 @@ Convert the bigInteger into bytes.
 | destination | `ArrayBuffer`   |  The destination array to store the bytes. |
 | offset | `number`   |  The offset within the array to store the bytes. |
 
-
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
 <a id="bigintegertotrits"></a>
 
-### «Static» bigIntegerToTrits
+### `<Static>` bigIntegerToTrits
 
-► **bigIntegerToTrits**(value: *`BigInteger`*, trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
+▸ **bigIntegerToTrits**(value: *`BigInteger`*, trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
-
-
-*Defined in [helpers/bigIntegerHelper.ts:63](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/helpers/bigIntegerHelper.ts#L63)*
-
-
+*Defined in [helpers/bigIntegerHelper.ts:63](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/helpers/bigIntegerHelper.ts#L63)*
 
 Convert bigInteger to trits.
-
 
 **Parameters:**
 
@@ -79,32 +62,19 @@ Convert bigInteger to trits.
 | offset | `number`   |  The offset to place the trits in the array. |
 | length | `number`   |  The length of the array. |
 
-
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
 <a id="bytestobiginteger"></a>
 
-### «Static» bytesToBigInteger
+### `<Static>` bytesToBigInteger
 
-► **bytesToBigInteger**(source: *`ArrayBuffer`*, offset: *`number`*, length: *`number`*): `BigInteger`
+▸ **bytesToBigInteger**(source: *`ArrayBuffer`*, offset: *`number`*, length: *`number`*): `BigInteger`
 
-
-
-*Defined in [helpers/bigIntegerHelper.ts:171](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/helpers/bigIntegerHelper.ts#L171)*
-
-
+*Defined in [helpers/bigIntegerHelper.ts:171](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/helpers/bigIntegerHelper.ts#L171)*
 
 Convert bytes to a bigInteger.
-
 
 **Parameters:**
 
@@ -114,32 +84,19 @@ Convert bytes to a bigInteger.
 | offset | `number`   |  The offset within the bytes to start conversion. |
 | length | `number`   |  The length of the bytes to use for conversion. |
 
-
-
-
-
 **Returns:** `BigInteger`
-
-
-
-
 
 ___
 
 <a id="tritstobiginteger"></a>
 
-### «Static» tritsToBigInteger
+### `<Static>` tritsToBigInteger
 
-► **tritsToBigInteger**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `BigInteger`
+▸ **tritsToBigInteger**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `BigInteger`
 
-
-
-*Defined in [helpers/bigIntegerHelper.ts:30](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/helpers/bigIntegerHelper.ts#L30)*
-
-
+*Defined in [helpers/bigIntegerHelper.ts:30](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/helpers/bigIntegerHelper.ts#L30)*
 
 Convert trits to a bigInteger.
-
 
 **Parameters:**
 
@@ -149,16 +106,7 @@ Convert trits to a bigInteger.
 | offset | `number`   |  Offset within the array to start. |
 | length | `number`   |  The length of the trits array to convert. |
 
-
-
-
-
 **Returns:** `BigInteger`
 
-
-
-
-
 ___
-
 

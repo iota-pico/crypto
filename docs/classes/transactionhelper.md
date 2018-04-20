@@ -1,11 +1,12 @@
 [@iota-pico/crypto](../README.md) > [TransactionHelper](../classes/transactionhelper.md)
 
-
-
 # Class: TransactionHelper
 
-
 Helper class for transactions. Converted [https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/signing/signing.js](https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/signing/signing.js)
+
+## Hierarchy
+
+**TransactionHelper**
 
 ## Index
 
@@ -13,24 +14,19 @@ Helper class for transactions. Converted [https://github.com/iotaledger/iota.lib
 
 * [hash](transactionhelper.md#hash)
 
-
-
 ---
+
 ## Methods
+
 <a id="hash"></a>
 
-### «Static» hash
+### `<Static>` hash
 
-► **hash**(transaction: *`Transaction`*): `Hash`
+▸ **hash**(transaction: *`Transaction`*): `Hash`
 
-
-
-*Defined in [helpers/transactionHelper.ts:18](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/helpers/transactionHelper.ts#L18)*
-
-
+*Defined in [helpers/transactionHelper.ts:18](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/helpers/transactionHelper.ts#L18)*
 
 Create the hash for a transaction.
-
 
 **Parameters:**
 
@@ -38,18 +34,8 @@ Create the hash for a transaction.
 | ------ | ------ | ------ |
 | transaction | `Transaction`   |  The transaction to generate the hash. |
 
-
-
-
-
 **Returns:** `Hash`
 The hash of thr transaction.
 
-
-
-
-
-
 ___
-
 

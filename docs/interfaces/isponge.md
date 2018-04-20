@@ -1,35 +1,43 @@
 [@iota-pico/crypto](../README.md) > [ISponge](../interfaces/isponge.md)
 
-
-
 # Interface: ISponge
-
 
 Represents an interface to hash trits.
 *__interface__*: 
 
+## Hierarchy
+
+**ISponge**
 
 ## Implemented by
 
 * [Curl](../classes/curl.md)
 * [Kerl](../classes/kerl.md)
 
+## Index
+
+### Methods
+
+* [absorb](isponge.md#absorb)
+* [getConstant](isponge.md#getconstant)
+* [getState](isponge.md#getstate)
+* [initialize](isponge.md#initialize)
+* [reset](isponge.md#reset)
+* [squeeze](isponge.md#squeeze)
+
+---
 
 ## Methods
+
 <a id="absorb"></a>
 
 ###  absorb
 
-► **absorb**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
+▸ **absorb**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
-
-
-*Defined in [interfaces/ISponge.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/interfaces/ISponge.ts#L36)*
-
-
+*Defined in [interfaces/ISponge.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L36)*
 
 Absorb trits into the hash.
-
 
 **Parameters:**
 
@@ -39,15 +47,7 @@ Absorb trits into the hash.
 | offset | `number`   |  The offset into the trits to absorb from. |
 | length | `number`   |  The number of trits to absorb. |
 
-
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
@@ -55,18 +55,12 @@ ___
 
 ###  getConstant
 
-► **getConstant**(name: *`string`*): `number`
+▸ **getConstant**(name: *`string`*): `number`
 
-
-
-*Defined in [interfaces/ISponge.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/interfaces/ISponge.ts#L11)*
-
-
+*Defined in [interfaces/ISponge.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L11)*
 
 Get the constant for the spone.
 *__name__*: The name of the contant to get.
-
-
 
 **Parameters:**
 
@@ -74,17 +68,8 @@ Get the constant for the spone.
 | ------ | ------ | ------ |
 | name | `string`   |  - |
 
-
-
-
-
 **Returns:** `number`
 The constant.
-
-
-
-
-
 
 ___
 
@@ -92,26 +77,14 @@ ___
 
 ###  getState
 
-► **getState**(): `Int8Array`
+▸ **getState**(): `Int8Array`
 
-
-
-*Defined in [interfaces/ISponge.ts:17](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/interfaces/ISponge.ts#L17)*
-
-
+*Defined in [interfaces/ISponge.ts:17](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L17)*
 
 Get the state.
 
-
-
-
 **Returns:** `Int8Array`
 The state.
-
-
-
-
-
 
 ___
 
@@ -119,16 +92,11 @@ ___
 
 ###  initialize
 
-► **initialize**(state?: *`Int8Array`*): `void`
+▸ **initialize**(state?: *`Int8Array`*): `void`
 
-
-
-*Defined in [interfaces/ISponge.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/interfaces/ISponge.ts#L23)*
-
-
+*Defined in [interfaces/ISponge.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L23)*
 
 Initialise the hasher.
-
 
 **Parameters:**
 
@@ -136,15 +104,7 @@ Initialise the hasher.
 | ------ | ------ | ------ |
 | state | `Int8Array`   |  The initial state for the hasher. |
 
-
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
@@ -152,24 +112,13 @@ ___
 
 ###  reset
 
-► **reset**(): `void`
+▸ **reset**(): `void`
 
-
-
-*Defined in [interfaces/ISponge.ts:28](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/interfaces/ISponge.ts#L28)*
-
-
+*Defined in [interfaces/ISponge.ts:28](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L28)*
 
 Reset the hasher.
 
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
@@ -177,16 +126,11 @@ ___
 
 ###  squeeze
 
-► **squeeze**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
+▸ **squeeze**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
-
-
-*Defined in [interfaces/ISponge.ts:44](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/interfaces/ISponge.ts#L44)*
-
-
+*Defined in [interfaces/ISponge.ts:44](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L44)*
 
 Squeeze trits into the hash.
-
 
 **Parameters:**
 
@@ -196,16 +140,7 @@ Squeeze trits into the hash.
 | offset | `number`   |  The offset into the trits to squeeze from. |
 | length | `number`   |  The number of trits to squeeze. |
 
-
-
-
-
 **Returns:** `void`
 
-
-
-
-
 ___
-
 

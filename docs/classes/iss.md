@@ -1,11 +1,12 @@
 [@iota-pico/crypto](../README.md) > [ISS](../classes/iss.md)
 
-
-
 # Class: ISS
 
-
 ISS Hashing functions. Converted [https://github.com/iotaledger/iri/src/main/java/com/iota/iri/hash/ISS.java](https://github.com/iotaledger/iri/src/main/java/com/iota/iri/hash/ISS.java)
+
+## Hierarchy
+
+**ISS**
 
 ## Index
 
@@ -21,24 +22,19 @@ ISS Hashing functions. Converted [https://github.com/iotaledger/iri/src/main/jav
 * [subseedToDigest](iss.md#subseedtodigest)
 * [validateSignatures](iss.md#validatesignatures)
 
-
-
 ---
+
 ## Methods
+
 <a id="address"></a>
 
-### «Static» address
+### `<Static>` address
 
-► **address**(digests: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
+▸ **address**(digests: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
 
-
-
-*Defined in [hash/iss.ts:203](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/hash/iss.ts#L203)*
-
-
+*Defined in [hash/iss.ts:203](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/hash/iss.ts#L203)*
 
 Create the address for the digests.
-
 
 **Parameters:**
 
@@ -47,34 +43,20 @@ Create the address for the digests.
 | digests | `Int8Array`  | - |   The digests to create the address for. |
 | spongeType | `string`  | &quot;kerl&quot; |   The sponge type to use for operations. |
 
-
-
-
-
 **Returns:** `Int8Array`
 the address trits.
-
-
-
-
-
 
 ___
 
 <a id="digest"></a>
 
-### «Static» digest
+### `<Static>` digest
 
-► **digest**(normalizedBundleFragment: *`Int8Array`*, signatureMessageFragment: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
+▸ **digest**(normalizedBundleFragment: *`Int8Array`*, signatureMessageFragment: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
 
-
-
-*Defined in [hash/iss.ts:235](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/hash/iss.ts#L235)*
-
-
+*Defined in [hash/iss.ts:235](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/hash/iss.ts#L235)*
 
 Create digest of the normalized bundle fragment.
-
 
 **Parameters:**
 
@@ -84,34 +66,20 @@ Create digest of the normalized bundle fragment.
 | signatureMessageFragment | `Int8Array`  | - |   The trits for signature message fragment. |
 | spongeType | `string`  | &quot;kerl&quot; |   The sponge type to use for operations. |
 
-
-
-
-
 **Returns:** `Int8Array`
 The digest of the bundle and signature message fragment.
-
-
-
-
-
 
 ___
 
 <a id="digests"></a>
 
-### «Static» digests
+### `<Static>` digests
 
-► **digests**(subseed: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
+▸ **digests**(subseed: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
 
-
-
-*Defined in [hash/iss.ts:142](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/hash/iss.ts#L142)*
-
-
+*Defined in [hash/iss.ts:142](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/hash/iss.ts#L142)*
 
 Create the digests for the given subseed.
-
 
 **Parameters:**
 
@@ -120,34 +88,20 @@ Create the digests for the given subseed.
 | subseed | `Int8Array`  | - |   To create the digests for. |
 | spongeType | `string`  | &quot;kerl&quot; |   The sponge type to use for operations. |
 
-
-
-
-
 **Returns:** `Int8Array`
 The digests.
-
-
-
-
-
 
 ___
 
 <a id="key"></a>
 
-### «Static» key
+### `<Static>` key
 
-► **key**(seed: *`Hash`*, index: *`number`*, security: *`AddressSecurity`*, spongeType?: *`string`*): `Int8Array`
+▸ **key**(seed: *`Hash`*, index: *`number`*, security: *`AddressSecurity`*, spongeType?: *`string`*): `Int8Array`
 
-
-
-*Defined in [hash/iss.ts:88](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/hash/iss.ts#L88)*
-
-
+*Defined in [hash/iss.ts:88](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/hash/iss.ts#L88)*
 
 Create the key for the seed.
-
 
 **Parameters:**
 
@@ -158,34 +112,20 @@ Create the key for the seed.
 | security | `AddressSecurity`  | - |   - |
 | spongeType | `string`  | &quot;kerl&quot; |   The sponge type to use for operations. |
 
-
-
-
-
 **Returns:** `Int8Array`
 the key.
-
-
-
-
-
 
 ___
 
 <a id="normalizedbundle"></a>
 
-### «Static» normalizedBundle
+### `<Static>` normalizedBundle
 
-► **normalizedBundle**(bundleHash: *`Hash`*, spongeType?: *`string`*): `Int8Array`
+▸ **normalizedBundle**(bundleHash: *`Hash`*, spongeType?: *`string`*): `Int8Array`
 
-
-
-*Defined in [hash/iss.ts:329](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/hash/iss.ts#L329)*
-
-
+*Defined in [hash/iss.ts:329](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/hash/iss.ts#L329)*
 
 Create a normalized bundle.
-
 
 **Parameters:**
 
@@ -194,34 +134,20 @@ Create a normalized bundle.
 | bundleHash | `Hash`  | - |   The hash of the bundle. |
 | spongeType | `string`  | &quot;curl81&quot; |   The sponge type to use for operations. |
 
-
-
-
-
 **Returns:** `Int8Array`
 the normalized bundle.
-
-
-
-
-
 
 ___
 
 <a id="signaturemessagefragment"></a>
 
-### «Static» signatureMessageFragment
+### `<Static>` signatureMessageFragment
 
-► **signatureMessageFragment**(normalizedBundleFragment: *`Int8Array`*, keyFragment: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
+▸ **signatureMessageFragment**(normalizedBundleFragment: *`Int8Array`*, keyFragment: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
 
-
-
-*Defined in [hash/iss.ts:434](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/hash/iss.ts#L434)*
-
-
+*Defined in [hash/iss.ts:434](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/hash/iss.ts#L434)*
 
 Create a signed signature message fragment.
-
 
 **Parameters:**
 
@@ -231,34 +157,20 @@ Create a signed signature message fragment.
 | keyFragment | `Int8Array`  | - |   The key fragment to sign with. |
 | spongeType | `string`  | &quot;kerl&quot; |   The sponge type to use for operations. |
 
-
-
-
-
 **Returns:** `Int8Array`
 The signed fragment.
-
-
-
-
-
 
 ___
 
 <a id="subseed"></a>
 
-### «Static» subseed
+### `<Static>` subseed
 
-► **subseed**(seed: *`Int8Array`*, index: *`number`*, spongeType?: *`string`*): `Int8Array`
+▸ **subseed**(seed: *`Int8Array`*, index: *`number`*, spongeType?: *`string`*): `Int8Array`
 
-
-
-*Defined in [hash/iss.ts:42](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/hash/iss.ts#L42)*
-
-
+*Defined in [hash/iss.ts:42](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/hash/iss.ts#L42)*
 
 Get the subseed for the seed and index.
-
 
 **Parameters:**
 
@@ -268,34 +180,20 @@ Get the subseed for the seed and index.
 | index | `number`  | - |   The index for the seed. |
 | spongeType | `string`  | &quot;curl27&quot; |   The sponge type to use for operations. |
 
-
-
-
-
 **Returns:** `Int8Array`
 The subseed.
-
-
-
-
-
 
 ___
 
 <a id="subseedtodigest"></a>
 
-### «Static» subseedToDigest
+### `<Static>` subseedToDigest
 
-► **subseedToDigest**(subseed: *`Int8Array`*, security: *`AddressSecurity`*, spongeType?: *`string`*): `Int8Array`
+▸ **subseedToDigest**(subseed: *`Int8Array`*, security: *`AddressSecurity`*, spongeType?: *`string`*): `Int8Array`
 
-
-
-*Defined in [hash/iss.ts:279](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/hash/iss.ts#L279)*
-
-
+*Defined in [hash/iss.ts:279](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/hash/iss.ts#L279)*
 
 Get the digest for the subseed.
-
 
 **Parameters:**
 
@@ -305,34 +203,20 @@ Get the digest for the subseed.
 | security | `AddressSecurity`  | - |   The security level. |
 | spongeType | `string`  | &quot;curl27&quot; |   The sponge type to use for operations. |
 
-
-
-
-
 **Returns:** `Int8Array`
 The digest.
-
-
-
-
-
 
 ___
 
 <a id="validatesignatures"></a>
 
-### «Static» validateSignatures
+### `<Static>` validateSignatures
 
-► **validateSignatures**(expectedAddress: *`Address`*, signatureMessageFragments: *`SignatureMessageFragment`[]*, bundleHash: *`Hash`*, spongeType?: *`string`*): `boolean`
+▸ **validateSignatures**(expectedAddress: *`Address`*, signatureMessageFragments: *`SignatureMessageFragment`[]*, bundleHash: *`Hash`*, spongeType?: *`string`*): `boolean`
 
-
-
-*Defined in [hash/iss.ts:387](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/hash/iss.ts#L387)*
-
-
+*Defined in [hash/iss.ts:387](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/hash/iss.ts#L387)*
 
 Validate the signature fragments from the address.
-
 
 **Parameters:**
 
@@ -343,18 +227,8 @@ Validate the signature fragments from the address.
 | bundleHash | `Hash`  | - |   The hash for the bundle. |
 | spongeType | `string`  | &quot;kerl&quot; |   The sponge type to use for operations. |
 
-
-
-
-
 **Returns:** `boolean`
 True if the signature message fragment are signed by the expected address.
 
-
-
-
-
-
 ___
-
 

@@ -1,11 +1,12 @@
 [@iota-pico/crypto](../README.md) > [Kerl](../classes/kerl.md)
 
-
-
 # Class: Kerl
 
-
 Implementation of ISponge using Kerl algorithm. [https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java](https://github.com/iotaledger/iri/blob/dev/src/main/java/com/iota/iri/hash/Kerl.java)
+
+## Hierarchy
+
+**Kerl**
 
 ## Implements
 
@@ -17,7 +18,6 @@ Implementation of ISponge using Kerl algorithm. [https://github.com/iotaledger/i
 
 * [constructor](kerl.md#constructor)
 
-
 ### Methods
 
 * [absorb](kerl.md#absorb)
@@ -27,47 +27,35 @@ Implementation of ISponge using Kerl algorithm. [https://github.com/iotaledger/i
 * [reset](kerl.md#reset)
 * [squeeze](kerl.md#squeeze)
 
-
-
 ---
-## Constructors
-<a id="constructor"></a>
 
+## Constructors
+
+<a id="constructor"></a>
 
 ### ⊕ **new Kerl**(): [Kerl](kerl.md)
 
-
-*Defined in [sponges/kerl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L21)*
-
-
+*Defined in [sponges/kerl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/kerl.ts#L21)*
 
 Create a new instance of Kerl.
-
-
-
 
 **Returns:** [Kerl](kerl.md)
 
 ---
 
-
 ## Methods
+
 <a id="absorb"></a>
 
 ###  absorb
 
-► **absorb**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
-
-
+▸ **absorb**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[absorb](../interfaces/isponge.md#absorb)*
 
-*Defined in [sponges/kerl.ts:75](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L75)*
-
-
+*Defined in [sponges/kerl.ts:75](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/kerl.ts#L75)*
 
 Absorb trits into the hash.
-
 
 **Parameters:**
 
@@ -77,15 +65,7 @@ Absorb trits into the hash.
 | offset | `number`   |  The offset into the trits to absorb from. |
 | length | `number`   |  The number of trits to absorb. |
 
-
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
@@ -93,20 +73,14 @@ ___
 
 ###  getConstant
 
-► **getConstant**(name: *`string`*): `number`
-
-
+▸ **getConstant**(name: *`string`*): `number`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getConstant](../interfaces/isponge.md#getconstant)*
 
-*Defined in [sponges/kerl.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L35)*
-
-
+*Defined in [sponges/kerl.ts:35](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/kerl.ts#L35)*
 
 Get the constant for the spone.
 *__name__*: The name of the contant to get.
-
-
 
 **Parameters:**
 
@@ -114,17 +88,8 @@ Get the constant for the spone.
 | ------ | ------ | ------ |
 | name | `string`   |  - |
 
-
-
-
-
 **Returns:** `number`
 The constant.
-
-
-
-
-
 
 ___
 
@@ -132,28 +97,16 @@ ___
 
 ###  getState
 
-► **getState**(): `Int8Array`
-
-
+▸ **getState**(): `Int8Array`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getState](../interfaces/isponge.md#getstate)*
 
-*Defined in [sponges/kerl.ts:51](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L51)*
-
-
+*Defined in [sponges/kerl.ts:51](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/kerl.ts#L51)*
 
 Get the state.
 
-
-
-
 **Returns:** `Int8Array`
 The state.
-
-
-
-
-
 
 ___
 
@@ -161,18 +114,13 @@ ___
 
 ###  initialize
 
-► **initialize**(state?: *`Int8Array`*): `void`
-
-
+▸ **initialize**(state?: *`Int8Array`*): `void`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[initialize](../interfaces/isponge.md#initialize)*
 
-*Defined in [sponges/kerl.ts:59](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L59)*
-
-
+*Defined in [sponges/kerl.ts:59](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/kerl.ts#L59)*
 
 Initialise the hasher.
-
 
 **Parameters:**
 
@@ -180,15 +128,7 @@ Initialise the hasher.
 | ------ | ------ | ------ |
 | state | `Int8Array`   |  The initial state for the hasher. |
 
-
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
@@ -196,26 +136,15 @@ ___
 
 ###  reset
 
-► **reset**(): `void`
-
-
+▸ **reset**(): `void`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[reset](../interfaces/isponge.md#reset)*
 
-*Defined in [sponges/kerl.ts:65](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L65)*
-
-
+*Defined in [sponges/kerl.ts:65](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/kerl.ts#L65)*
 
 Reset the hasher.
 
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
@@ -223,18 +152,13 @@ ___
 
 ###  squeeze
 
-► **squeeze**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
-
-
+▸ **squeeze**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[squeeze](../interfaces/isponge.md#squeeze)*
 
-*Defined in [sponges/kerl.ts:116](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/kerl.ts#L116)*
-
-
+*Defined in [sponges/kerl.ts:116](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/kerl.ts#L116)*
 
 Squeeze trits into the hash.
-
 
 **Parameters:**
 
@@ -244,16 +168,7 @@ Squeeze trits into the hash.
 | offset | `number`   |  The offset into the trits to squeeze from. |
 | length | `number`   |  The number of trits to squeeze. |
 
-
-
-
-
 **Returns:** `void`
 
-
-
-
-
 ___
-
 

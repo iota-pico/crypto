@@ -1,6 +1,4 @@
 
-
-
 #  @iota-pico/crypto
 
 ## Index
@@ -18,12 +16,10 @@
 * [SpongeFactory](classes/spongefactory.md)
 * [TransactionHelper](classes/transactionhelper.md)
 
-
 ### Interfaces
 
 * [IProofOfWork](interfaces/iproofofwork.md)
 * [ISponge](interfaces/isponge.md)
 
-
-
 ---
+

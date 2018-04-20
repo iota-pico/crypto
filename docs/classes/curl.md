@@ -1,11 +1,12 @@
 [@iota-pico/crypto](../README.md) > [Curl](../classes/curl.md)
 
-
-
 # Class: Curl
 
-
 Implementation of ISponge using Curl algorithm. [https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js](https://github.com/iotaledger/iota.lib.js/blob/master/lib/crypto/curl/curl.js)
+
+## Hierarchy
+
+**Curl**
 
 ## Implements
 
@@ -17,13 +18,11 @@ Implementation of ISponge using Curl algorithm. [https://github.com/iotaledger/i
 
 * [constructor](curl.md#constructor)
 
-
 ### Properties
 
 * [HASH_LENGTH](curl.md#hash_length)
 * [NUMBER_OF_ROUNDS](curl.md#number_of_rounds)
 * [STATE_LENGTH](curl.md#state_length)
-
 
 ### Methods
 
@@ -34,22 +33,17 @@ Implementation of ISponge using Curl algorithm. [https://github.com/iotaledger/i
 * [reset](curl.md#reset)
 * [squeeze](curl.md#squeeze)
 
-
-
 ---
-## Constructors
-<a id="constructor"></a>
 
+## Constructors
+
+<a id="constructor"></a>
 
 ### ⊕ **new Curl**(rounds?: *`number`*): [Curl](curl.md)
 
-
-*Defined in [sponges/curl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/curl.ts#L21)*
-
-
+*Defined in [sponges/curl.ts:21](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/curl.ts#L21)*
 
 Create a new instance of Curl.
-
 
 **Parameters:**
 
@@ -57,76 +51,55 @@ Create a new instance of Curl.
 | ------ | ------ | ------ | ------ |
 | rounds | `number`  |  Curl.NUMBER_OF_ROUNDS |   The number of rounds to use. |
 
-
-
-
-
 **Returns:** [Curl](curl.md)
 
 ---
 
-
 ## Properties
+
 <a id="hash_length"></a>
 
-### «Static» HASH_LENGTH
+### `<Static>` HASH_LENGTH
 
 **●  HASH_LENGTH**:  *`number`*  = 243
 
-*Defined in [sponges/curl.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/curl.ts#L11)*
-
-
-
-
+*Defined in [sponges/curl.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/curl.ts#L11)*
 
 ___
 
 <a id="number_of_rounds"></a>
 
-### «Static» NUMBER_OF_ROUNDS
+### `<Static>` NUMBER_OF_ROUNDS
 
 **●  NUMBER_OF_ROUNDS**:  *`number`*  = 81
 
-*Defined in [sponges/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/curl.ts#L12)*
-
-
-
-
+*Defined in [sponges/curl.ts:12](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/curl.ts#L12)*
 
 ___
 
 <a id="state_length"></a>
 
-### «Static» STATE_LENGTH
+### `<Static>` STATE_LENGTH
 
 **●  STATE_LENGTH**:  *`number`*  =  Curl.HASH_LENGTH * 3
 
-*Defined in [sponges/curl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/curl.ts#L13)*
-
-
-
-
+*Defined in [sponges/curl.ts:13](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/curl.ts#L13)*
 
 ___
 
-
 ## Methods
+
 <a id="absorb"></a>
 
 ###  absorb
 
-► **absorb**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
-
-
+▸ **absorb**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[absorb](../interfaces/isponge.md#absorb)*
 
-*Defined in [sponges/curl.ts:83](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/curl.ts#L83)*
-
-
+*Defined in [sponges/curl.ts:83](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/curl.ts#L83)*
 
 Absorb trits into the hash.
-
 
 **Parameters:**
 
@@ -136,15 +109,7 @@ Absorb trits into the hash.
 | offset | `number`   |  The offset into the trits to absorb from. |
 | length | `number`   |  The number of trits to absorb. |
 
-
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
@@ -152,20 +117,14 @@ ___
 
 ###  getConstant
 
-► **getConstant**(name: *`string`*): `number`
-
-
+▸ **getConstant**(name: *`string`*): `number`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getConstant](../interfaces/isponge.md#getconstant)*
 
-*Defined in [sponges/curl.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/curl.ts#L36)*
-
-
+*Defined in [sponges/curl.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/curl.ts#L36)*
 
 Get the constant for the spone.
 *__name__*: The name of the contant to get.
-
-
 
 **Parameters:**
 
@@ -173,17 +132,8 @@ Get the constant for the spone.
 | ------ | ------ | ------ |
 | name | `string`   |  - |
 
-
-
-
-
 **Returns:** `number`
 The constant.
-
-
-
-
-
 
 ___
 
@@ -191,28 +141,16 @@ ___
 
 ###  getState
 
-► **getState**(): `Int8Array`
-
-
+▸ **getState**(): `Int8Array`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getState](../interfaces/isponge.md#getstate)*
 
-*Defined in [sponges/curl.ts:54](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/curl.ts#L54)*
-
-
+*Defined in [sponges/curl.ts:54](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/curl.ts#L54)*
 
 Get the state.
 
-
-
-
 **Returns:** `Int8Array`
 The state.
-
-
-
-
-
 
 ___
 
@@ -220,18 +158,13 @@ ___
 
 ###  initialize
 
-► **initialize**(state?: *`Int8Array`*): `void`
-
-
+▸ **initialize**(state?: *`Int8Array`*): `void`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[initialize](../interfaces/isponge.md#initialize)*
 
-*Defined in [sponges/curl.ts:62](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/curl.ts#L62)*
-
-
+*Defined in [sponges/curl.ts:62](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/curl.ts#L62)*
 
 Initialise the hasher.
-
 
 **Parameters:**
 
@@ -239,15 +172,7 @@ Initialise the hasher.
 | ------ | ------ | ------ |
 | state | `Int8Array`   |  The initial state for the hasher. |
 
-
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
@@ -255,26 +180,15 @@ ___
 
 ###  reset
 
-► **reset**(): `void`
-
-
+▸ **reset**(): `void`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[reset](../interfaces/isponge.md#reset)*
 
-*Defined in [sponges/curl.ts:73](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/curl.ts#L73)*
-
-
+*Defined in [sponges/curl.ts:73](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/curl.ts#L73)*
 
 Reset the hasher.
 
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
@@ -282,18 +196,13 @@ ___
 
 ###  squeeze
 
-► **squeeze**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
-
-
+▸ **squeeze**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
 *Implementation of [ISponge](../interfaces/isponge.md).[squeeze](../interfaces/isponge.md#squeeze)*
 
-*Defined in [sponges/curl.ts:120](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/sponges/curl.ts#L120)*
-
-
+*Defined in [sponges/curl.ts:120](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/sponges/curl.ts#L120)*
 
 Squeeze trits into the hash.
-
 
 **Parameters:**
 
@@ -303,16 +212,7 @@ Squeeze trits into the hash.
 | offset | `number`   |  The offset into the trits to squeeze from. |
 | length | `number`   |  The number of trits to squeeze. |
 
-
-
-
-
 **Returns:** `void`
 
-
-
-
-
 ___
-
 

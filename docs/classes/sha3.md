@@ -1,11 +1,12 @@
 [@iota-pico/crypto](../README.md) > [Sha3](../classes/sha3.md)
 
-
-
 # Class: Sha3
 
-
 Sha3 implementation.
+
+## Hierarchy
+
+**Sha3**
 
 ## Index
 
@@ -13,11 +14,9 @@ Sha3 implementation.
 
 * [constructor](sha3.md#constructor)
 
-
 ### Properties
 
 * [KECCAK_PADDING](sha3.md#keccak_padding)
-
 
 ### Methods
 
@@ -25,22 +24,17 @@ Sha3 implementation.
 * [reset](sha3.md#reset)
 * [update](sha3.md#update)
 
-
-
 ---
-## Constructors
-<a id="constructor"></a>
 
+## Constructors
+
+<a id="constructor"></a>
 
 ### ⊕ **new Sha3**(bits: *`number`*, padding: *`Uint32Array`*, outputBits: *`number`*): [Sha3](sha3.md)
 
-
-*Defined in [digests/sha3.ts:42](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/digests/sha3.ts#L42)*
-
-
+*Defined in [digests/sha3.ts:42](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/digests/sha3.ts#L42)*
 
 Create a new instance of SHA3.
-
 
 **Parameters:**
 
@@ -50,56 +44,36 @@ Create a new instance of SHA3.
 | padding | `Uint32Array`   |  The padding to use. |
 | outputBits | `number`   |  The number of output bits. |
 
-
-
-
-
 **Returns:** [Sha3](sha3.md)
 
 ---
 
-
 ## Properties
+
 <a id="keccak_padding"></a>
 
-### «Static» KECCAK_PADDING
+### `<Static>` KECCAK_PADDING
 
 **●  KECCAK_PADDING**:  *`Uint32Array`*  =  new Uint32Array([1, 256, 65536, 16777216])
 
-*Defined in [digests/sha3.ts:9](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/digests/sha3.ts#L9)*
-
-
-
-
+*Defined in [digests/sha3.ts:9](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/digests/sha3.ts#L9)*
 
 ___
 
-
 ## Methods
+
 <a id="digest"></a>
 
 ###  digest
 
-► **digest**(): `ArrayBuffer`
+▸ **digest**(): `ArrayBuffer`
 
-
-
-*Defined in [digests/sha3.ts:115](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/digests/sha3.ts#L115)*
-
-
+*Defined in [digests/sha3.ts:115](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/digests/sha3.ts#L115)*
 
 Finalize and return the hash for the digest, will also reset the state.
 
-
-
-
 **Returns:** `ArrayBuffer`
 Array buffer containing the digest.
-
-
-
-
-
 
 ___
 
@@ -107,24 +81,13 @@ ___
 
 ###  reset
 
-► **reset**(): `void`
+▸ **reset**(): `void`
 
-
-
-*Defined in [digests/sha3.ts:64](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/digests/sha3.ts#L64)*
-
-
+*Defined in [digests/sha3.ts:64](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/digests/sha3.ts#L64)*
 
 Reset the digest.
 
-
-
-
 **Returns:** `void`
-
-
-
-
 
 ___
 
@@ -132,16 +95,11 @@ ___
 
 ###  update
 
-► **update**(input: *`ArrayBuffer`*): `void`
+▸ **update**(input: *`ArrayBuffer`*): `void`
 
-
-
-*Defined in [digests/sha3.ts:76](https://github.com/iotaeco/iota-pico-crypto/blob/18198f8/src/digests/sha3.ts#L76)*
-
-
+*Defined in [digests/sha3.ts:76](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/digests/sha3.ts#L76)*
 
 Update the digest.
-
 
 **Parameters:**
 
@@ -149,16 +107,7 @@ Update the digest.
 | ------ | ------ | ------ |
 | input | `ArrayBuffer`   |  Array of data to use in the update. |
 
-
-
-
-
 **Returns:** `void`
 
-
-
-
-
 ___
-
 
