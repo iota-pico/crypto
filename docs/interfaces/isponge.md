@@ -35,7 +35,7 @@ Represents an interface to hash trits.
 
 ▸ **absorb**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
-*Defined in [interfaces/ISponge.ts:36](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L36)*
+*Defined in [interfaces/ISponge.ts:36](https://github.com/iota-pico/crypto/blob/334d008/src/interfaces/ISponge.ts#L36)*
 
 Absorb trits into the hash.
 
@@ -57,7 +57,7 @@ ___
 
 ▸ **getConstant**(name: *`string`*): `number`
 
-*Defined in [interfaces/ISponge.ts:11](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L11)*
+*Defined in [interfaces/ISponge.ts:11](https://github.com/iota-pico/crypto/blob/334d008/src/interfaces/ISponge.ts#L11)*
 
 Get the constant for the spone.
 *__name__*: The name of the contant to get.
@@ -79,7 +79,7 @@ ___
 
 ▸ **getState**(): `Int8Array`
 
-*Defined in [interfaces/ISponge.ts:17](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L17)*
+*Defined in [interfaces/ISponge.ts:17](https://github.com/iota-pico/crypto/blob/334d008/src/interfaces/ISponge.ts#L17)*
 
 Get the state.
 
@@ -94,7 +94,7 @@ ___
 
 ▸ **initialize**(state?: *`Int8Array`*): `void`
 
-*Defined in [interfaces/ISponge.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L23)*
+*Defined in [interfaces/ISponge.ts:23](https://github.com/iota-pico/crypto/blob/334d008/src/interfaces/ISponge.ts#L23)*
 
 Initialise the hasher.
 
@@ -114,7 +114,7 @@ ___
 
 ▸ **reset**(): `void`
 
-*Defined in [interfaces/ISponge.ts:28](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L28)*
+*Defined in [interfaces/ISponge.ts:28](https://github.com/iota-pico/crypto/blob/334d008/src/interfaces/ISponge.ts#L28)*
 
 Reset the hasher.
 
@@ -128,7 +128,7 @@ ___
 
 ▸ **squeeze**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
-*Defined in [interfaces/ISponge.ts:44](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/interfaces/ISponge.ts#L44)*
+*Defined in [interfaces/ISponge.ts:44](https://github.com/iota-pico/crypto/blob/334d008/src/interfaces/ISponge.ts#L44)*
 
 Squeeze trits into the hash.
 

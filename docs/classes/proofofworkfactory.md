@@ -34,7 +34,7 @@ Factory to generate proof of work.
 
 *Inherited from FactoryBase.create*
 
-*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:35*
+*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:35*
 
 Create an instance of an object from the factory.
 
@@ -58,7 +58,7 @@ ___
 
 *Inherited from FactoryBase.exists*
 
-*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:22*
+*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:22*
 
 Does the factory contain a specific type.
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **getInstance**(): `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
 
-*Defined in [factories/proofOfWorkFactory.ts:31](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/factories/proofOfWorkFactory.ts#L31)*
+*Defined in [factories/proofOfWorkFactory.ts:31](https://github.com/iota-pico/crypto/blob/334d008/src/factories/proofOfWorkFactory.ts#L31)*
 
 **Returns:** `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
 
@@ -93,7 +93,7 @@ ___
 
 *Inherited from FactoryBase.register*
 
-*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:11*
+*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:11*
 
 Register a new type with the factory.
 
@@ -116,7 +116,7 @@ ___
 
 *Inherited from FactoryBase.types*
 
-*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:28*
+*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:28*
 
 List the types in the factory.
 
@@ -133,7 +133,7 @@ ___
 
 *Inherited from FactoryBase.unregister*
 
-*Defined in D:/Workarea/iotaeco/iota-pico-crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:16*
+*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:16*
 
 Unregister a type from the factory.
 
@@ -153,7 +153,7 @@ ___
 
 ▸ **instance**(): `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
 
-*Defined in [factories/proofOfWorkFactory.ts:23](https://github.com/iotaeco/iota-pico-crypto/blob/c97544d/src/factories/proofOfWorkFactory.ts#L23)*
+*Defined in [factories/proofOfWorkFactory.ts:23](https://github.com/iota-pico/crypto/blob/334d008/src/factories/proofOfWorkFactory.ts#L23)*
 
 Get the instance of the factory.
 
