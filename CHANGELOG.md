@@ -6,6 +6,8 @@
 * Added subseed() method to ISS
 * Added subseedToDigest() method to ISS
 * Added curl27 and curl81 defaults to SpongeFactory
+* Repo rename
+* Updated webpack major ver
 
 ## v0.9.2
 
