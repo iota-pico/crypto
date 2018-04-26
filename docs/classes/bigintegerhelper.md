@@ -27,7 +27,7 @@ Helper class to convert between BigInteger and other types. Converted from [http
 
 ▸ **bigIntegerToBytes**(value: *`BigInteger`*, destination: *`ArrayBuffer`*, offset: *`number`*): `void`
 
-*Defined in [helpers/bigIntegerHelper.ts:112](https://github.com/iota-pico/crypto/blob/594d2a7/src/helpers/bigIntegerHelper.ts#L112)*
+*Defined in [helpers/bigIntegerHelper.ts:113](https://github.com/iota-pico/crypto/blob/a29d55a/src/helpers/bigIntegerHelper.ts#L113)*
 
 Convert the bigInteger into bytes.
 
@@ -49,7 +49,7 @@ ___
 
 ▸ **bigIntegerToTrits**(value: *`BigInteger`*, trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
-*Defined in [helpers/bigIntegerHelper.ts:63](https://github.com/iota-pico/crypto/blob/594d2a7/src/helpers/bigIntegerHelper.ts#L63)*
+*Defined in [helpers/bigIntegerHelper.ts:64](https://github.com/iota-pico/crypto/blob/a29d55a/src/helpers/bigIntegerHelper.ts#L64)*
 
 Convert bigInteger to trits.
 
@@ -72,7 +72,7 @@ ___
 
 ▸ **bytesToBigInteger**(source: *`ArrayBuffer`*, offset: *`number`*, length: *`number`*): `BigInteger`
 
-*Defined in [helpers/bigIntegerHelper.ts:171](https://github.com/iota-pico/crypto/blob/594d2a7/src/helpers/bigIntegerHelper.ts#L171)*
+*Defined in [helpers/bigIntegerHelper.ts:173](https://github.com/iota-pico/crypto/blob/a29d55a/src/helpers/bigIntegerHelper.ts#L173)*
 
 Convert bytes to a bigInteger.
 
@@ -85,6 +85,7 @@ Convert bytes to a bigInteger.
 | length | `number`   |  The length of the bytes to use for conversion. |
 
 **Returns:** `BigInteger`
+Big integer version of bytes.
 
 ___
 
@@ -94,7 +95,7 @@ ___
 
 ▸ **tritsToBigInteger**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `BigInteger`
 
-*Defined in [helpers/bigIntegerHelper.ts:30](https://github.com/iota-pico/crypto/blob/594d2a7/src/helpers/bigIntegerHelper.ts#L30)*
+*Defined in [helpers/bigIntegerHelper.ts:31](https://github.com/iota-pico/crypto/blob/a29d55a/src/helpers/bigIntegerHelper.ts#L31)*
 
 Convert trits to a bigInteger.
 
@@ -107,6 +108,7 @@ Convert trits to a bigInteger.
 | length | `number`   |  The length of the trits array to convert. |
 
 **Returns:** `BigInteger`
+Big integer version of trits.
 
 ___
 

@@ -79,7 +79,7 @@ ___
 
 ▸ **getInstance**(): `FactoryBase`.<[ISponge](../interfaces/isponge.md)>
 
-*Defined in [factories/spongeFactory.ts:37](https://github.com/iota-pico/crypto/blob/594d2a7/src/factories/spongeFactory.ts#L37)*
+*Defined in [factories/spongeFactory.ts:37](https://github.com/iota-pico/crypto/blob/a29d55a/src/factories/spongeFactory.ts#L37)*
 
 **Returns:** `FactoryBase`.<[ISponge](../interfaces/isponge.md)>
 
@@ -153,7 +153,7 @@ ___
 
 ▸ **instance**(): `FactoryBase`.<[ISponge](../interfaces/isponge.md)>
 
-*Defined in [factories/spongeFactory.ts:25](https://github.com/iota-pico/crypto/blob/594d2a7/src/factories/spongeFactory.ts#L25)*
+*Defined in [factories/spongeFactory.ts:25](https://github.com/iota-pico/crypto/blob/a29d55a/src/factories/spongeFactory.ts#L25)*
 
 Get the instance of the factory.
 

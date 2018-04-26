@@ -30,7 +30,7 @@ Represents an interface to proof of work.
 
 ▸ **initialize**(): `Promise`.<`void`>
 
-*Defined in [interfaces/IProofOfWork.ts:13](https://github.com/iota-pico/crypto/blob/594d2a7/src/interfaces/IProofOfWork.ts#L13)*
+*Defined in [interfaces/IProofOfWork.ts:13](https://github.com/iota-pico/crypto/blob/a29d55a/src/interfaces/IProofOfWork.ts#L13)*
 
 Allow the proof of work to perform any initialization. Will throw an exception if the implementation is not supported.
 
@@ -44,7 +44,7 @@ ___
 
 ▸ **pow**(trunkTransaction: *`Hash`*, branchTransaction: *`Hash`*, trytes: *`Trytes`[]*, minWeightMagnitude: *`number`*): `Promise`.<`Trytes`[]>
 
-*Defined in [interfaces/IProofOfWork.ts:23](https://github.com/iota-pico/crypto/blob/594d2a7/src/interfaces/IProofOfWork.ts#L23)*
+*Defined in [interfaces/IProofOfWork.ts:23](https://github.com/iota-pico/crypto/blob/a29d55a/src/interfaces/IProofOfWork.ts#L23)*
 
 Perform a proof of work on the data.
 

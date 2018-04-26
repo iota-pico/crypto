@@ -26,6 +26,7 @@ export class BigIntegerHelper {
      * @param trits The trits to convert.
      * @param offset Offset within the array to start.
      * @param length The length of the trits array to convert.
+     * @returns Big integer version of trits.
      */
     public static tritsToBigInteger(trits: Int8Array, offset: number, length: number): bigInt.BigInteger {
         if (!ObjectHelper.isType(trits, Int8Array) || trits.length === 0) {
@@ -167,6 +168,7 @@ export class BigIntegerHelper {
      * @param source The source bytes.
      * @param offset The offset within the bytes to start conversion.
      * @param length The length of the bytes to use for conversion.
+     * @returns Big integer version of bytes.
      */
     public static bytesToBigInteger(source: ArrayBuffer, offset: number, length: number): bigInt.BigInteger {
         if (!ObjectHelper.isType(source, ArrayBuffer) || source.byteLength === 0) {

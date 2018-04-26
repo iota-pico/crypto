@@ -9,6 +9,7 @@ export declare class BigIntegerHelper {
      * @param trits The trits to convert.
      * @param offset Offset within the array to start.
      * @param length The length of the trits array to convert.
+     * @returns Big integer version of trits.
      */
     static tritsToBigInteger(trits: Int8Array, offset: number, length: number): bigInt.BigInteger;
     /**
@@ -31,6 +32,7 @@ export declare class BigIntegerHelper {
      * @param source The source bytes.
      * @param offset The offset within the bytes to start conversion.
      * @param length The length of the bytes to use for conversion.
+     * @returns Big integer version of bytes.
      */
     static bytesToBigInteger(source: ArrayBuffer, offset: number, length: number): bigInt.BigInteger;
 }

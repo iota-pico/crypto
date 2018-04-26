@@ -32,7 +32,7 @@ Sha3 implementation.
 
 ### ⊕ **new Sha3**(bits: *`number`*, padding: *`Uint32Array`*, outputBits: *`number`*): [Sha3](sha3.md)
 
-*Defined in [digests/sha3.ts:42](https://github.com/iota-pico/crypto/blob/594d2a7/src/digests/sha3.ts#L42)*
+*Defined in [digests/sha3.ts:42](https://github.com/iota-pico/crypto/blob/a29d55a/src/digests/sha3.ts#L42)*
 
 Create a new instance of SHA3.
 
@@ -56,7 +56,7 @@ Create a new instance of SHA3.
 
 **●  KECCAK_PADDING**:  *`Uint32Array`*  =  new Uint32Array([1, 256, 65536, 16777216])
 
-*Defined in [digests/sha3.ts:9](https://github.com/iota-pico/crypto/blob/594d2a7/src/digests/sha3.ts#L9)*
+*Defined in [digests/sha3.ts:9](https://github.com/iota-pico/crypto/blob/a29d55a/src/digests/sha3.ts#L9)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 ▸ **digest**(): `ArrayBuffer`
 
-*Defined in [digests/sha3.ts:115](https://github.com/iota-pico/crypto/blob/594d2a7/src/digests/sha3.ts#L115)*
+*Defined in [digests/sha3.ts:115](https://github.com/iota-pico/crypto/blob/a29d55a/src/digests/sha3.ts#L115)*
 
 Finalize and return the hash for the digest, will also reset the state.
 
@@ -83,7 +83,7 @@ ___
 
 ▸ **reset**(): `void`
 
-*Defined in [digests/sha3.ts:64](https://github.com/iota-pico/crypto/blob/594d2a7/src/digests/sha3.ts#L64)*
+*Defined in [digests/sha3.ts:64](https://github.com/iota-pico/crypto/blob/a29d55a/src/digests/sha3.ts#L64)*
 
 Reset the digest.
 
@@ -97,7 +97,7 @@ ___
 
 ▸ **update**(input: *`ArrayBuffer`*): `void`
 
-*Defined in [digests/sha3.ts:76](https://github.com/iota-pico/crypto/blob/594d2a7/src/digests/sha3.ts#L76)*
+*Defined in [digests/sha3.ts:76](https://github.com/iota-pico/crypto/blob/a29d55a/src/digests/sha3.ts#L76)*
 
 Update the digest.
 

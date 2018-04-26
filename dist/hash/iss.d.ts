@@ -19,7 +19,7 @@ export declare class ISS {
      * Create the key for the seed.
      * @param seed The seed to create the key for.
      * @param index The index to use for the seed.
-     * @param length The security level to create the key.
+     * @param security The security level to create the key.
      * @param spongeType The sponge type to use for operations.
      * @returns the key.
      */

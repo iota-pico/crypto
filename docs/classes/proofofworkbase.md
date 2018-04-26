@@ -37,7 +37,7 @@ Base class for proof of work.
 
 ### ⊕ **new ProofOfWorkBase**(timeService?: *`ITimeService`*): [ProofOfWorkBase](proofofworkbase.md)
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:25](https://github.com/iota-pico/crypto/blob/594d2a7/src/proofOfWork/proofOfWorkBase.ts#L25)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:25](https://github.com/iota-pico/crypto/blob/a29d55a/src/proofOfWork/proofOfWorkBase.ts#L25)*
 
 Create an instance of ProofOfWork.
 
@@ -59,7 +59,7 @@ Create an instance of ProofOfWork.
 
 **●  _timeService**:  *`ITimeService`* 
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:25](https://github.com/iota-pico/crypto/blob/594d2a7/src/proofOfWork/proofOfWorkBase.ts#L25)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:25](https://github.com/iota-pico/crypto/blob/a29d55a/src/proofOfWork/proofOfWorkBase.ts#L25)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 **●  MAX_TIMESTAMP_VALUE**:  *`number`*  =  (Math.pow(3, 27) - 1) / 2
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:22](https://github.com/iota-pico/crypto/blob/594d2a7/src/proofOfWork/proofOfWorkBase.ts#L22)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:22](https://github.com/iota-pico/crypto/blob/a29d55a/src/proofOfWork/proofOfWorkBase.ts#L22)*
 
 The maximum timestamp value used in proof of work.
 
@@ -85,11 +85,12 @@ ___
 
 *Implementation of [IProofOfWork](../interfaces/iproofofwork.md).[initialize](../interfaces/iproofofwork.md#initialize)*
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:39](https://github.com/iota-pico/crypto/blob/594d2a7/src/proofOfWork/proofOfWorkBase.ts#L39)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:40](https://github.com/iota-pico/crypto/blob/a29d55a/src/proofOfWork/proofOfWorkBase.ts#L40)*
 
 Allow the proof of work to perform any initialization. Will throw an exception if the implementation is not supported.
 
 **Returns:** `Promise`.<`void`>
+Promise.
 
 ___
 
@@ -101,7 +102,7 @@ ___
 
 *Implementation of [IProofOfWork](../interfaces/iproofofwork.md).[pow](../interfaces/iproofofwork.md#pow)*
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:51](https://github.com/iota-pico/crypto/blob/594d2a7/src/proofOfWork/proofOfWorkBase.ts#L51)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:52](https://github.com/iota-pico/crypto/blob/a29d55a/src/proofOfWork/proofOfWorkBase.ts#L52)*
 
 Perform a proof of work on the data.
 
@@ -125,7 +126,7 @@ ___
 
 ▸ **singlePow**(trytes: *`Trytes`*, minWeightMagnitude: *`number`*): `Promise`.<`Trytes`>
 
-*Defined in [proofOfWork/proofOfWorkBase.ts:118](https://github.com/iota-pico/crypto/blob/594d2a7/src/proofOfWork/proofOfWorkBase.ts#L118)*
+*Defined in [proofOfWork/proofOfWorkBase.ts:119](https://github.com/iota-pico/crypto/blob/a29d55a/src/proofOfWork/proofOfWorkBase.ts#L119)*
 
 Perform a proof of work on a single item.
 

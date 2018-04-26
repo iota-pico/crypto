@@ -40,7 +40,7 @@ A crypto implementation of an error.
 
 *Overrides CoreError.__constructor*
 
-*Defined in [error/cryptoError.ts:6](https://github.com/iota-pico/crypto/blob/594d2a7/src/error/cryptoError.ts#L6)*
+*Defined in [error/cryptoError.ts:6](https://github.com/iota-pico/crypto/blob/a29d55a/src/error/cryptoError.ts#L6)*
 
 Create an instance of CryptoError.
 
@@ -150,11 +150,12 @@ ___
 
 *Inherited from CoreError.format*
 
-*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/error/coreError.d.ts:37*
+*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/error/coreError.d.ts:38*
 
 Format the error to a readable version.
 
 **Returns:** `string`
+Formatted version of the error.
 
 ___
 

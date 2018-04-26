@@ -14,7 +14,7 @@ export declare class Curl implements ISponge {
     constructor(rounds?: number);
     /**
      * Get the constant for the spone.
-     * @name The name of the contant to get.
+     * @param name The name of the constant to get.
      * @returns The constant.
      */
     getConstant(name: string): number;
