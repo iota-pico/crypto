@@ -1,5 +1,5 @@
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/https://github.com/iota-pico/crypto/master/LICENSE) [![Build Status](https://travis-ci.org/https://github.com/iota-pico/crypto.svg?branch=master)](https://travis-ci.org/https://github.com/iota-pico/crypto) [![NSP Status](https://nodesecurity.io/orgs/https://github.com/iota-pico/projects/db76de2d-ab76-40fb-a846-086022a8beae/badge)](https://nodesecurity.io/orgs/https://github.com/iota-pico/projects/db76de2d-ab76-40fb-a846-086022a8beae)
-[![Coveralls](https://img.shields.io/coveralls/https://github.com/iota-pico/crypto.svg)](https://coveralls.io/github/https://github.com/iota-pico/crypto)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/iota-pico/crypto/master/LICENSE) [![Build Status](https://travis-ci.org/iota-pico/crypto.svg?branch=master)](https://travis-ci.org/iota-pico/crypto) [![NSP Status](https://nodesecurity.io/orgs/iota-pico/projects/db76de2d-ab76-40fb-a846-086022a8beae/badge)](https://nodesecurity.io/orgs/iota-pico/projects/db76de2d-ab76-40fb-a846-086022a8beae)
+[![Coveralls](https://img.shields.io/coveralls/iota-pico/crypto.svg)](https://coveralls.io/github/iota-pico/crypto)
 
 # IOTA Pico Framework Crypto
 

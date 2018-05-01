@@ -6,7 +6,7 @@ Factory to generate proof of work.
 
 ## Hierarchy
 
- `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
+ `FactoryBase`<[IProofOfWork](../interfaces/iproofofwork.md)>
 
 **↳ ProofOfWorkFactory**
 
@@ -42,14 +42,13 @@ Create an instance of an object from the factory.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| name | `string`   |  The name of the type to create. |
-| args | `any`[]   |  Any parameters to pass to the constructor. |
+| name | `string` |  The name of the type to create. |
+| `Rest` args | `any`[] |  Any parameters to pass to the constructor. |
 
 **Returns:** [IProofOfWork](../interfaces/iproofofwork.md)
 A new instance of the type if it exists, or undefined if it does not.
 
 ___
-
 <a id="exists"></a>
 
 ###  exists
@@ -66,25 +65,23 @@ Does the factory contain a specific type.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| name | `string`   |  The name of the type to look for. |
+| name | `string` |  The name of the type to look for. |
 
 **Returns:** `boolean`
 True if the type exists.
 
 ___
-
 <a id="getinstance"></a>
 
 ### `<Protected>` getInstance
 
-▸ **getInstance**(): `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
+▸ **getInstance**(): `FactoryBase`<[IProofOfWork](../interfaces/iproofofwork.md)>
 
-*Defined in [factories/proofOfWorkFactory.ts:31](https://github.com/iota-pico/crypto/blob/a29d55a/src/factories/proofOfWorkFactory.ts#L31)*
+*Defined in [factories/proofOfWorkFactory.ts:31](https://github.com/iota-pico/crypto/blob/a1912d9/src/factories/proofOfWorkFactory.ts#L31)*
 
-**Returns:** `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
+**Returns:** `FactoryBase`<[IProofOfWork](../interfaces/iproofofwork.md)>
 
 ___
-
 <a id="register"></a>
 
 ###  register
@@ -101,13 +98,12 @@ Register a new type with the factory.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| name | `string`   |  The name of the type to register. |
-| typeConstructor | `function`   |  The constructor for the type. |
+| name | `string` |  The name of the type to register. |
+| typeConstructor | `function` |  The constructor for the type. |
 
 **Returns:** `void`
 
 ___
-
 <a id="types"></a>
 
 ###  types
@@ -124,7 +120,6 @@ List the types in the factory.
 True if the type exists.
 
 ___
-
 <a id="unregister"></a>
 
 ###  unregister
@@ -141,23 +136,22 @@ Unregister a type from the factory.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| name | `string`   |  The name of the type to unregister. |
+| name | `string` |  The name of the type to unregister. |
 
 **Returns:** `void`
 
 ___
-
 <a id="instance"></a>
 
 ### `<Static>` instance
 
-▸ **instance**(): `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
+▸ **instance**(): `FactoryBase`<[IProofOfWork](../interfaces/iproofofwork.md)>
 
-*Defined in [factories/proofOfWorkFactory.ts:23](https://github.com/iota-pico/crypto/blob/a29d55a/src/factories/proofOfWorkFactory.ts#L23)*
+*Defined in [factories/proofOfWorkFactory.ts:23](https://github.com/iota-pico/crypto/blob/a1912d9/src/factories/proofOfWorkFactory.ts#L23)*
 
 Get the instance of the factory.
 
-**Returns:** `FactoryBase`.<[IProofOfWork](../interfaces/iproofofwork.md)>
+**Returns:** `FactoryBase`<[IProofOfWork](../interfaces/iproofofwork.md)>
 The factory instance.
 
 ___

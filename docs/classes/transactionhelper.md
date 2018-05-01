@@ -24,7 +24,7 @@ Helper class for transactions. Converted [https://github.com/iotaledger/iota.lib
 
 ▸ **hash**(transaction: *`Transaction`*): `Hash`
 
-*Defined in [helpers/transactionHelper.ts:18](https://github.com/iota-pico/crypto/blob/a29d55a/src/helpers/transactionHelper.ts#L18)*
+*Defined in [helpers/transactionHelper.ts:18](https://github.com/iota-pico/crypto/blob/a1912d9/src/helpers/transactionHelper.ts#L18)*
 
 Create the hash for a transaction.
 
@@ -32,7 +32,7 @@ Create the hash for a transaction.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| transaction | `Transaction`   |  The transaction to generate the hash. |
+| transaction | `Transaction` |  The transaction to generate the hash. |
 
 **Returns:** `Hash`
 The hash of thr transaction.

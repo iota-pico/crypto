@@ -28,23 +28,22 @@ Represents an interface to proof of work.
 
 ###  initialize
 
-▸ **initialize**(): `Promise`.<`void`>
+▸ **initialize**(): `Promise`<`void`>
 
-*Defined in [interfaces/IProofOfWork.ts:13](https://github.com/iota-pico/crypto/blob/a29d55a/src/interfaces/IProofOfWork.ts#L13)*
+*Defined in [interfaces/IProofOfWork.ts:13](https://github.com/iota-pico/crypto/blob/a1912d9/src/interfaces/IProofOfWork.ts#L13)*
 
 Allow the proof of work to perform any initialization. Will throw an exception if the implementation is not supported.
 
-**Returns:** `Promise`.<`void`>
+**Returns:** `Promise`<`void`>
 
 ___
-
 <a id="pow"></a>
 
 ###  pow
 
-▸ **pow**(trunkTransaction: *`Hash`*, branchTransaction: *`Hash`*, trytes: *`Trytes`[]*, minWeightMagnitude: *`number`*): `Promise`.<`Trytes`[]>
+▸ **pow**(trunkTransaction: *`Hash`*, branchTransaction: *`Hash`*, trytes: *`Trytes`[]*, minWeightMagnitude: *`number`*): `Promise`<`Trytes`[]>
 
-*Defined in [interfaces/IProofOfWork.ts:23](https://github.com/iota-pico/crypto/blob/a29d55a/src/interfaces/IProofOfWork.ts#L23)*
+*Defined in [interfaces/IProofOfWork.ts:23](https://github.com/iota-pico/crypto/blob/a1912d9/src/interfaces/IProofOfWork.ts#L23)*
 
 Perform a proof of work on the data.
 
@@ -52,12 +51,12 @@ Perform a proof of work on the data.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trunkTransaction | `Hash`   |  The trunkTransaction to use for the pow. |
-| branchTransaction | `Hash`   |  The branchTransaction to use for the pow. |
-| trytes | `Trytes`[]   |  The trytes to perform the pow on. |
-| minWeightMagnitude | `number`   |  The minimum weight magnitude. |
+| trunkTransaction | `Hash` |  The trunkTransaction to use for the pow. |
+| branchTransaction | `Hash` |  The branchTransaction to use for the pow. |
+| trytes | `Trytes`[] |  The trytes to perform the pow on. |
+| minWeightMagnitude | `number` |  The minimum weight magnitude. |
 
-**Returns:** `Promise`.<`Trytes`[]>
+**Returns:** `Promise`<`Trytes`[]>
 The trytes produced by the proof of work.
 
 ___

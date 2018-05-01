@@ -33,15 +33,17 @@ Implementation of ISponge using Kerl algorithm. [https://github.com/iotaledger/i
 
 <a id="constructor"></a>
 
-### ⊕ **new Kerl**(): [Kerl](kerl.md)
+###  constructor
 
-*Defined in [sponges/kerl.ts:21](https://github.com/iota-pico/crypto/blob/a29d55a/src/sponges/kerl.ts#L21)*
+⊕ **new Kerl**(): [Kerl](kerl.md)
+
+*Defined in [sponges/kerl.ts:21](https://github.com/iota-pico/crypto/blob/a1912d9/src/sponges/kerl.ts#L21)*
 
 Create a new instance of Kerl.
 
 **Returns:** [Kerl](kerl.md)
 
----
+___
 
 ## Methods
 
@@ -53,7 +55,7 @@ Create a new instance of Kerl.
 
 *Implementation of [ISponge](../interfaces/isponge.md).[absorb](../interfaces/isponge.md#absorb)*
 
-*Defined in [sponges/kerl.ts:75](https://github.com/iota-pico/crypto/blob/a29d55a/src/sponges/kerl.ts#L75)*
+*Defined in [sponges/kerl.ts:75](https://github.com/iota-pico/crypto/blob/a1912d9/src/sponges/kerl.ts#L75)*
 
 Absorb trits into the hash.
 
@@ -61,14 +63,13 @@ Absorb trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `Int8Array`   |  The trits to absorb. |
-| offset | `number`   |  The offset into the trits to absorb from. |
-| length | `number`   |  The number of trits to absorb. |
+| trits | `Int8Array` |  The trits to absorb. |
+| offset | `number` |  The offset into the trits to absorb from. |
+| length | `number` |  The number of trits to absorb. |
 
 **Returns:** `void`
 
 ___
-
 <a id="getconstant"></a>
 
 ###  getConstant
@@ -77,7 +78,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getConstant](../interfaces/isponge.md#getconstant)*
 
-*Defined in [sponges/kerl.ts:35](https://github.com/iota-pico/crypto/blob/a29d55a/src/sponges/kerl.ts#L35)*
+*Defined in [sponges/kerl.ts:35](https://github.com/iota-pico/crypto/blob/a1912d9/src/sponges/kerl.ts#L35)*
 
 Get the constant for the spone.
 
@@ -85,13 +86,12 @@ Get the constant for the spone.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| name | `string`   |  The name of the constant to get. |
+| name | `string` |  The name of the constant to get. |
 
 **Returns:** `number`
 The constant.
 
 ___
-
 <a id="getstate"></a>
 
 ###  getState
@@ -100,7 +100,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getState](../interfaces/isponge.md#getstate)*
 
-*Defined in [sponges/kerl.ts:51](https://github.com/iota-pico/crypto/blob/a29d55a/src/sponges/kerl.ts#L51)*
+*Defined in [sponges/kerl.ts:51](https://github.com/iota-pico/crypto/blob/a1912d9/src/sponges/kerl.ts#L51)*
 
 Get the state.
 
@@ -108,7 +108,6 @@ Get the state.
 The state.
 
 ___
-
 <a id="initialize"></a>
 
 ###  initialize
@@ -117,7 +116,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[initialize](../interfaces/isponge.md#initialize)*
 
-*Defined in [sponges/kerl.ts:59](https://github.com/iota-pico/crypto/blob/a29d55a/src/sponges/kerl.ts#L59)*
+*Defined in [sponges/kerl.ts:59](https://github.com/iota-pico/crypto/blob/a1912d9/src/sponges/kerl.ts#L59)*
 
 Initialise the hasher.
 
@@ -125,12 +124,11 @@ Initialise the hasher.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| state | `Int8Array`   |  The initial state for the hasher. |
+| `Optional` state | `Int8Array` |  The initial state for the hasher. |
 
 **Returns:** `void`
 
 ___
-
 <a id="reset"></a>
 
 ###  reset
@@ -139,14 +137,13 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[reset](../interfaces/isponge.md#reset)*
 
-*Defined in [sponges/kerl.ts:65](https://github.com/iota-pico/crypto/blob/a29d55a/src/sponges/kerl.ts#L65)*
+*Defined in [sponges/kerl.ts:65](https://github.com/iota-pico/crypto/blob/a1912d9/src/sponges/kerl.ts#L65)*
 
 Reset the hasher.
 
 **Returns:** `void`
 
 ___
-
 <a id="squeeze"></a>
 
 ###  squeeze
@@ -155,7 +152,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[squeeze](../interfaces/isponge.md#squeeze)*
 
-*Defined in [sponges/kerl.ts:116](https://github.com/iota-pico/crypto/blob/a29d55a/src/sponges/kerl.ts#L116)*
+*Defined in [sponges/kerl.ts:116](https://github.com/iota-pico/crypto/blob/a1912d9/src/sponges/kerl.ts#L116)*
 
 Squeeze trits into the hash.
 
@@ -163,9 +160,9 @@ Squeeze trits into the hash.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| trits | `Int8Array`   |  The trits to squeeze. |
-| offset | `number`   |  The offset into the trits to squeeze from. |
-| length | `number`   |  The number of trits to squeeze. |
+| trits | `Int8Array` |  The trits to squeeze. |
+| offset | `number` |  The offset into the trits to squeeze from. |
+| length | `number` |  The number of trits to squeeze. |
 
 **Returns:** `void`
 
