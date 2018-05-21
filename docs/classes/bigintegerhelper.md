@@ -27,7 +27,7 @@ Helper class to convert between BigInteger and other types. Converted from [http
 
 ▸ **bigIntegerToBytes**(value: *`BigInteger`*, destination: *`ArrayBuffer`*, offset: *`number`*): `void`
 
-*Defined in [helpers/bigIntegerHelper.ts:113](https://github.com/iota-pico/crypto/blob/a1912d9/src/helpers/bigIntegerHelper.ts#L113)*
+*Defined in [helpers/bigIntegerHelper.ts:113](https://github.com/iota-pico/crypto/blob/b1e71f4/src/helpers/bigIntegerHelper.ts#L113)*
 
 Convert the bigInteger into bytes.
 
@@ -48,7 +48,7 @@ ___
 
 ▸ **bigIntegerToTrits**(value: *`BigInteger`*, trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `void`
 
-*Defined in [helpers/bigIntegerHelper.ts:64](https://github.com/iota-pico/crypto/blob/a1912d9/src/helpers/bigIntegerHelper.ts#L64)*
+*Defined in [helpers/bigIntegerHelper.ts:64](https://github.com/iota-pico/crypto/blob/b1e71f4/src/helpers/bigIntegerHelper.ts#L64)*
 
 Convert bigInteger to trits.
 
@@ -70,7 +70,7 @@ ___
 
 ▸ **bytesToBigInteger**(source: *`ArrayBuffer`*, offset: *`number`*, length: *`number`*): `BigInteger`
 
-*Defined in [helpers/bigIntegerHelper.ts:173](https://github.com/iota-pico/crypto/blob/a1912d9/src/helpers/bigIntegerHelper.ts#L173)*
+*Defined in [helpers/bigIntegerHelper.ts:173](https://github.com/iota-pico/crypto/blob/b1e71f4/src/helpers/bigIntegerHelper.ts#L173)*
 
 Convert bytes to a bigInteger.
 
@@ -92,7 +92,7 @@ ___
 
 ▸ **tritsToBigInteger**(trits: *`Int8Array`*, offset: *`number`*, length: *`number`*): `BigInteger`
 
-*Defined in [helpers/bigIntegerHelper.ts:31](https://github.com/iota-pico/crypto/blob/a1912d9/src/helpers/bigIntegerHelper.ts#L31)*
+*Defined in [helpers/bigIntegerHelper.ts:31](https://github.com/iota-pico/crypto/blob/b1e71f4/src/helpers/bigIntegerHelper.ts#L31)*
 
 Convert trits to a bigInteger.
 
