@@ -5,7 +5,6 @@ import { ITimeService } from "@iota-pico/core/dist/interfaces/ITimeService";
 import { Hash } from "@iota-pico/data/dist/data/hash";
 import { Trytes } from "@iota-pico/data/dist/data/trytes";
 import * as chai from "chai";
-import * as sinon from "sinon";
 import { ProofOfWorkBase } from "../../src/proofOfWork/proofOfWorkBase";
 
 class ProofOfWorkTest extends ProofOfWorkBase {
@@ -15,16 +14,6 @@ class ProofOfWorkTest extends ProofOfWorkBase {
 }
 
 describe("ProofOfWorkBase", () => {
-    let sandbox: sinon.SinonSandbox;
-
-    beforeEach(() => {
-        sandbox = sinon.createSandbox();
-    });
-
-    afterEach(() => {
-        sandbox.restore();
-    });
-
     it("can be created", () => {
         const obj = new ProofOfWorkTest();
         chai.should().exist(obj);
@@ -79,7 +68,7 @@ describe("ProofOfWorkBase", () => {
 
         it("can fail with wrong bundle order", async () => {
             const timeServiceStub = <ITimeService>{};
-            timeServiceStub.msSinceEpoch = sandbox.stub().returns(1518782585);
+            timeServiceStub.msSinceEpoch = () => 1518782585;
 
             // tslint:disable:max-line-length
             const trytes = [
@@ -102,7 +91,7 @@ describe("ProofOfWorkBase", () => {
 
         it("can complete", async () => {
             const timeServiceStub = <ITimeService>{};
-            timeServiceStub.msSinceEpoch = sandbox.stub().returns(1518782585);
+            timeServiceStub.msSinceEpoch = () => 1518782585;
 
             // tslint:disable:max-line-length
             const trytes = [
