@@ -1,7 +1,6 @@
 /**
  * Tests for BigIntegerHelper.
  */
-// tslint:disable-next-line:import-name
 import bigInt from "big-integer";
 import * as chai from "chai";
 import { BigIntegerHelper } from "../../src/helpers/bigIntegerHelper";

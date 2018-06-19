@@ -32,7 +32,7 @@ ISS Hashing functions. Converted [https://github.com/iotaledger/iri/src/main/jav
 
 ▸ **address**(digests: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
 
-*Defined in [hash/iss.ts:203](https://github.com/iota-pico/crypto/blob/b1e71f4/src/hash/iss.ts#L203)*
+*Defined in [hash/iss.ts:203](https://github.com/iota-pico/crypto/blob/aa8469a/src/hash/iss.ts#L203)*
 
 Create the address for the digests.
 
@@ -53,7 +53,7 @@ ___
 
 ▸ **digest**(normalizedBundleFragment: *`Int8Array`*, signatureMessageFragment: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
 
-*Defined in [hash/iss.ts:235](https://github.com/iota-pico/crypto/blob/b1e71f4/src/hash/iss.ts#L235)*
+*Defined in [hash/iss.ts:235](https://github.com/iota-pico/crypto/blob/aa8469a/src/hash/iss.ts#L235)*
 
 Create digest of the normalized bundle fragment.
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **digests**(subseed: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
 
-*Defined in [hash/iss.ts:142](https://github.com/iota-pico/crypto/blob/b1e71f4/src/hash/iss.ts#L142)*
+*Defined in [hash/iss.ts:142](https://github.com/iota-pico/crypto/blob/aa8469a/src/hash/iss.ts#L142)*
 
 Create the digests for the given subseed.
 
@@ -96,7 +96,7 @@ ___
 
 ▸ **key**(seed: *`Hash`*, index: *`number`*, security: *`AddressSecurity`*, spongeType?: *`string`*): `Int8Array`
 
-*Defined in [hash/iss.ts:88](https://github.com/iota-pico/crypto/blob/b1e71f4/src/hash/iss.ts#L88)*
+*Defined in [hash/iss.ts:88](https://github.com/iota-pico/crypto/blob/aa8469a/src/hash/iss.ts#L88)*
 
 Create the key for the seed.
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **normalizedBundle**(bundleHash: *`Hash`*, spongeType?: *`string`*): `Int8Array`
 
-*Defined in [hash/iss.ts:329](https://github.com/iota-pico/crypto/blob/b1e71f4/src/hash/iss.ts#L329)*
+*Defined in [hash/iss.ts:329](https://github.com/iota-pico/crypto/blob/aa8469a/src/hash/iss.ts#L329)*
 
 Create a normalized bundle.
 
@@ -140,7 +140,7 @@ ___
 
 ▸ **signatureMessageFragment**(normalizedBundleFragment: *`Int8Array`*, keyFragment: *`Int8Array`*, spongeType?: *`string`*): `Int8Array`
 
-*Defined in [hash/iss.ts:434](https://github.com/iota-pico/crypto/blob/b1e71f4/src/hash/iss.ts#L434)*
+*Defined in [hash/iss.ts:434](https://github.com/iota-pico/crypto/blob/aa8469a/src/hash/iss.ts#L434)*
 
 Create a signed signature message fragment.
 
@@ -162,7 +162,7 @@ ___
 
 ▸ **subseed**(seed: *`Int8Array`*, index: *`number`*, spongeType?: *`string`*): `Int8Array`
 
-*Defined in [hash/iss.ts:42](https://github.com/iota-pico/crypto/blob/b1e71f4/src/hash/iss.ts#L42)*
+*Defined in [hash/iss.ts:42](https://github.com/iota-pico/crypto/blob/aa8469a/src/hash/iss.ts#L42)*
 
 Get the subseed for the seed and index.
 
@@ -184,7 +184,7 @@ ___
 
 ▸ **subseedToDigest**(subseed: *`Int8Array`*, security: *`AddressSecurity`*, spongeType?: *`string`*): `Int8Array`
 
-*Defined in [hash/iss.ts:279](https://github.com/iota-pico/crypto/blob/b1e71f4/src/hash/iss.ts#L279)*
+*Defined in [hash/iss.ts:279](https://github.com/iota-pico/crypto/blob/aa8469a/src/hash/iss.ts#L279)*
 
 Get the digest for the subseed.
 
@@ -206,7 +206,7 @@ ___
 
 ▸ **validateSignatures**(expectedAddress: *`Address`*, signatureMessageFragments: *`SignatureMessageFragment`[]*, bundleHash: *`Hash`*, spongeType?: *`string`*): `boolean`
 
-*Defined in [hash/iss.ts:387](https://github.com/iota-pico/crypto/blob/b1e71f4/src/hash/iss.ts#L387)*
+*Defined in [hash/iss.ts:387](https://github.com/iota-pico/crypto/blob/aa8469a/src/hash/iss.ts#L387)*
 
 Validate the signature fragments from the address.
 

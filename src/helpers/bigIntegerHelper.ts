@@ -1,6 +1,5 @@
 import { NumberHelper } from "@iota-pico/core/dist/helpers/numberHelper";
 import { ObjectHelper } from "@iota-pico/core/dist/helpers/objectHelper";
-// tslint:disable-next-line:import-name
 import bigInt from "big-integer";
 import { CryptoError } from "../error/cryptoError";
 
