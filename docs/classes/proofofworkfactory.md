@@ -77,7 +77,7 @@ ___
 
 ▸ **getInstance**(): `FactoryBase`<[IProofOfWork](../interfaces/iproofofwork.md)>
 
-*Defined in [factories/proofOfWorkFactory.ts:31](https://github.com/iota-pico/crypto/blob/aa8469a/src/factories/proofOfWorkFactory.ts#L31)*
+*Defined in [factories/proofOfWorkFactory.ts:31](https://github.com/iota-pico/crypto/blob/127b5d1/src/factories/proofOfWorkFactory.ts#L31)*
 
 **Returns:** `FactoryBase`<[IProofOfWork](../interfaces/iproofofwork.md)>
 
@@ -147,7 +147,7 @@ ___
 
 ▸ **instance**(): `FactoryBase`<[IProofOfWork](../interfaces/iproofofwork.md)>
 
-*Defined in [factories/proofOfWorkFactory.ts:23](https://github.com/iota-pico/crypto/blob/aa8469a/src/factories/proofOfWorkFactory.ts#L23)*
+*Defined in [factories/proofOfWorkFactory.ts:23](https://github.com/iota-pico/crypto/blob/127b5d1/src/factories/proofOfWorkFactory.ts#L23)*
 
 Get the instance of the factory.
 
