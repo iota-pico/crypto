@@ -13,7 +13,7 @@ class TransactionHelper {
     /**
      * Create the hash for a transaction.
      * @param transaction The transaction to generate the hash.
-     * @returns The hash of thr transaction.
+     * @returns The hash of the transaction.
      */
     static hash(transaction) {
         if (!objectHelper_1.ObjectHelper.isType(transaction, transaction_1.Transaction)) {

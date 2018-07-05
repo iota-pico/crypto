@@ -35,7 +35,7 @@ Create the hash for a transaction.
 | transaction | `Transaction` |  The transaction to generate the hash. |
 
 **Returns:** `Hash`
-The hash of thr transaction.
+The hash of the transaction.
 
 ___
 
