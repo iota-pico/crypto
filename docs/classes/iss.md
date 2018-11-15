@@ -38,7 +38,7 @@ Create the address for the digests.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | digests | `Int8Array` | - |  The digests to create the address for. |
 | `Default value` spongeType | `string` | &quot;kerl&quot; |  The sponge type to use for operations. |
@@ -59,7 +59,7 @@ Create digest of the normalized bundle fragment.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | normalizedBundleFragment | `Int8Array` | - |  The fragment to create digest. |
 | signatureMessageFragment | `Int8Array` | - |  The trits for signature message fragment. |
@@ -81,7 +81,7 @@ Create the digests for the given subseed.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | subseed | `Int8Array` | - |  To create the digests for. |
 | `Default value` spongeType | `string` | &quot;kerl&quot; |  The sponge type to use for operations. |
@@ -102,7 +102,7 @@ Create the key for the seed.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | seed | `Hash` | - |  The seed to create the key for. |
 | index | `number` | - |  The index to use for the seed. |
@@ -125,7 +125,7 @@ Create a normalized bundle.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | bundleHash | `Hash` | - |  The hash of the bundle. |
 | `Default value` spongeType | `string` | &quot;curl81&quot; |  The sponge type to use for operations. |
@@ -146,7 +146,7 @@ Create a signed signature message fragment.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | normalizedBundleFragment | `Int8Array` | - |  The fragment to sign. |
 | keyFragment | `Int8Array` | - |  The key fragment to sign with. |
@@ -168,7 +168,7 @@ Get the subseed for the seed and index.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | seed | `Int8Array` | - |  The seed. |
 | index | `number` | - |  The index for the seed. |
@@ -190,7 +190,7 @@ Get the digest for the subseed.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | subseed | `Int8Array` | - |  The subseed to get the digest for. |
 | security | `AddressSecurity` | - |  The security level. |
@@ -212,7 +212,7 @@ Validate the signature fragments from the address.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | expectedAddress | `Address` | - |  The address. |
 | signatureMessageFragments | `SignatureMessageFragment`[] | - |  The signature message fragments. |

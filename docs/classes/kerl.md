@@ -61,7 +61,7 @@ Absorb trits into the hash.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | trits | `Int8Array` |  The trits to absorb. |
 | offset | `number` |  The offset into the trits to absorb from. |
@@ -84,7 +84,7 @@ Get the constant for the spone.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | name | `string` |  The name of the constant to get. |
 
@@ -122,7 +122,7 @@ Initialise the hasher.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | `Optional` state | `Int8Array` |  The initial state for the hasher. |
 
@@ -158,7 +158,7 @@ Squeeze trits into the hash.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | trits | `Int8Array` |  The trits to squeeze. |
 | offset | `number` |  The offset into the trits to squeeze from. |

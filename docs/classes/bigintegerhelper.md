@@ -33,7 +33,7 @@ Convert the bigInteger into bytes.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `BigInteger` |  The value to convert. |
 | destination | `ArrayBuffer` |  The destination array to store the bytes. |
@@ -54,7 +54,7 @@ Convert bigInteger to trits.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | value | `BigInteger` |  The bigInteger to convert to trits. |
 | trits | `Int8Array` |  The array to receive the trits. |
@@ -76,7 +76,7 @@ Convert bytes to a bigInteger.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | source | `ArrayBuffer` |  The source bytes. |
 | offset | `number` |  The offset within the bytes to start conversion. |
@@ -98,7 +98,7 @@ Convert trits to a bigInteger.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | trits | `Int8Array` |  The trits to convert. |
 | offset | `number` |  Offset within the array to start. |

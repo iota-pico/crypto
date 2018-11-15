@@ -45,7 +45,7 @@ Create an instance of ProofOfWork.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | `Optional` timeService | `ITimeService` |  Service to get the time for attachments. |
 
@@ -108,7 +108,7 @@ Perform a proof of work on the data.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | trunkTransaction | `Hash` |  The trunkTransaction to use for the pow. |
 | branchTransaction | `Hash` |  The branchTransaction to use for the pow. |
@@ -131,7 +131,7 @@ Perform a proof of work on a single item.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | trytes | `Trytes` |  The trytes to perform the pow on. |
 | minWeightMagnitude | `number` |  The minimum weight magnitude. |

@@ -30,7 +30,7 @@ Create the hash for a transaction.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | transaction | `Transaction` |  The transaction to generate the hash. |
 

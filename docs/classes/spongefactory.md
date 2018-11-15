@@ -34,13 +34,13 @@ Factory to generate sponges.
 
 *Inherited from FactoryBase.create*
 
-*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:35*
+*Defined in D:/Workarea/iota.eco/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:35*
 
 Create an instance of an object from the factory.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | name | `string` |  The name of the type to create. |
 | `Rest` args | `any`[] |  Any parameters to pass to the constructor. |
@@ -57,13 +57,13 @@ ___
 
 *Inherited from FactoryBase.exists*
 
-*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:22*
+*Defined in D:/Workarea/iota.eco/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:22*
 
 Does the factory contain a specific type.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | name | `string` |  The name of the type to look for. |
 
@@ -90,13 +90,13 @@ ___
 
 *Inherited from FactoryBase.register*
 
-*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:11*
+*Defined in D:/Workarea/iota.eco/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:11*
 
 Register a new type with the factory.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | name | `string` |  The name of the type to register. |
 | typeConstructor | `function` |  The constructor for the type. |
@@ -112,7 +112,7 @@ ___
 
 *Inherited from FactoryBase.types*
 
-*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:28*
+*Defined in D:/Workarea/iota.eco/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:28*
 
 List the types in the factory.
 
@@ -128,13 +128,13 @@ ___
 
 *Inherited from FactoryBase.unregister*
 
-*Defined in D:/Workarea/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:16*
+*Defined in D:/Workarea/iota.eco/iota-pico/crypto/node_modules/@iota-pico/core/dist/factories/factoryBase.d.ts:16*
 
 Unregister a type from the factory.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | name | `string` |  The name of the type to unregister. |
 

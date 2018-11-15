@@ -40,7 +40,7 @@ Create a new instance of SHA3.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | bits | `number` |  The number of input bits. |
 | padding | `Uint32Array` |  The padding to use. |
@@ -103,7 +103,7 @@ Update the digest.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | input | `ArrayBuffer` |  Array of data to use in the update. |
 
