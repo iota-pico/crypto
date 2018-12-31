@@ -5,6 +5,7 @@ import { Trits } from "@iota-pico/data/dist/data/trits";
 import { Trytes } from "@iota-pico/data/dist/data/trytes";
 import * as chai from "chai";
 import { Kerl } from "../../src/sponges/kerl";
+// tslint:disable:no-default-import
 import kerlMultiAbsorbMultiSqueezeJson from "./kerl-multi-absorb-multi-squeeze.json";
 import kerlMultiAbsorbSingleSqueezeJson from "./kerl-multi-absorb-single-squeeze.json";
 import kerlSingleAbsorbMultiSqueezeJson from "./kerl-single-absorb-multi-squeeze.json";

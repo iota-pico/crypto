@@ -206,8 +206,7 @@
 <a name='L158'></a><a href='#L158'>158</a>
 <a name='L159'></a><a href='#L159'>159</a>
 <a name='L160'></a><a href='#L160'>160</a>
-<a name='L161'></a><a href='#L161'>161</a>
-<a name='L162'></a><a href='#L162'>162</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L161'></a><a href='#L161'>161</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -243,7 +242,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9081x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -406,8 +404,7 @@ export class Kerl implements ISponge {
         switch (name) {
             case "HASH_LENGTH":
             case "BIT_HASH_LENGTH":
-            case "BYTE_HASH_LENGTH":
-            {
+            case "BYTE_HASH_LENGTH": {
                 return Kerl[name];
             }
             default: throw new CryptoError(`Unknown constant requested ${name}`);
@@ -415,7 +412,7 @@ export class Kerl implements ISponge {
     }
 &nbsp;
     /**
-     * Get the state.
+     * Get the internal state.
      * @returns The state.
      */
     public getState(): Int8Array {

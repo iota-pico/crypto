@@ -97,7 +97,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[absorb](../interfaces/isponge.md#absorb)*
 
-*Defined in [sponges/curl.ts:83](https://github.com/iota-pico/crypto/tree/master/src/sponges/curl.ts#L83*
+*Defined in [sponges/curl.ts:82](https://github.com/iota-pico/crypto/tree/master/src/sponges/curl.ts#L82*
 
 Absorb trits into the hash.
 
@@ -142,9 +142,9 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getState](../interfaces/isponge.md#getstate)*
 
-*Defined in [sponges/curl.ts:54](https://github.com/iota-pico/crypto/tree/master/src/sponges/curl.ts#L54*
+*Defined in [sponges/curl.ts:53](https://github.com/iota-pico/crypto/tree/master/src/sponges/curl.ts#L53*
 
-Get the state.
+Get the internal state.
 
 **Returns:** `Int8Array`
 The state.
@@ -158,7 +158,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[initialize](../interfaces/isponge.md#initialize)*
 
-*Defined in [sponges/curl.ts:62](https://github.com/iota-pico/crypto/tree/master/src/sponges/curl.ts#L62*
+*Defined in [sponges/curl.ts:61](https://github.com/iota-pico/crypto/tree/master/src/sponges/curl.ts#L61*
 
 Initialise the hasher.
 
@@ -179,7 +179,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[reset](../interfaces/isponge.md#reset)*
 
-*Defined in [sponges/curl.ts:73](https://github.com/iota-pico/crypto/tree/master/src/sponges/curl.ts#L73*
+*Defined in [sponges/curl.ts:72](https://github.com/iota-pico/crypto/tree/master/src/sponges/curl.ts#L72*
 
 Reset the hasher.
 
@@ -194,7 +194,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[squeeze](../interfaces/isponge.md#squeeze)*
 
-*Defined in [sponges/curl.ts:120](https://github.com/iota-pico/crypto/tree/master/src/sponges/curl.ts#L120*
+*Defined in [sponges/curl.ts:119](https://github.com/iota-pico/crypto/tree/master/src/sponges/curl.ts#L119*
 
 Squeeze trits into the hash.
 
