@@ -39,8 +39,7 @@ export class Curl implements ISponge {
                 return this._numberOfRounds;
             }
             case "HASH_LENGTH":
-            case "STATE_LENGTH":
-            {
+            case "STATE_LENGTH": {
                 return Curl[name];
             }
             default: throw new CryptoError(`Unknown constant requested ${name}`);

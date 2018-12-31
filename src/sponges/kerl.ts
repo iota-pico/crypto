@@ -36,8 +36,7 @@ export class Kerl implements ISponge {
         switch (name) {
             case "HASH_LENGTH":
             case "BIT_HASH_LENGTH":
-            case "BYTE_HASH_LENGTH":
-            {
+            case "BYTE_HASH_LENGTH": {
                 return Kerl[name];
             }
             default: throw new CryptoError(`Unknown constant requested ${name}`);
