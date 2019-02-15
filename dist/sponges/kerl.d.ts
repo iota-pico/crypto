@@ -15,7 +15,7 @@ export declare class Kerl implements ISponge {
      */
     getConstant(name: string): number;
     /**
-     * Get the state.
+     * Get the state of the kerl hash.
      * @returns The state.
      */
     getState(): Int8Array;

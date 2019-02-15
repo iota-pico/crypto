@@ -19,7 +19,7 @@ export declare class Curl implements ISponge {
      */
     getConstant(name: string): number;
     /**
-     * Get the state.
+     * Get the state of the curl hash.
      * @returns The state.
      */
     getState(): Int8Array;

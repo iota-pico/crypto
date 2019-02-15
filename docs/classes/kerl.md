@@ -55,7 +55,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[absorb](../interfaces/isponge.md#absorb)*
 
-*Defined in [sponges/kerl.ts:75](https://github.com/iota-pico/crypto/tree/master/src/sponges/kerl.ts#L75*
+*Defined in [sponges/kerl.ts:74](https://github.com/iota-pico/crypto/tree/master/src/sponges/kerl.ts#L74*
 
 Absorb trits into the hash.
 
@@ -100,9 +100,9 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[getState](../interfaces/isponge.md#getstate)*
 
-*Defined in [sponges/kerl.ts:51](https://github.com/iota-pico/crypto/tree/master/src/sponges/kerl.ts#L51*
+*Defined in [sponges/kerl.ts:50](https://github.com/iota-pico/crypto/tree/master/src/sponges/kerl.ts#L50*
 
-Get the state.
+Get the state of the kerl hash.
 
 **Returns:** `Int8Array`
 The state.
@@ -116,7 +116,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[initialize](../interfaces/isponge.md#initialize)*
 
-*Defined in [sponges/kerl.ts:59](https://github.com/iota-pico/crypto/tree/master/src/sponges/kerl.ts#L59*
+*Defined in [sponges/kerl.ts:58](https://github.com/iota-pico/crypto/tree/master/src/sponges/kerl.ts#L58*
 
 Initialise the hasher.
 
@@ -137,7 +137,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[reset](../interfaces/isponge.md#reset)*
 
-*Defined in [sponges/kerl.ts:65](https://github.com/iota-pico/crypto/tree/master/src/sponges/kerl.ts#L65*
+*Defined in [sponges/kerl.ts:64](https://github.com/iota-pico/crypto/tree/master/src/sponges/kerl.ts#L64*
 
 Reset the hasher.
 
@@ -152,7 +152,7 @@ ___
 
 *Implementation of [ISponge](../interfaces/isponge.md).[squeeze](../interfaces/isponge.md#squeeze)*
 
-*Defined in [sponges/kerl.ts:116](https://github.com/iota-pico/crypto/tree/master/src/sponges/kerl.ts#L116*
+*Defined in [sponges/kerl.ts:115](https://github.com/iota-pico/crypto/tree/master/src/sponges/kerl.ts#L115*
 
 Squeeze trits into the hash.
 

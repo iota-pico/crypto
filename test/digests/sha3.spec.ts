@@ -3,6 +3,7 @@
  */
 import * as chai from "chai";
 import { Sha3 } from "../../src/digests/sha3";
+// tslint:disable-next-line:no-default-import
 import sha3Json from "./sha3.json";
 
 describe("Sha3", () => {

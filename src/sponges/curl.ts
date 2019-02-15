@@ -47,7 +47,7 @@ export class Curl implements ISponge {
     }
 
     /**
-     * Get the state.
+     * Get the state of the curl hash.
      * @returns The state.
      */
     public getState(): Int8Array {

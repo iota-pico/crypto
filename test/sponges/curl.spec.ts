@@ -5,6 +5,7 @@ import { Trits } from "@iota-pico/data/dist/data/trits";
 import { Trytes } from "@iota-pico/data/dist/data/trytes";
 import * as chai from "chai";
 import { Curl } from "../../src/sponges/curl";
+// tslint:disable:no-default-import
 import curlMultiAbsorbMultiSqueezeJson from "./curl-multi-absorb-multi-squeeze.json";
 import curlMultiAbsorbSingleSqueezeJson from "./curl-multi-absorb-single-squeeze.json";
 import curlSingleAbsorbMultiSqueezeJson from "./curl-single-absorb-multi-squeeze.json";
