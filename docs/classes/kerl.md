@@ -102,7 +102,7 @@ ___
 
 *Defined in [sponges/kerl.ts:50](https://github.com/iota-pico/crypto/tree/master/src/sponges/kerl.ts#L50*
 
-Get the internal state.
+Get the state of the kerl hash.
 
 **Returns:** `Int8Array`
 The state.

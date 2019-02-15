@@ -44,7 +44,7 @@ export class Kerl implements ISponge {
     }
 
     /**
-     * Get the internal state.
+     * Get the state of the kerl hash.
      * @returns The state.
      */
     public getState(): Int8Array {

@@ -3,6 +3,7 @@
 # Interface: IProofOfWork
 
 Represents an interface to proof of work.
+
 *__interface__*: 
 
 ## Hierarchy

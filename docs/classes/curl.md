@@ -144,7 +144,7 @@ ___
 
 *Defined in [sponges/curl.ts:53](https://github.com/iota-pico/crypto/tree/master/src/sponges/curl.ts#L53*
 
-Get the internal state.
+Get the state of the curl hash.
 
 **Returns:** `Int8Array`
 The state.

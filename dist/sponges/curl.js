@@ -32,7 +32,7 @@ class Curl {
         }
     }
     /**
-     * Get the internal state.
+     * Get the state of the curl hash.
      * @returns The state.
      */
     getState() {

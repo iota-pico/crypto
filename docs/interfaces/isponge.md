@@ -3,6 +3,7 @@
 # Interface: ISponge
 
 Represents an interface to hash trits.
+
 *__interface__*: 
 
 ## Hierarchy
@@ -59,6 +60,7 @@ ___
 *Defined in [interfaces/ISponge.ts:11](https://github.com/iota-pico/crypto/tree/master/src/interfaces/ISponge.ts#L11*
 
 Get the constant for the spone.
+
 *__name__*: The name of the contant to get.
 
 **Parameters:**

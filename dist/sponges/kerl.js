@@ -31,7 +31,7 @@ class Kerl {
         }
     }
     /**
-     * Get the internal state.
+     * Get the state of the kerl hash.
      * @returns The state.
      */
     getState() {
